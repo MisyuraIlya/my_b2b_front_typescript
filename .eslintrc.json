@@ -21,17 +21,25 @@
         "no-unused-vars":"warn",
         "jsx-runtime":"off",
         "no-console": "warn",
-        "quotes": ["error", "single"],
+        // "quotes": ["warn", "single"],
+        "quotes": "off",
         "prefer-const":"error",
-        "indent":["warn",2],
+        // "indent":["warn",2],
         "max-len":["error",{"code":120}],
         "import/order":["error", {
             "groups":["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
             "newlines-between": "always-and-inside-groups"
         }],
         "semi": "off",
+        "eol-last":"off",
         "@typescript-eslint/semi": "off",
-        "@typescript-eslint/explicit-function-return-type": "off"
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/consistent-type-imports": "off",
+        "@typescript-eslint/quotes": "off",
+        "@typescript-eslint/member-delimiter-style": "off"
+        
 
     }
 }

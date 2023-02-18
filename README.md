@@ -34,3 +34,24 @@
   "exclude": ["node_modules", "test", "dist", "dist/**/*spec.ts"],
   "include": ["src/**/*", ".eslintrc.js"]
 }
+<!-- install webpack and sass -->
+13. npm install webpack webpack-cli --save-dev
+14. npx webpack-cli init
+15. npm install axios
+# Prepare aliasing revolver
+need to configure it in tsconfig.json file and webpack.config.js file the same routes like
+
+tsconfig:
+    "paths": {
+        "@components/*": [
+            "./src/components/*"
+        ]
+    },
+
+webpack: 
+resolve: {
+    extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
+    alias: {
+      '@components': path.resolve(__dirname, 'components'),
+    }
+  }

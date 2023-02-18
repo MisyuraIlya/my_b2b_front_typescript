@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { LocalStorage } from '@services/LocalStorage/LocalStorage.service';
 function App () {
   return (
     <div className="App">
