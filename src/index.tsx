@@ -1,6 +1,9 @@
+// global
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+// local
+import './App.scss';
 import App from './App';
 
 const root = ReactDOM.createRoot(
