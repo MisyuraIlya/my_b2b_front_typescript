@@ -1,16 +1,22 @@
 // global
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 
+import { setupStore } from './store/rootReducer';
 // local
 import './App.scss';
 import App from './App';
+
+const stroe = setupStore();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={stroe}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
