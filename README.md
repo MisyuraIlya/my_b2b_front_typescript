@@ -28,3 +28,9 @@
 9. npm i react-query
 <!-- if not using nextjs -->
 11. npm i react-router-dom
+12. add file tsconfig.build.json with this object 
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["node_modules", "test", "dist", "dist/**/*spec.ts"],
+  "include": ["src/**/*", ".eslintrc.js"]
+}
