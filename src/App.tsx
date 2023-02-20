@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { LocalStorage } from '@services/LocalStorage/LocalStorage.service';
+import Home from './pages/Home/Home';
 function App () {
   return (
     <div className="App">
       <div className='test'>
         <h1>hello asd</h1>
-
+        <Home/>
       </div>
     </div>
   );

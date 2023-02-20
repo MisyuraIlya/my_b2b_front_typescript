@@ -1,23 +1,19 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+/* eslint-disable no-tabs */
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { useDispatch } from 'react-redux'
 
-// import { postAPI } from "../services/PostService";
-import userReducer from './users/users.slice';
+import { productApi } from '../services/ProductsService/product.service';
 
-import { userAPI } from '@/services/Users/user.service';
+import { cartReducer } from './cart/cart.slice'
 
-const rootReducer = combineReducers({
-    userReducer,
-    [userAPI.reducerPath]: userAPI.reducer
-
+export const store = configureStore({
+	reducer: { cart: cartReducer, [productApi.reducerPath]: productApi.reducer },
+	middleware: getDefaultMiddleware =>
+		getDefaultMiddleware().concat(productApi.middleware)
 })
 
-export const setupStore = () => {
-    return configureStore({
-        reducer: rootReducer,
-        middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(userAPI.middleware)
-    })
-}
+// optional, but required for refetchOnFocus/refetchOnReconnect behaviors
+// see `setupListeners` docs - takes an optional callback as the 2nd arg for customization
+// setupListeners(store.dispatch)
 
-export type RootState = ReturnType<typeof rootReducer>
-export type AppStore = ReturnType<typeof setupStore>
-export type AppDispatch = AppStore['dispatch']
+export type TypeRootState = ReturnType<typeof store.getState>
