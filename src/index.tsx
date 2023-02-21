@@ -1,12 +1,14 @@
 // global
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
+import { Provider } from "react-redux";
 
-import { store } from './store/rootReducer';
 // local
 import './App.scss';
 import App from './App';
+import { setupStore } from "./store/store";
+
+const store = setupStore();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

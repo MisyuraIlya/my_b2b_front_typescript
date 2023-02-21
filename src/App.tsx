@@ -1,12 +1,15 @@
 import React from 'react';
+import PostContainer from './pages/PostContainer';
+import ProductContainer from './pages/ProductContainer';
 
-import Home from './pages/Home/Home';
 function App () {
   return (
     <div className="App">
       <div className='test'>
         <h1>hello asd</h1>
-        <Home/>
+        {/* <Home/> */}
+        <PostContainer/>
+        <ProductContainer/>
       </div>
     </div>
   );

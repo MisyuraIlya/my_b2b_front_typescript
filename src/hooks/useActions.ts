@@ -1,17 +1,12 @@
-/* eslint-disable no-tabs */
-import { useDispatch } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { bindActionCreators } from "@reduxjs/toolkit"
+import { useDispatch } from "react-redux"
+import { cartActions } from "../store/cart/cart.slice";
 
-import { cartActions } from '../store/cart/cart.slice'
-
-const AllActions = {
-	...cartActions
+const allActions = {
+    ...cartActions
 }
 
-const useActions = () => {
-	const dispatch = useDispatch()
-
-	return bindActionCreators(AllActions, dispatch)
+export const useActions = () => {
+    const dispatch = useDispatch()
+    return bindActionCreators(allActions, dispatch)
 }
-
-export default useActions

@@ -26,7 +26,7 @@
         "prefer-const":"error",
         // "indent":["warn",2],
         "max-len":["error",{"code":120}],
-        "import/order":["error", {
+        "import/order":["off", {
             "groups":["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
             "newlines-between": "always-and-inside-groups"
         }],
@@ -38,7 +38,8 @@
         "@typescript-eslint/indent": "off",
         "@typescript-eslint/consistent-type-imports": "off",
         "@typescript-eslint/quotes": "off",
-        "@typescript-eslint/member-delimiter-style": "off"
+        "@typescript-eslint/member-delimiter-style": "off",
+        "@typescript-eslint/object-curly-spacing" : "off"
         
 
     }
