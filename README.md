@@ -58,3 +58,7 @@ resolve: {
 # installing storybook
 there is issue with webpack 5 this is the command to install
 1. npx sb init --builder webpack5
+
+# Tests
+1. npm i -D jest
+2. create script "MyTest": "jest"
