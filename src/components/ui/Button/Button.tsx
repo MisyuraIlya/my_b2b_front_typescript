@@ -8,7 +8,7 @@ export interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({children, color, big, ...props}) => {
     const rootClasses = ['my-button']
-    if (big) {
+    if (big ?? false) {
         rootClasses.push('big-btn')
     }
     return (

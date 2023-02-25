@@ -55,3 +55,6 @@ resolve: {
       '@components': path.resolve(__dirname, 'components'),
     }
   }
+# installing storybook
+there is issue with webpack 5 this is the command to install
+1. npx sb init --builder webpack5
