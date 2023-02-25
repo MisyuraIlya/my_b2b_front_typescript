@@ -4,47 +4,49 @@ import { useTypedSelector } from '../hooks/useTypedSelector';
 import { useActions } from '../hooks/useActions';
 interface PostItemProps {
     product: IProduct;
-    remove: (product: IProduct) => void;
-    update: (product: IProduct) => void;
-    addToCard: (product: IProduct) => void;
 }
 
-const ProductItem: FC<PostItemProps> = ({product, remove, update, addToCard}) => {
+const ProductItem: FC<PostItemProps> = ({product}) => {
     const {cart} = useTypedSelector(state => state)
-    const {addItem} = useActions()
-    const handleRemove = (event: React.MouseEvent) => {
-        event.stopPropagation()
-        remove(product)
-    }
+    const {addItem, removeItem, increaseQuantity, decreaseQuantity} = useActions()
+    // const isExistsInCart = cart.some(p => p.product.id === product.id)
+    // const object = cart.find(p => p.product.id === product.id)
 
-    const handleUpdate = (event: React.MouseEvent) => {
-        const title = prompt() ?? "no"
-        update({...product, title})
-    }
+    const handleAddItem = (product: IProduct) => {
+        addItem(product);
+      };
 
-    const handleAddToCart = (event: React.MouseEvent) => {
-        event.stopPropagation()
-        addToCard(product)
-    }
+      const handleIncreaseQuantity = (id: number) => {
+        increaseQuantity(id);
+      };
 
-    const isExistsInCart = cart.some(p => p.product.id === product.id)
+      const handleDecreaseQuantity = (id: number) => {
+        decreaseQuantity(id);
+      };
+
+      const handleRemoveItem = (id: number) => {
+        removeItem(id);
+      };
+
+      const getCartItem = (productId: number) => {
+        const data = cart.items.find((item) => item.product.id === productId)
+        return data
+      };
 
     return (
-        <div className="post"
-        //  onClick={handleUpdate}
-         >
-            {product.id}. {product.title}
-            {product.category}
-            {product.description}
-            {product.image}
-            {product.price}
-            <button onClick={handleRemove}>Delete</button>
-            {!isExistsInCart &&
-            <button onClick={() => addItem(product)} >
-                add to cart
-            </button>
-            }
-
+        <div key={product.id}>
+          <h3>{product.title}</h3>
+          <p>{product.description}</p>
+          <p>Price: ${product.price}</p>
+          <button onClick={() => { handleAddItem(product); }}>Add to cart</button>
+          {(Boolean(getCartItem(product.id))) && (
+            <div>
+              <button onClick={() => { handleIncreaseQuantity(product.id); }}>+</button>
+              <span>{getCartItem(product.id)?.quantity}</span>
+              <button onClick={() => { handleDecreaseQuantity(product.id); }}>-</button>
+            </div>
+          )}
+          <button onClick={() => { handleRemoveItem(product.id); }}>delete from cart</button>
         </div>
     );
 };

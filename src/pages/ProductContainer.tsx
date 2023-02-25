@@ -9,8 +9,10 @@ import { productAPI } from '../services/ProductService';
 import { IProduct } from '@/models/product.interface';
 
 import ProductItem from './ProductItem';
+import { useTypedSelector } from '../hooks/useTypedSelector';
 
 const ProductContainer = () => {
+    const { cart } = useTypedSelector(state => state)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [limit, setLimit] = useState(100);
     const {data: products, error, isLoading, refetch} = productAPI.useFetchAllProductsQuery(limit)
@@ -37,6 +39,10 @@ const ProductContainer = () => {
     const addToCard = (product: IProduct) => {
         console.log('here')
     }
+
+    const readFetch = () => {
+        console.log(cart)
+    }
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -58,15 +64,13 @@ const ProductContainer = () => {
                 {isLoading && <h1>Идет загрузка...</h1>}
                 {(error != null) && <h1>Произошла ошибка при загрузке</h1>}
                 {products?.map(product =>
+                    // eslint-disable-next-line react/jsx-key
                     <ProductItem
-                    remove={handleRemove}
-                    update={handleUpdate}
-                    key={product.id}
                     product={product}
-                    addToCard={addToCard}
                     />
                 )}
             </div>
+            <button onClick={() => { readFetch(); }}>fetch</button>
         </div>
     );
 };

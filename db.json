@@ -82,22 +82,6 @@
   ],
   "products": [
     {
-      "id": "1",
-      "title": "no",
-      "price": "b",
-      "description": "c",
-      "category": "e",
-      "image": "f"
-    },
-    {
-      "id": "2",
-      "title": "",
-      "price": "b",
-      "description": "c",
-      "category": "e",
-      "image": "f"
-    },
-    {
       "id": "3",
       "title": "",
       "price": "b",
