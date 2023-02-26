@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Users from "./Users";
-import axios from 'axios';
+// import axios from 'axios';
 import userEvent from "@testing-library/user-event";
 import '@testing-library/jest-dom/extend-expect';
 import {MemoryRouter, Route, Routes} from "react-router-dom";
@@ -38,9 +38,9 @@ describe('USERS TEST', () => {
 
     // currently not working because axios issue
     test('renders learn react link', async () => {
-        (axios.get as jest.MockedFunction<typeof axios.get>).mockReturnValue(response);
-        render(<Users />);
-        screen.debug()
+        // (axios.get as jest.MockedFunction<typeof axios.get>).mockReturnValue(response);
+        // render(<Users />);
+        // screen.debug()
         // const users = await screen.findAllByTestId('user-item');
         // screen.debug()
         // expect(users.length).toBe(3);

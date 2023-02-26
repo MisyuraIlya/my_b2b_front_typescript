@@ -1,9 +1,11 @@
 import React from 'react';
+import Counter from '../redux/components/Counter/Counter';
 
 const MainPage = () => {
     return (
         <div data-testid="main-page">
             Main Page
+            <Counter/>
         </div>
     );
 };

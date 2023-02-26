@@ -13,7 +13,6 @@ function App () {
         {/* <Home/> */}
         {/* <PostContainer/> */}
         {/* <ProductContainer/>y */}
-        <Users/>
         <Router/>
       </div>
     </div>
