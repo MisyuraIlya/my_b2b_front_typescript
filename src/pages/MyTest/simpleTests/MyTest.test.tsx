@@ -19,11 +19,11 @@ describe('TEST APP', () => {
     render(<MyTest />);
     // const helloWorldElem = screen.queryByText(/hello2/i)
     // expect(helloWorldElem).toBeNull()
-    screen.debug()
+    // screen.debug()
     const helloWorldElem = await screen.findByText(/data/i)
     expect(helloWorldElem).toBeInTheDocument();
     expect(helloWorldElem).toHaveStyle({color: 'red'});
-    screen.debug()
+    // screen.debug()
   });
 
   test("CLICK EVENT", () => {
