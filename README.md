@@ -62,3 +62,6 @@ there is issue with webpack 5 this is the command to install
 # Tests
 1. npm i -D jest
 2. create script "MyTest": "jest"
+
+# screen shot test 
+1. npm i -D loki
