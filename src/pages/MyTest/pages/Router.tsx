@@ -1,3 +1,4 @@
+import HelloWorld from '../../HelloWorld';
 import React from 'react';
 import { Routes, Route, Link} from 'react-router-dom';
 import Users from '../Users/Users';
@@ -5,6 +6,7 @@ import AboutPage from './AboutPage';
 import ErrorPage from './ErrorPage';
 import MainPage from './MainPage';
 import UserDetailesPage from './UserDetailesPage';
+import UsersForTest from '../../../components/UsersForTest/UsersForTest';
 const Router = () => {
     return (
         <div>
@@ -18,6 +20,9 @@ const Router = () => {
                     <Route path='/users' element={<Users/>}/>
                     <Route path='/users/:id' element={<UserDetailesPage/>}/>
                     <Route path='/*' element={<ErrorPage/>}/>
+                    <Route path='/hello' element={<HelloWorld/>}/>
+                    <Route path='users-test' element={<UsersForTest/>}/>
+
                 </Route>
             </Routes>
         </div>

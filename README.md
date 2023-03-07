@@ -65,3 +65,33 @@ there is issue with webpack 5 this is the command to install
 
 # screen shot test 
 1. npm i -D loki
+2. npx loki init
+3. in package json added configuration this must be like this 
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.app",
+        "preset": "iPhone 7"
+      }
+    }
+  }
+  in default it in docker not app then must change to app
+3. npx loki test
+4. npx loki approve
+
+# webdriver IO
+1. add to package json "type":"module"
+2. npm init wdio .
+3. npx wdio run ./wdio.conf.ts
+
+
+# conflict 
+1. between e2e tests with webrdiverio and storybook type:module in packge.json 
+
