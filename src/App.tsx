@@ -1,9 +1,8 @@
 import axios from 'axios';
 import React from 'react';
-import Router from './pages/MyTest/pages/Router';
-import Users from './pages/MyTest/Users/Users';
 import PostContainer from './pages/PostContainer';
 import ProductContainer from './pages/ProductContainer';
+import RouterExample from './tests/integration/examples/RouterExample';
 
 function App () {
   return (
@@ -13,7 +12,7 @@ function App () {
         {/* <Home/> */}
         {/* <PostContainer/> */}
         {/* <ProductContainer/>y */}
-        <Router/>
+        <RouterExample/>
       </div>
     </div>
   );

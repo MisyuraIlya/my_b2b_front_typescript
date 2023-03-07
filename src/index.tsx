@@ -9,8 +9,8 @@ import App from './App';
 import { setupStore } from "./store/store";
 
 // for test
-import { createReduxStore } from './pages/MyTest/redux/store/reducers/store';
-
+// import { createReduxStore } from './pages/MyTest/redux/store/reducers/store';
+import { createReduxStore } from './tests/integration/examples/redux/store/reducers/store';
 const store = setupStore();
 
 const root = ReactDOM.createRoot(

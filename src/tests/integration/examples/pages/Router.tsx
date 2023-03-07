@@ -1,4 +1,3 @@
-import HelloWorld from '../../HelloWorld';
 import React from 'react';
 import { Routes, Route, Link} from 'react-router-dom';
 import Users from '../Users/Users';
@@ -6,7 +5,8 @@ import AboutPage from './AboutPage';
 import ErrorPage from './ErrorPage';
 import MainPage from './MainPage';
 import UserDetailesPage from './UserDetailesPage';
-import UsersForTest from '../../../components/UsersForTest/UsersForTest';
+import UsersForTest from '../components/UsersForTest/UsersForTest';
+import HelloWorld from './HelloWorld';
 const Router = () => {
     return (
         <div>

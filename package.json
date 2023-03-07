@@ -34,7 +34,7 @@
     "watch": "webpack --watch",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "MyTest": "jest",
+    "jest": "jest", 
     "wdio": "wdio run ./wdio.conf.ts",
     "test:e2e": "npx wdio run ./wdio.conf.ts"
   },

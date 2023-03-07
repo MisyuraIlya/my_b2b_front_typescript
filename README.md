@@ -95,3 +95,7 @@ there is issue with webpack 5 this is the command to install
 # conflict 
 1. between e2e tests with webrdiverio and storybook type:module in packge.json 
 
+
+# how to run test
+1. npm run test
+2. npm run test:e2e
