@@ -1,6 +1,5 @@
-import { ChainablePromiseElement } from 'webdriverio';
 
-import Page from './page.js';
+const Page = require('./page');
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -35,8 +34,8 @@ class LoginPage extends Page {
      * overwrite specific options to adapt it to page object
      */
     public open() {
-        return super.open('/hello');
+        return super.open('/hello.js');
     }
 }
 
-export default new LoginPage();
+module.exports = new LoginPage();

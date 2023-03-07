@@ -1,6 +1,4 @@
-import { ChainablePromiseElement } from 'webdriverio';
-
-import Page from './page.js';
+const Page = require('./page');
 
 class UsersPage extends Page {
 
@@ -22,7 +20,7 @@ class UsersPage extends Page {
             await this.loadingTitle.waitForDisplayed({timeout: 2000});
             await this.usersList.waitForDisplayed({timeout: 2000});
         } catch (e) {
-            throw new Error('Не удалось загрузить пользователей')
+            throw new Error('Не удалось загрузить пользователей' + e.message)
         }
     }
 
@@ -52,4 +50,4 @@ class UsersPage extends Page {
     }
 }
 
-export default new UsersPage();
+module.exports = new UsersPage();

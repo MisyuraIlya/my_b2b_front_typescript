@@ -1,6 +1,7 @@
-import { ChainablePromiseElement } from 'webdriverio';
+// import { ChainablePromiseElement } from 'webdriverio';
 
-import Page from './page.js';
+// import Page from './page';
+const Page = require('./page');
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -14,4 +15,5 @@ class SecurePage extends Page {
     }
 }
 
-export default new SecurePage();
+// export default new SecurePage();
+module.exports = new SecurePage();

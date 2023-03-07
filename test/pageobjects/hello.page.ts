@@ -1,6 +1,6 @@
-import { ChainablePromiseElement } from 'webdriverio';
+// import { ChainablePromiseElement } from 'webdriverio';
 
-import Page from './page.js';
+const Page = require('./page');
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -39,4 +39,4 @@ class HelloPage extends Page {
     }
 }
 
-export default new HelloPage();
+module.exports = new HelloPage();
