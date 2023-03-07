@@ -30,7 +30,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.ts'
+        './tests/e2e/specs/**/*.ts'
     ],
     // Patterns to exclude.
     exclude: [
