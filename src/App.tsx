@@ -1,18 +1,18 @@
 import axios from 'axios';
 import React from 'react';
-import PostContainer from './pages/PostContainer';
-import ProductContainer from './pages/ProductContainer';
+import PostContainer from './modules/PostModule/components/PostContainer';
+import ProductContainer from './modules/CartMoudle/Components/ProductContainer';
 import RouterExample from './tests/integration/examples/RouterExample';
-
+import RouterApp from './RouterApp';
 function App () {
   return (
     <div className="App">
       <div className='test'>
-        <h1>hello asd</h1>
+        <RouterApp/>
         {/* <Home/> */}
         {/* <PostContainer/> */}
-        {/* <ProductContainer/>y */}
-        <RouterExample/>
+        {/* <ProductContainer/> */}
+        {/* <RouterExample/> */}
       </div>
     </div>
   );

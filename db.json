@@ -78,6 +78,11 @@
       "id": 3,
       "title": "json-server 1",
       "body": "typicode"
+    },
+    {
+      "title": "asd",
+      "body": "asd",
+      "id": 4
     }
   ],
   "products": [
@@ -96,6 +101,22 @@
       "description": "c",
       "category": "e",
       "image": "f"
+    },
+    {
+      "id": "sd",
+      "title": "asd",
+      "price": "sa",
+      "description": "asd",
+      "category": "sda",
+      "image": "asd"
+    },
+    {
+      "id": "sdasd",
+      "title": "asdasd",
+      "price": "saasd",
+      "description": "asdasd",
+      "category": "sdaasd",
+      "image": "sasdasd"
     }
   ]
 }

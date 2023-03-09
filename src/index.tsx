@@ -10,7 +10,7 @@ import { setupStore } from "./store/store";
 
 // for test
 // import { createReduxStore } from './pages/MyTest/redux/store/reducers/store';
-import { createReduxStore } from './tests/integration/examples/redux/store/reducers/store';
+// import { createReduxStore } from './tests/integration/examples/redux/store/reducers/store';
 const store = setupStore();
 
 const root = ReactDOM.createRoot(
@@ -18,7 +18,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Provider store={createReduxStore()}>
+    <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>

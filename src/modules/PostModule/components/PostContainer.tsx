@@ -1,9 +1,9 @@
 /* eslint-disable no-empty-pattern */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/consistent-type-assertions */
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
-import {postAPI} from "../services/PostService";
+import {postAPI} from "../../../services/PostService";
 
 import { IPost } from '@/models/post.interface';
 
@@ -15,12 +15,6 @@ const PostContainer = () => {
     const [createPost, {}] = postAPI.useCreatePostMutation()
     const [updatePost, {}] = postAPI.useUpdatePostMutation()
     const [deletePost, {}] = postAPI.useDeletePostMutation()
-
-    useEffect(() => {
-        // setTimeout(() => {
-        //     setLimit(3)
-        // }, 2000)
-    }, [])
 
     const handleCreate = async () => {
         const title = prompt()

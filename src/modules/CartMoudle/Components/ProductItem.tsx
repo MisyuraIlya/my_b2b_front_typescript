@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import { IProduct } from '@/models/product.interface';
-import { useTypedSelector } from '../hooks/useTypedSelector';
-import { useActions } from '../hooks/useActions';
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useActions } from '../../../hooks/useActions';
 interface PostItemProps {
     product: IProduct;
 }
@@ -9,8 +9,6 @@ interface PostItemProps {
 const ProductItem: FC<PostItemProps> = ({product}) => {
     const {cart} = useTypedSelector(state => state)
     const {addItem, removeItem, increaseQuantity, decreaseQuantity} = useActions()
-    // const isExistsInCart = cart.some(p => p.product.id === product.id)
-    // const object = cart.find(p => p.product.id === product.id)
 
     const handleAddItem = (product: IProduct) => {
         addItem(product);
