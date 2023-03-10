@@ -40,7 +40,7 @@ describe('React Router', () => {
         const store = setupStore();
         render(
             <Provider store={store}>
-                <MemoryRouter initialEntries={['/posta']}>
+                <MemoryRouter initialEntries={['/post']}>
                     <ReactApp />
                 </MemoryRouter>
             </Provider>
