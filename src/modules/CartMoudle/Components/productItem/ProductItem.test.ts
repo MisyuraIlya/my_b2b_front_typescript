@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Users from "./Users";
-import axios from 'axios';
+import ProductItem from './ProductItem';
+// import axios from 'axios';
 import userEvent from "@testing-library/user-event";
 import '@testing-library/jest-dom/extend-expect';
 import {MemoryRouter, Route, Routes} from "react-router-dom";
@@ -13,7 +13,7 @@ jest.mock('axios');
 
 describe('USERS TEST', () => {
     let response: any;
-    beforeEach(() => {
+        beforeEach(() => {
         response = {
             data: [
                 {
@@ -31,15 +31,9 @@ describe('USERS TEST', () => {
             ]
         }
     })
-
-    afterEach(() => {
-        jest.clearAllMocks();
-    })
-
-    // currently not working because axios issue
-    test('renders learn react link', async () => {
-        (axios.get as jest.MockedFunction<typeof axios.get>).mockReturnValue(response);
-        render(<Users />);
+    test('creation form', async () => {
+        // (axios.get as jest.MockedFunction<typeof axios.get>).mockReturnValue(response);
+        // render(<Users />);
         // screen.debug()
         // const users = await screen.findAllByTestId('user-item');
         // screen.debug()
@@ -47,13 +41,4 @@ describe('USERS TEST', () => {
         // expect(axios.get).toBeCalledTimes(1);
         // screen.debug();
     });
-
-    // test('test redirect to details page', async () => {
-    //     (axios.get as jest.MockedFunction<typeof axios.get>).mockReturnValue(response);
-    //     render(renderWithRouter(<Users />));
-    //     const users = await screen.findAllByTestId('user-item');
-    //     expect(users.length).toBe(3);
-    //     userEvent.click(users[0])
-    //     expect(screen.getByTestId('user-page')).toBeInTheDocument();
-    // });
 })

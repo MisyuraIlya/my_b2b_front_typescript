@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import { IProduct } from '@/models/product.interface';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import { useActions } from '../../../hooks/useActions';
+import { useTypedSelector } from '../../../../hooks/useTypedSelector';
+import { useActions } from '../../../../hooks/useActions';
 interface PostItemProps {
     product: IProduct;
 }

@@ -19,9 +19,9 @@ const PostItem: FC<PostItemProps> = ({post, remove, update}) => {
     }
 
     return (
-        <div className="post" onClick={handleUpdate}>
+        <div className="post" id="post-list" onClick={handleUpdate}>
             {post.id}. {post.title}
-            <button onClick={handleRemove}>Delete</button>
+            <button id="post-btn-remove" onClick={handleRemove}>Delete</button>
         </div>
     );
 };

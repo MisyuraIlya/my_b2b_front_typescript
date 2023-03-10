@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductContainer from './Components/ProductContainer';
+import ProductContainer from './Components/ProductContainer/ProductContainer';
 
 const CartModule = () => {
     return (

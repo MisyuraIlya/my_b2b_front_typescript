@@ -33,8 +33,8 @@ const PostContainer = () => {
         <div>
             <div className="post__list">
                 <button onClick={handleCreate}>Add new post</button>
-                {isLoading && <h1>Идет загрузка...</h1>}
-                {(error != null) && <h1>Произошла ошибка при загрузке</h1>}
+                {isLoading && <h1 id="post-loading">Идет загрузка...</h1>}
+                {(error != null) && <h1 id="post-error">Произошла ошибка при загрузке</h1>}
                 {posts?.map(post =>
                     <PostItem remove={handleRemove} update={handleUpdate} key={post.id} post={post}/>
                 )}

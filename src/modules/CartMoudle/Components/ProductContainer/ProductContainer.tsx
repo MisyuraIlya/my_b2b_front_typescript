@@ -1,13 +1,13 @@
 /* eslint-disable no-empty-pattern */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/consistent-type-assertions */
-import React, { useState} from 'react';
+import React, { useState, FC} from 'react';
 import { useForm } from "react-hook-form";
 
-import { productAPI } from '../../../services/ProductService';
-import ProductItem from './ProductItem';
+import { productAPI } from '../../../../services/ProductService';
+import ProductItem from '../productItem/ProductItem';
 
-const ProductContainer = () => {
+const ProductContainer: FC = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [limit, setLimit] = useState(100);
     const {data: products, error, isLoading, refetch} = productAPI.useFetchAllProductsQuery(limit)
@@ -26,10 +26,7 @@ const ProductContainer = () => {
                 <input {...register("description")} />
                 <input {...register("category")} />
                 <input {...register("image")} />
-
-                {/* errors will return when field validation fails  */}
                 {(errors.exampleRequired != null) && <span>This field is required</span>}
-
                 <input type="submit" />
             </form>
 
