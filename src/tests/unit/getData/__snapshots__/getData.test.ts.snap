@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`getData success balue 1`] = `
-Array [
-  "1",
-  "2",
-  "3",
-]
-`;
