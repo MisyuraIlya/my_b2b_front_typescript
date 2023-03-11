@@ -26,8 +26,8 @@
   "scripts": {
     "start": "craco start",
     "build": "webpack --mode=production --node-env=production",
-    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
-    "eject": "react-scripts eject",
+    "test": "craco test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
+    "eject": "craco eject",
     "lint": "eslint \"src/**/*.{js,ts,jsx,tsx}\"",
     "lint:fix": "npm run lint -- --fix",
     "build:dev": "webpack --mode=development",
@@ -129,6 +129,19 @@
         "target": "chrome.app",
         "preset": "iPhone 7"
       }
+    }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1",
+      "^@components/(.*)$": "<rootDir>/src/components/$1",
+      "^@hooks/(.*)$": "<rootDir>/src/hooks/$1",
+      "^@models/(.*)$": "<rootDir>/src/models/$1",
+      "^@modules/(.*)$": "<rootDir>/src/modules/$1",
+      "^@pages/(.*)$": "<rootDir>/src/pages/$1",
+      "^@services/(.*)$": "<rootDir>/src/services/$1",
+      "^@store/(.*)$": "<rootDir>/src/store/$1",
+      "^@utils/(.*)$": "<rootDir>/src/utils/$1"
     }
   }
 }
