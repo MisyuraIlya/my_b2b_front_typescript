@@ -99,3 +99,45 @@ there is issue with webpack 5 this is the command to install
 # how to run test
 1. npm run test
 2. npm run test:e2e
+
+
+# ALIAS INSTALLATION
+there was issue with tsconfig alias paths to solve it we install carco
+1. npm i @craco/craco
+2. add new tsconfig.build.json and this code
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@components/*": ["./src/components/*"],
+            "@hooks/*": ["./src/hooks/*"],
+            "@models/*": ["./src/models/*"],
+            "@modules/*": ["./src/modules/*"],
+            "@pages/*": ["./src/pages/*"],
+            "@services/*": ["./src/services/*"],
+            "@store/*": ["./src/store/*"],
+            "@utils/*": ["./src/utils/*"]
+        },
+    }
+}
+
+3. add carco.config.js and add code 
+const path = require('path');
+module.exports = {
+  webpack: {
+    alias: {
+        '@': path.resolve(__dirname, 'src'),
+        '@components': path.resolve(__dirname, 'components'),
+        '@hooks': path.resolve(__dirname, 'hooks'),
+        '@models': path.resolve(__dirname, 'models'),
+        '@modules': path.resolve(__dirname, 'src/modules'),
+        '@pages': path.resolve(__dirname, 'src/pages'),
+        '@services': path.resolve(__dirname, 'services'),
+        '@store': path.resolve(__dirname, 'store'),
+        '@utils': path.resolve(__dirname, 'utils')
+    },
+  },
+};
+4. and package json update code 
+"start": "craco start",
