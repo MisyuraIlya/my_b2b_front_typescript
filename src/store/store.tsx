@@ -1,8 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import {postAPI} from '@/services/PostService'
+import { productAPI } from "@/services/ProductService";
+import { cartReducer } from "@/store/cart/cart.slice";
 
-import { postAPI } from "../services/PostService";
-import { productAPI } from "../services/ProductService";
-import { cartReducer } from "./cart/cart.slice";
 const rootReducer = combineReducers({
     [postAPI.reducerPath]: postAPI.reducer,
     [productAPI.reducerPath]: productAPI.reducer,

@@ -38,13 +38,6 @@ const config = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-      '@assets': path.resolve(__dirname, 'assets'),
-      '@components': path.resolve(__dirname, 'components'),
-      '@services': path.resolve(__dirname, 'services'),
-      '@models': path.resolve(__dirname, 'models')
-    }
   }
 };
 

@@ -1,4 +1,4 @@
-import HomeModule from '../../modules/HomeModule/HomeModule';
+import HomeModule from '@modules/HomeModule/HomeModule';
 import React from 'react';
 
 const HomePage = () => {

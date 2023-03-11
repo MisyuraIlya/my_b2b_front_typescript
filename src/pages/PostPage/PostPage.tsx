@@ -1,4 +1,4 @@
-import PostModule from '../../modules/PostModule/PostModule';
+import PostModule from '@modules/PostModule/PostModule';
 import React from 'react';
 
 const PostPage = () => {
