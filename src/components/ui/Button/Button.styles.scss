@@ -1,12 +1,10 @@
-.my-button {
+.Button {
+    border: none;
+    border-radius: 30px;
     background-color: black;
-    padding: 30px 5px;
-    color: black;
-    border: 2px solid black;
-    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    color: white;
 }
 
-.big-btn {
-    font-size: 40px;
-    padding: 20px;
-}

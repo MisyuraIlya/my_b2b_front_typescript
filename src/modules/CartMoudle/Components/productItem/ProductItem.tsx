@@ -33,7 +33,7 @@ const ProductItem: FC<PostItemProps> = ({product}) => {
 
     return (
         <div key={product.id}>
-          <h3>{product.title}</h3>
+          {/* <h3>{product.title}</h3>
           <p>{product.description}</p>
           <p>Price: ${product.price}</p>
           <button onClick={() => { handleAddItem(product); }}>Add to cart</button>
@@ -44,7 +44,7 @@ const ProductItem: FC<PostItemProps> = ({product}) => {
               <button onClick={() => { handleDecreaseQuantity(product.id); }}>-</button>
             </div>
           )}
-          <button onClick={() => { handleRemoveItem(product.id); }}>delete from cart</button>
+          <button onClick={() => { handleRemoveItem(product.id); }}>delete from cart</button> */}
         </div>
     );
 };

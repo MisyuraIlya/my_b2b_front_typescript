@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
-
+import './Description.styles.scss';
 const Description: FC<{
-    title: string
+    children: string
     className?: string
-}> = ({ title, className = '' }) => {
+}> = ({ children, className = '' }) => {
     return (
-        <h1 className={`heading ${className.includes('xl') ? '' : 'text-3xl'} ${className}`}>
-            {title}
-        </h1>
+        <p className={`Description ${className}`}>
+            {children}
+        </p>
     );
 };
 

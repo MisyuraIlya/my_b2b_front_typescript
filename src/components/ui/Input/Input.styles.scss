@@ -1,7 +1,15 @@
-.Input{
-    color: red;
-    background-color: #f3f5f9;
-    border: none;
-    border-radius: 5px;
-    padding: 0 16px;
+.Input {
+padding: 15px 20px 15px 20px;
+width: 100%;
+font-size: 18px;
+background-color: #f3f3f3;
+border: none;
+border-radius: 5px;
+img {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 32px;
+    max-width: initial;
+}
 }

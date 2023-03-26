@@ -7,10 +7,12 @@ import ErrorPage from '@pages/ErrorPage/ErrorPage';
 import LoginPage from '@pages/LoginPage/LoginPage';
 import RegistrationPage from '@pages/RegistrationPage/RegistrationPage';
 import Header from './components/layout/Header/Header';
+import { RegistrationForm } from './modules/RegistrationForm';
 const RouterApp = () => {
     return (
         <div>
             <Header/>
+            <RegistrationForm/>
             <Link to="/" data-testid="home-link">Home</Link>
             <Link to="/cart" data-testid="cart-link">Cart</Link>
             <Link to="/post" data-testid="post-link">Post</Link>

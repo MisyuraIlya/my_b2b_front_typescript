@@ -21,6 +21,7 @@
         "no-unused-vars":"warn",
         "jsx-runtime":"off",
         "no-console": "warn",
+        "operator-linebreak":"error",
         // "quotes": ["warn", "single"],
         "quotes": "off",
         "prefer-const":"warn",
@@ -30,6 +31,7 @@
             "groups":["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
             "newlines-between": "always-and-inside-groups"
         }],
+        "no-multiple-empty-lines":"off",
         "semi": "off",
         "eol-last":"off",
         "padded-blocks": "off",
@@ -42,7 +44,8 @@
         "@typescript-eslint/quotes": "off",
         "@typescript-eslint/member-delimiter-style": "off",
         "@typescript-eslint/object-curly-spacing" : "off",
-        " @typescript-eslint/strict-boolean-expressions" : "off"
+        " @typescript-eslint/strict-boolean-expressions" : "off",
+        "@typescript-eslint/no-confusing-void-expression": "off"
         
 
     }
