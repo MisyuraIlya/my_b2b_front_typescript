@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { Input, Button, SubHeading, Heading, Description, InputIcon } from '../../constructor';
 import { useForm, SubmitHandler } from "react-hook-form";
 import './RegistrationForm.styles.scss';
-
+import { RegistrationRequest } from '../../api/registrationRequest';
 type Inputs = {
     mail: string,
     password: string,
@@ -15,7 +15,10 @@ type Inputs = {
 const RegistrationForm = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
-
+    const handleClick = (data: Inputs) => {
+        RegistrationRequest()
+    }
+    const [active, setActive] = useState('user')
     return (
         <div className='RegistrationForm'>
             <div className='flex-container'>
@@ -32,7 +35,7 @@ const RegistrationForm = () => {
                                 <SubHeading title='User'/>
                             </div>
                         </div>
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form onSubmit={handleSubmit(handleClick)}>
                             <div className='field'>
                                 <Input hookForm={{...register("mail")}} type='text' placeholder='username'/>
                             </div>

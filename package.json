@@ -20,6 +20,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
+    "sweetalert2": "^11.7.3",
     "ts-jest": "^29.0.5",
     "web-vitals": "^2.1.4"
   },
@@ -38,22 +39,6 @@
     "jest": "jest",
     "wdio": "wdio run ./wdio.conf.ts",
     "test:e2e": "npx wdio run ./wdio.conf.ts"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
   },
   "browserslist": {
     "production": [

@@ -38,6 +38,7 @@
 13. npm install webpack webpack-cli --save-dev
 14. npx webpack-cli init
 15. npm install axios
+16. npm install sweetalert2
 # Prepare aliasing revolver
 need to configure it in tsconfig.json file and webpack.config.js file the same routes like
 
@@ -158,3 +159,22 @@ set in package.json jest configuration
       "^@utils/(.*)$": "<rootDir>/src/utils/$1"
     }
   }
+
+
+  i disable eslint nned to return this package json
+
+    "eslintConfig": {
+    "extends": [
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
