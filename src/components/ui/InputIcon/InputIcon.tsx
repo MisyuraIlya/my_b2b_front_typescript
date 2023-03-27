@@ -26,7 +26,7 @@ const InputIcon: FC<InputIconProps> = ({ myType, placeholder, imgLink, eye, hook
     }
     return (
         <div className='InputIcon'>
-            <input {...props} type={type} placeholder={placeholder}/>
+            <input {...props} type={type} placeholder={placeholder} {...hookForm}/>
             {
                 eye   
                 ? 

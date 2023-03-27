@@ -16,7 +16,8 @@ const RegistrationForm = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
     const handleClick = (data: Inputs) => {
-        RegistrationRequest()
+        console.log(data)
+        // RegistrationRequest()
     }
     const [active, setActive] = useState('user')
     return (

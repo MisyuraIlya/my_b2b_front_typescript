@@ -2,11 +2,11 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import RegistrationForm from './components/RegistrationForm/RegistrationForm';
+import RegistrationForm from './RegistrationForm';
 // import './index.styles.scss';
 
 export default {
-    title: 'Components/RegistrationModule',
+    title: 'Components/Registration/RegistrationForm',
     component: RegistrationForm
 } as ComponentMeta<typeof RegistrationForm>;
 
