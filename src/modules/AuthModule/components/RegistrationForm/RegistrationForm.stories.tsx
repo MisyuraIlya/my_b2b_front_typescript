@@ -1,16 +1,15 @@
-/* eslint-disable @typescript-eslint/consistent-type-assertions */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import RegistrationForm from './components/RegistrationForm/RegistrationForm';
+import { AuthProvider } from '../../context/AuthProvider';
+import RegistrationForm from './RegistrationForm';
 // import './index.styles.scss';
 
 export default {
-    title: 'Components/RegistrationModule',
+    title: 'Components/AuthModule/RegistrationForm',
     component: RegistrationForm
 } as ComponentMeta<typeof RegistrationForm>;
 
-const Template: ComponentStory<typeof RegistrationForm> = (args) => <RegistrationForm/>;
+const Template: ComponentStory<typeof RegistrationForm> = (args) => <AuthProvider><RegistrationForm/></AuthProvider>;
 
 export const Registration = Template.bind({});
 Registration.args = {};

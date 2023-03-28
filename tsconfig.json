@@ -26,6 +26,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src","./.eslintrc.js", "tests/unit/delay"],
+  "include": ["src", "tests/unit/delay"],
   "extends": "./tsconfig.paths.json" 
 }

@@ -1,4 +1,4 @@
-.ValidationForm{
+.AuthLayout{
     width: 65%;
     margin: 0 auto;
     background-color: rgb(250, 250, 250);
@@ -6,38 +6,20 @@
         width: 100%;
         height: 100%;
     }
-
-    .contenct{
+    .head{
         padding: 24px;
-        .head{
-            display: flex;
-            .userType{
-                cursor: pointer;
-                padding: 5px 20px 5px 0px;
-            }
-            .active{
-                h2{
-                    border-bottom: 5px solid black;
-                }
+        display: flex;
+        .userType{
+            cursor: pointer;
+            padding: 5px 20px 5px 0px;
+        }
+        .active{
+            h2{
+                border-bottom: 5px solid black;
             }
         }
-        .field{
-            padding-top: 10px;
-            padding-bottom: 10px;
-            input {
-                width: 90%;
-            }
-        }
-
-        .button{
-            float: right;
-            padding: 20px;
-        }
-
     }
-
 }
-
 .flex-container {
 	display: flex;
 	flex-direction: row;

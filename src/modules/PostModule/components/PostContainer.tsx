@@ -1,6 +1,3 @@
-/* eslint-disable no-empty-pattern */
-/* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable @typescript-eslint/consistent-type-assertions */
 import React, {useState} from 'react';
 
 import {postAPI} from "../../../services/PostService";

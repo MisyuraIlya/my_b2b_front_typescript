@@ -1,12 +1,6 @@
 import React, {FC} from 'react';
 import { useForm } from 'react-hook-form';
-/* eslint-disable @typescript-eslint/no-confusing-void-expression */
-/* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-/* eslint-disable @typescript-eslint/comma-spacing */
-/* eslint-disable @typescript-eslint/key-spacing */
-/* eslint-disable @typescript-eslint/comma-dangle */
-/* eslint-disable @typescript-eslint/key-spacing */
+
 interface LoginFormInputs {
     email: string;
     password: string;

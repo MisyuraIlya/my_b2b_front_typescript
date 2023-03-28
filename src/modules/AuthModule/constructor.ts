@@ -6,4 +6,5 @@ import Description from '../../components/ui/Heading/Description';
 import InputIcon from '../../components/ui/InputIcon/InputIcon';
 import { API_BACKEND } from '../../utils/constants/API';
 import { onSuccessAlert } from '../../utils/sweetAlert/sweetAlert';
-export {Input, Button, SubHeading, Heading, Description, InputIcon, API_BACKEND, onSuccessAlert};
+import { APP_CONFIG } from '../../appconfig';
+export {Input, Button, SubHeading, Heading, Description, InputIcon, API_BACKEND, onSuccessAlert, APP_CONFIG};

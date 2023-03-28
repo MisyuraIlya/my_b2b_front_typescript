@@ -1,10 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-/* eslint-disable  @typescript-eslint/space-infix-ops */
-/* eslint-disable  operator-linebreak */
-/* eslint-disable  no-multi-spaces */
-/* eslint-disable  @typescript-eslint/keyword-spacing */
-/* eslint-disable  @typescript-eslint/space-before-blocks */
-
 import React, {FC, useState} from 'react';
 import './InputIcon.styles.scss';
 export interface InputIconProps {

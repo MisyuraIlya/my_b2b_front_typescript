@@ -1,6 +1,3 @@
-/* eslint-disable no-empty-pattern */
-/* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable @typescript-eslint/consistent-type-assertions */
 import React, { useState, FC} from 'react';
 import { useForm } from "react-hook-form";
 
@@ -34,7 +31,6 @@ const ProductContainer: FC = () => {
                 {isLoading && <h1>Идет загрузка...</h1>}
                 {(error != null) && <h1>Произошла ошибка при загрузке</h1>}
                 {products?.map(product =>
-                    // eslint-disable-next-line react/jsx-key
                     <ProductItem
                     product={product}
                     />

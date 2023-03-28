@@ -2,7 +2,6 @@
 
 const path = require('path');
 
-// eslint-disable-next-line eqeqeq
 const isProduction = process.env.NODE_ENV == 'production';
 
 const stylesHandler = 'style-loader';

@@ -8,7 +8,9 @@ export interface InputProps {
 
 const Input: FC<InputProps> = ({ type, placeholder, hookForm, ...props}) => {
     return (
-        <input {...hookForm} type={type} placeholder={placeholder} className="Input"/>
+        <div className="Input">
+            <input {...hookForm} type={type} placeholder={placeholder} />
+        </div>
     );
 };
 

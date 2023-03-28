@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/no-confusing-void-expression */
-/* eslint-disable @typescript-eslint/comma-dangle */
-/* eslint-disable @typescript-eslint/consistent-type-assertions */
-/* eslint-disable @typescript-eslint/space-before-function-paren */
 import React, {useState} from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import CheckBox from './CheckBox';
