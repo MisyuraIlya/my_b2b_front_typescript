@@ -6,6 +6,8 @@ import Iconsbar from './components/IconsBar/Iconsbar';
 import Searchbar from './components/Searchbar/Searchbar';
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
+
+
 const HeaderModule = () => {
     return (
         <div className='HeaderModule relative'>
@@ -19,7 +21,7 @@ const HeaderModule = () => {
                     </div>
                     <div className='col-lg-4 center'>
                         <img src="https://amit-pastry-b2b.com/src/img/logo.png" alt="logo" style={{width:'45px'}}/>
-                    </div>      
+                    </div>  
                 </div>
                 <Navbar/>
             </Container>

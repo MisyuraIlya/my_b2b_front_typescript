@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { MdViewHeadline, MdCategory, MdPublishedWithChanges } from "react-icons/md";
 import './Sidebar.styles.scss';
 import { Sidebar as ImportedSidebar, Menu, MenuItem, SubMenu, ProSidebarProvider } from 'react-pro-sidebar';
+import UseAnimations from 'react-useanimations';
+import menu2 from 'react-useanimations/lib/menu2'
 
 const Sidebar = () => {
     const [active, setActive] = useState(false)
@@ -9,7 +11,9 @@ const Sidebar = () => {
         <>
         <ProSidebarProvider>
             <div className='Sidebar_Icon'>
-                    <MdViewHeadline onClick={() => setActive(!active)}/>
+                    {/* <MdViewHeadline onClick={() => setActive(!active)}/> */}
+                    <UseAnimations animation={menu2} onClick={() => setActive(!active)} size={40} speed={3}/>    
+
                 </div>
                 <div className={`Sidebar ${active ? 'active': null}`}>
                     

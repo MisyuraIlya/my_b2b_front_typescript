@@ -38,9 +38,11 @@
 13. npm install webpack webpack-cli --save-dev
 14. npx webpack-cli init
 15. npm install axios
+
 16. npm install sweetalert2
 17. npm install react-icons --save
 18. npm i react-pro-sidebar
+19. npm install -S react-useanimations
 # Prepare aliasing revolver
 need to configure it in tsconfig.json file and webpack.config.js file the same routes like
 
