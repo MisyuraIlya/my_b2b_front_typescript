@@ -36,33 +36,36 @@ const Navbar = () => {
       setIsMouseOn(false);
     };
     return (
-        <div className='Navbar' >
-            <div className='list'>
-                <ul>
-                    {mockData?.map((item,index) =>
-                        <li key={index} className="pointer" onMouseEnter={handleMouseEnter}>
-                            <p>{item.category}</p>
-                        </li>
-                    )}
-                </ul>
-            </div>
-            {isMouseOn &&
-            <div className='modal' onMouseLeave={handleMouseLeave}>
-                <ul>
-                    {mockDataLvl2?.map((item,index) => 
-                        <li key={index} className="pointer">
-                            <div className='img_cont center'>
-                                <img src={item.imgLink} alt="" />
-                            </div>
-                            <div className='title_cont center'>
+        <div onMouseLeave={handleMouseLeave}>
+            <div className='Navbar' >
+                <div className='list'>
+                    <ul>
+                        {mockData?.map((item,index) =>
+                            <li key={index} className="pointer" onMouseEnter={handleMouseEnter}>
                                 <p>{item.category}</p>
-                            </div>
-                        </li>
-                    )}
-                </ul>
+                            </li>
+                        )}
+                    </ul>
+                </div>
+                {isMouseOn &&
+                <div className='modal' >
+                    <ul>
+                        {mockDataLvl2?.map((item,index) => 
+                            <li key={index} className="pointer">
+                                <div className='img_cont center'>
+                                    <img src={item.imgLink} alt="" />
+                                </div>
+                                <div className='title_cont center'>
+                                    <p>{item.category}</p>
+                                </div>
+                            </li>
+                        )}
+                    </ul>
+                </div>
+                }
             </div>
-            }
         </div>
+
     );
 };
 
