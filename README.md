@@ -40,6 +40,7 @@
 15. npm install axios
 16. npm install sweetalert2
 17. npm install react-icons --save
+18. npm i react-pro-sidebar
 # Prepare aliasing revolver
 need to configure it in tsconfig.json file and webpack.config.js file the same routes like
 

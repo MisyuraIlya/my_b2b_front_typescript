@@ -17,6 +17,7 @@
     .modal{
         position: absolute;
         top: 50px;
+        z-index: 1;
         background: #fff;
         width: 250px;
         box-shadow: 0 1px 3px #b6b6b6;

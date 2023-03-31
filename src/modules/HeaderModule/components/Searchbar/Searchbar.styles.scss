@@ -16,6 +16,7 @@
         }
         
         .modal {
+            z-index: 1;
             direction: rtl;
             position: absolute;
             box-shadow: 0 2px 4px 0 #555557;

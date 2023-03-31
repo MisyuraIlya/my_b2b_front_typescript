@@ -5,9 +5,10 @@ import { Container } from './constructor';
 import Iconsbar from './components/IconsBar/Iconsbar';
 import Searchbar from './components/Searchbar/Searchbar';
 import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
 const HeaderModule = () => {
     return (
-        <div className='HeaderModule'>
+        <div className='HeaderModule relative'>
             <Container>
                 <div className='flex-container'>
                     <div className='col-lg-4 center'>
@@ -22,6 +23,8 @@ const HeaderModule = () => {
                 </div>
                 <Navbar/>
             </Container>
+            <Sidebar/>
+
         </div>
     );
 };
