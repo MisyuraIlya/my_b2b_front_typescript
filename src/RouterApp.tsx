@@ -8,10 +8,12 @@ import LoginPage from '@pages/LoginPage/LoginPage';
 import RegistrationPage from '@pages/RegistrationPage/RegistrationPage';
 import Header from './components/layout/Header/Header';
 import AuthPage from './pages/AuthPage/AuthPage';
+import { HeaderModule } from './modules/HeaderModule';
 const RouterApp = () => {
     return (
         <div>
             <Header/>
+            <HeaderModule/>
             <AuthPage/>
             <Link to="/" data-testid="home-link">Home</Link>
             <Link to="/cart" data-testid="cart-link">Cart</Link>

@@ -39,6 +39,7 @@
 14. npx webpack-cli init
 15. npm install axios
 16. npm install sweetalert2
+17. npm install react-icons --save
 # Prepare aliasing revolver
 need to configure it in tsconfig.json file and webpack.config.js file the same routes like
 

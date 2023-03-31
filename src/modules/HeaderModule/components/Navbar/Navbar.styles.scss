@@ -1,0 +1,50 @@
+.Navbar{
+    position: relative;
+    width: 100%;
+    direction: rtl;
+    background-color: white;
+    .list{
+        width: 100%;
+        overflow: auto;
+        ul {
+            display: flex;
+            align-items: center;
+            position: relative;
+            justify-content: center;
+            list-style-type: none;
+            li{
+                padding: 0 16px 0 16px;
+            }
+        }
+    }
+
+    .modal{
+        position: absolute;
+        top: 100%;
+        background: #fff;
+        right: 0;
+        left: 0;
+        box-shadow: 2px 2px 8px rgba(0,0,0,.2);
+        max-height: 80vh;
+        overflow-y: auto;
+        ul {
+            list-style-type: none;
+            display: flex;
+            li{
+                .img_cont{
+                    img {
+                        width: 100%;
+                    }
+                }
+                .title_cont{
+                    p{
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+                padding: 0 16px 0 16px;
+            }
+        }
+    }
+
+}

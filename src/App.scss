@@ -21,3 +21,15 @@
 .myPadding {
 	padding: 10px;
 }
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.pointer {
+	cursor: pointer;
+}
+$c1: #581c1c;
+$c2: #fdf7e7;//#3E8CE1;
+$c3: #fff;
