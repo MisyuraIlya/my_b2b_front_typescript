@@ -7,6 +7,7 @@ export interface IProduct {
     priceListBase: IPriceListBase
     sku: string
     name: string
+    image: string
     description: string
     packQuant: number
     barcode: string
