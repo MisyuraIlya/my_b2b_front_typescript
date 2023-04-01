@@ -12,22 +12,22 @@ import { HeaderModule } from './modules/HeaderModule';
 const RouterApp = () => {
     return (
         <div>
-            <Header/>
+            {/* <Header/> */}
             <HeaderModule/>
-            <AuthPage/>
+            {/* <AuthPage/> */}
             <Link to="/" data-testid="home-link">Home</Link>
-            <Link to="/cart" data-testid="cart-link">Cart</Link>
+            <Link to="/auth" data-testid="cart-link">auth</Link>
             <Link to="/post" data-testid="post-link">Post</Link>
             <Link to="/login" data-testid="cart-link">Login</Link>
             <Link to="/registration" data-testid="post-link">Registration</Link>
             <Routes>
                 <Route>
-                    {/* <Route path="/" element={<HomePage/>} />
-                    <Route path='/cart' element={<CartPage/>}/>
-                    <Route path='/post' element={<PostPage/>}/>
-                    <Route path='/login' element={<LoginPage/>}/>
-                    <Route path='/registration' element={<RegistrationPage/>}/>
-                    <Route path='/*' element={<ErrorPage/>}/> */}
+                    {/* <Route path="/" element={<HomePage/>} /> */}
+                    <Route path='/auth' element={<AuthPage/>}/>
+                    {/* <Route path='/post' element={<PostPage/>}/> */}
+                    {/* <Route path='/login' element={<LoginPage/>}/> */}
+                    {/* <Route path='/registration' element={<RegistrationPage/>}/> */}
+                    {/* <Route path='/*' element={<ErrorPage/>}/> */}
                 </Route>
             </Routes>
         </div>

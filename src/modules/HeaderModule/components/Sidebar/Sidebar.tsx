@@ -12,7 +12,13 @@ const Sidebar = () => {
         <ProSidebarProvider>
             <div className='Sidebar_Icon'>
                     {/* <MdViewHeadline onClick={() => setActive(!active)}/> */}
-                    <UseAnimations animation={menu2} onClick={() => setActive(!active)} size={40} speed={3}/>    
+                    <UseAnimations 
+                    animation={menu2}
+                    onClick={() => setActive(!active)}
+                    size={40}
+                    speed={3}
+                    reverse={active}
+                    />    
 
                 </div>
                 <div className={`Sidebar ${active ? 'active': null}`}>
@@ -30,7 +36,8 @@ const Sidebar = () => {
             </div>
 
         </ProSidebarProvider>
-
+        {/* {active&& <div className='background_fon_white' onClick={() => setActive(!active)}></div>} */}
+        
         </>
 
     );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MdSearch } from "react-icons/md";
-
+import './Searchbar.styles.scss';
 const mockData = [
     {id:1, title:'product a', sku:'1', price:10},
     {id:2, title:'product b', sku:'2', price:11},

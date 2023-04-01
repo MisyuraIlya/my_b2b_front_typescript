@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MdShoppingCart, MdPerson, MdShoppingBag, MdOutlineShoppingBag, MdOutlineSettings } from "react-icons/md";
 import { Button } from '../../constructor';
-
+import './Iconsbar.styles.scss';
 const Iconsbar = () => {
     const [isMouseOn, setIsMouseOn] = useState(false);
 
