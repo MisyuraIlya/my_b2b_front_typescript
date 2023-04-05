@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-
+import React, { FC, useState } from 'react';
+import './SearchBar.styles.scss'
 export interface Product {
   id: number;
   name: string;
   description: string;
 }
 
-export interface Props {
+export interface SearchBarProps {
   products: Product[];
 }
 
-const SearchBar: React.FC<Props> = ({ products }) => {
+const SearchBar: FC<SearchBarProps> = ({ products }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredProducts = products.filter((product) =>
@@ -22,7 +22,7 @@ const SearchBar: React.FC<Props> = ({ products }) => {
   };
 
   return (
-    <div>
+    <div className='SearchBar'>
       <input type="text" value={searchTerm} onChange={handleChange} />
       <ul>
         {filteredProducts.map((product) => (

@@ -4,9 +4,27 @@
     direction: rtl;
     border-top: 1px solid rgba(65,67,106,.21);
     border-bottom: 1px solid rgba(65,67,106,.21);
+    .content{
+        padding: 10px 0 10px 0;
+    }
     .box{
         display: flex;
         justify-content: center;
         align-items: center;
+
+        .selectBox{
+            padding: 0 10px 0 10px;
+        }
+    }
+
+    .search{
+        margin: 0 20px 0 20px;
+    }
+
+    .views{
+        display: flex;
+        .icon{
+            padding: 0 10px 0 10px;
+        }
     }
 }
