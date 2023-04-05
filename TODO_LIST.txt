@@ -7,3 +7,5 @@ TODO CART MODULE [v]
 
 BACKEND
 TODO create DRAFTS
+TODO dragging calendar
+TODO create global serach input

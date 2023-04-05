@@ -44,6 +44,8 @@
 18. npm i react-pro-sidebar
 19. npm install -S react-useanimations
 20. npm i swiper
+21. npm i react-calendar
+22. npm i moment-timezone
 # Prepare aliasing revolver
 need to configure it in tsconfig.json file and webpack.config.js file the same routes like
 
