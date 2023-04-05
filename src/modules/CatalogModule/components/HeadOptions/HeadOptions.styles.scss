@@ -1,0 +1,12 @@
+@import '../../../../App.scss';
+
+.HeadOptions{
+    direction: rtl;
+    border-top: 1px solid rgba(65,67,106,.21);
+    border-bottom: 1px solid rgba(65,67,106,.21);
+    .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
