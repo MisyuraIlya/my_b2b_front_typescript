@@ -1,30 +1,15 @@
 import React, {useState} from 'react';
 import './DatePicker.styles.scss';
-import { MdCalendarMonth } from "react-icons/md";
-import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import moment from 'moment-timezone'
+import { MyCalendar } from '../../constructor';
 const DatePicker = () => {
-    const [value, onChange] = useState(new Date());
+    const [fromDate, setFronDate] = useState(new Date())
+    const [toDate, setToDate] = useState(new Date())
     return (
         <div className='DatePicker'>
-                {/* <Calendar onChange={onChange} value={value} /> */}
             <div className='calendar_btn'>
-                <div className='block'>
-                    <p>מתאריך</p>
-                    <div className='calendar_card'>
-                        <MdCalendarMonth size={24}/>
-                        <span>{moment(value).format('DD/MM/YYYY')}</span>
-                    </div>
-                </div>
-
-                <div className='block'>
-                    <p>עד תאריך</p>
-                    <div className='calendar_card'>
-                        <MdCalendarMonth size={24}/>
-                        <span>{moment(value).format('DD/MM/YYYY')}</span>
-                    </div>
-                </div>
+                <MyCalendar date={fromDate} onChangeDate={setFronDate}/>
+                <MyCalendar date={toDate} onChangeDate={setToDate}/>
             </div>
             <div className='static_dates'>
                 <div className='date_rande'>

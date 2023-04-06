@@ -1,3 +1,28 @@
+@import '../../../../App.scss';
 .head{
-    
+    direction: rtl;
+
+    .wrap{
+        background: #e1e3ec;
+        border-radius: 4px;
+        padding: 5px;
+        min-width: 80%;
+    }
+
+    .options{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .option{
+            padding: 0 10px 0 10px;
+            span{
+                cursor: pointer;
+            }
+
+            &.active{
+                text-decoration: underline;
+                color: $c1;
+            }
+        }
+    }
 }
