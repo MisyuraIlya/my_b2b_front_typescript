@@ -1,13 +1,21 @@
 TODO AUTH Module [v]
 TODO HEADER Module (SIDEBAR + NAVBAR) [v]
 TODO HOME PAGE (HERO + Slider(CATEGORY+PRODUCT)) [v]
-TODO MY DOCUMENTS Module
-TODO MY PRODILE MODULE
+TODO MY DOCUMENTS Module [v]
+TODO MY PRODILE MODULE[v]
 TODO CART MODULE [v]
+TODO CATALOG MODULE [v]
+TODO ADMIN PANEL -
+    TODO CategoriesAndProductEdit Module 
+    TODO Users Module
+    TODO Orders Module
+    TODO Statistics Module
+    TODO Brand Module
+TODO dragging calendar
+TODO create global serach input
+
 
 BACKEND
 TODO create DRAFTS
 TODO create Brand Table
-TODO dragging calendar
-TODO create global serach input
-TODO ADMIN
+TODO JWT

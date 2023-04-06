@@ -1,0 +1,11 @@
+@import '../../../../App.scss';
+
+.CatalogEditList{
+    direction: rtl;
+
+    .image{
+        img{
+            width: 30%;
+        }
+    }
+}
