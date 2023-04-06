@@ -1,0 +1,19 @@
+@import '../../../../App.scss';
+
+.UsersList{
+    direction: rtl;
+
+    .image{
+        img{
+            width: 30%;
+        }
+    }
+    .option{
+        position: relative;
+        .modalOption{
+            position: absolute;
+            top: 30px;
+            z-index: 2;
+        }
+    }
+}
