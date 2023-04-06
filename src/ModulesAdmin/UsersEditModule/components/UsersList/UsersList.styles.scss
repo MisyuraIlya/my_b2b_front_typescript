@@ -3,6 +3,9 @@
 .UsersList{
     direction: rtl;
 
+    .list {
+        border-bottom: 1px solid #f0f3ff;
+    }
     .image{
         img{
             width: 30%;
@@ -16,4 +19,5 @@
             z-index: 2;
         }
     }
+
 }

@@ -13,6 +13,7 @@ TODO ADMIN PANEL -
     TODO Brand Module
 TODO dragging calendar
 TODO create global serach input
+TODO create modal
 
 
 BACKEND
