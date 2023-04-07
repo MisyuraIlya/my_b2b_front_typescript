@@ -14,6 +14,7 @@ const Head = () => {
     const [toDate, setToDate] = useState(new Date())
     const [showAll, setShowAll] = useState('הכל')
     return (
+        <>
         <div className='head'>
             <div className='flex-container'>
                 <div className='col-lg-2 center'>
@@ -47,6 +48,41 @@ const Head = () => {
                 </div>
             </div>
         </div>
+
+        <div className='head_col'>
+            <div className='flex-container'>
+                <div className='col-lg-1'>
+
+                </div>
+                <div className='col-lg-1'>
+                    <span>#</span>
+                </div>
+                <div className='col-lg-3'>
+                    <span>שם לקוח</span>
+                </div>
+                <div className='col-lg-2'>
+                    <span>תאריך</span>
+                </div>
+                <div className='col-lg-1'>
+                    <span>זמן</span>
+                </div>
+                <div className='col-lg-1'>
+                    <span>סה״כ</span>
+                </div>
+                <div className='col-lg-1'>
+                    <span>חיוב</span>
+                </div>
+                <div className='col-lg-1'>
+                    <span>הערה</span>
+                </div>
+                <div className='col-lg-1'>
+                    <span>פעולות</span>
+                </div>
+
+            </div>
+        </div>
+        </>
+ 
     );
 };
 
