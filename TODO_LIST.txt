@@ -6,12 +6,12 @@ TODO MY PRODILE MODULE[v]
 TODO CART MODULE [v]
 TODO CATALOG MODULE [v]
 TODO ADMIN PANEL -
-    TODO CategoriesAndProductEdit Module 
-    TODO Users Module
-    TODO Orders Module
+    TODO CategoriesAndProductEdit Module [v]
+    TODO Users Module [v]
+    TODO Orders Module [v]
     TODO Statistics Module
-    TODO Brand Module
-TODO dragging calendar
+    TODO Brand Module [v]
+TODO dragging calendar [v]
 TODO create global serach input
 TODO create modal
 
