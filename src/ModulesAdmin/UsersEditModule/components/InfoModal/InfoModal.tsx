@@ -3,59 +3,48 @@ import './InfoModal.styles.scss';
 import { MdInfoOutline } from "react-icons/md";
 import UseAnimations from 'react-useanimations';
 import settings from 'react-useanimations/lib/settings'
-const mockData = [
-    {id:1, userExId:'123', status:true , type:'עסקי', name:'userA', image:'https://smartsale.co.il/huri/pics/items/10406103.jpg'},
-    {id:2, userExId:'123', status:true , type:'עסקי', name:'userA', image:'https://smartsale.co.il/huri/pics/items/10406103.jpg'},
-    {id:3, userExId:'123', status:true , type:'עסקי', name:'userA', image:'https://smartsale.co.il/huri/pics/items/10406103.jpg'},
-    {id:4, userExId:'123', status:true , type:'עסקי', name:'userA', image:'https://smartsale.co.il/huri/pics/items/10406103.jpg'},
-]
+import { Modal } from '../../constructor';
+const mockData = {id:1, name:'ilya', userExId:'123', mail:'ilya@gmail.com', password:'12345' }
+
+
+    
+
 const InfoModal = () => {
+    const [active, setActive] = useState(false)
+    const closeModal = () => {
+        setActive(false)
+    }
     return (
         <div className='InfoModal'>
-            {mockData?.map((item,index) => 
-                <div className='flex-container' key={index}>
-                    <div className='col-lg-1 center'>
-                        <div className=''>
-                            <span>{item.userExId}</span>
-                        </div>
+            <button onClick={() => setActive(true)}>open</button>
+            <Modal isOpen={active} onClose={closeModal}>
+                <div className='flex-container'>
+                    <div className='col-lg-3 margin'>
+                        <span>שם לוקח</span>
                     </div>
-                    <div className='col-lg-3 center'>
-                        <div className=''>
-                            <span>{item.name}</span>
-                        </div>
+                    <div className='col-lg-9 margin'>
+                        <span>{mockData.name}</span>
+                    </div> 
+                    <div className='col-lg-3 margin'>
+                        <span>מס לקוח</span>
                     </div>
-                    <div className='col-lg-2'>
-                        <div className='image center'>
-                            <span>{item.type}</span>
-                        </div>
+                    <div className='col-lg-9 margin'>
+                        <span>{mockData.userExId}</span>
+                    </div> 
+                    <div className='col-lg-3 margin'>
+                        <span>שם משתמש</span>
                     </div>
-                    <div className='col-lg-2 center'>
-                        <div className=''>
-                            {item.status 
-                                ?
-                                    <span>פעיל</span>
-                            
-                                :
-                                    <span>חסום</span>
-                            }
-                        </div>    
+                    <div className='col-lg-9 margin'>
+                        <span>{mockData.mail}</span>
+                    </div> 
+                    <div className='col-lg-3 margin'>
+                        <span>סיסמא</span>
                     </div>
-                    <div className='col-lg-2 center'>
-                        <div className='pointer'>
-                            <MdInfoOutline size={24} className="pointer"/>
-                        </div>  
-                    </div>
-                    <div className='col-lg-2 center'>
-                        <div className='pointer'>
-                            <UseAnimations 
-                            animation={settings}
-                            size={35}
-                            />  
-                        </div> 
-                    </div>
+                    <div className='col-lg-9 margin'>
+                        <span>{mockData.password}</span>
+                    </div> 
                 </div>
-            )}
-
+            </Modal>
         </div>
     );
 };

@@ -11,8 +11,10 @@ TODO ADMIN PANEL -
     TODO Orders Module [v]
     TODO Statistics Module
     TODO Brand Module [v]
+    TODO SlidersEdit module
+    TODO CouponsModule [v]
 TODO dragging calendar [v]
-TODO create global serach input
+TODO create global serach input 
 TODO create modal
 
 

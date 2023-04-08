@@ -1,0 +1,18 @@
+@import '../../../../App.scss';
+.SliderList{
+    direction: rtl;
+
+    .card{
+        padding: 10px;
+        img {
+            width: 40%;
+        }
+    }
+
+    .trash {
+        cursor: pointer;
+    }
+    .drag{
+        cursor: pointer;
+    }
+}
