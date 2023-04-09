@@ -1,7 +1,16 @@
 export interface ICategory {
     id: number
     name: string
+    level: number,
     image: string
-    createdAt: Date
-    updatedAt: Date
+    parent?: ICategory[]
+    children?: ICategory[]
+    createdAt: IDate
+    updatedAt: IDate
+}
+
+interface IDate {
+    date: string
+    timezone: string,
+    timezone_type: number
 }

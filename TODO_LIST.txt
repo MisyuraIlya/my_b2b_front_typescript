@@ -11,14 +11,17 @@ TODO ADMIN PANEL -
     TODO Orders Module [v]
     TODO Statistics Module
     TODO Brand Module [v]
-    TODO SlidersEdit module
+    TODO SlidersEdit module [v]
     TODO CouponsModule [v]
 TODO dragging calendar [v]
 TODO create global serach input 
-TODO create modal
+TODO create modal [v]
 
 
 BACKEND
 TODO create DRAFTS
 TODO create Brand Table
 TODO JWT
+
+FUNCITONALLITY:
+TODO FETCH FROM DB CATEGORIES WITH 3 lvl chidlren from 2 lvls

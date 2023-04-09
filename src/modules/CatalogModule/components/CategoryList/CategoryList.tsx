@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-
+import { useCatalog } from '../../context/CatalogProvider';
 export interface mockCategorylvl1 {
     id: number
     name:string
@@ -26,7 +26,8 @@ const mock = [
 const CategoryList: FC = () => {
     const [activeLvl2, setActiveLvl2] = useState(0)
     const [activeLvl3, setActiveLvl3] = useState(0)
-
+    const {data} =useCatalog()
+    console.log('data',data)
     const handleOpenLvl2 = (id: number) => {
         if(activeLvl2 === id) {
             setActiveLvl2(0)
@@ -43,7 +44,7 @@ const CategoryList: FC = () => {
             setActiveLvl3(id)
         }
     }
-
+    data?.map((item) => console.log(item.name))
     return (
         <div className='CategoryList'>
             {mock?.map((item,index) => 
