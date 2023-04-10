@@ -5,26 +5,26 @@ import { API_BACKEND } from '../constructor';
 import { onSuccessAlert } from '../constructor';
 import { useQuery,  } from 'react-query';
 import { ICategory } from '../constructor';
-interface CatalogContextType {
-  CatalogMethods: {
+interface HeaderContextType {
+  HeaderMethods: {
 
   };
   loading: boolean;
   data: ICategory[];
 }
 
-const CatalogContext = createContext<CatalogContextType | null>(null);
+const HeaderContext = createContext<HeaderContextType | null>(null);
 
 // React hook
-const useCatalog = (): CatalogContextType => {
-  const context = useContext(CatalogContext);
+const useHeader = (): HeaderContextType => {
+  const context = useContext(HeaderContext);
   if (!context) {
-    throw new Error('Can not run without "CatalogProvider"');
+    throw new Error('Can not run without "HeaderProvider"');
   }
   return context;
 };
 
-interface CatalogProviderProps {
+interface HeaderProviderProps {
     children: ReactNode;
 };
 
@@ -32,7 +32,7 @@ interface IFetchAllCategoriesResponse {
     data: ICategory[];
   }
   
-const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
+const HeaderProvider: React.FC<HeaderProviderProps> = (props) => {
   // state
   const [loading, setLoading] = useState(false);
   const [allowRegister, setAllowRegister] = useState(false);
@@ -63,16 +63,16 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
     }
   );
   // Exports
-  const CatalogMethods = {
+  const HeaderMethods = {
 
   };
-  const value: CatalogContextType = {
-    CatalogMethods,
+  const value: HeaderContextType = {
+    HeaderMethods,
     loading,
     data
   };
 
-  return <CatalogContext.Provider value={value} {...props} />;
+  return <HeaderContext.Provider value={value} {...props} />;
 };
 
-export { useCatalog, CatalogProvider };
+export { useHeader, HeaderProvider };

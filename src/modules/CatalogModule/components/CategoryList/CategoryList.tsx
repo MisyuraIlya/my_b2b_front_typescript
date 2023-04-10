@@ -27,7 +27,6 @@ const CategoryList: FC = () => {
     const [activeLvl2, setActiveLvl2] = useState(0)
     const [activeLvl3, setActiveLvl3] = useState(0)
     const {data} =useCatalog()
-    console.log('data',data)
     const handleOpenLvl2 = (id: number) => {
         if(activeLvl2 === id) {
             setActiveLvl2(0)
@@ -44,22 +43,21 @@ const CategoryList: FC = () => {
             setActiveLvl3(id)
         }
     }
-    data?.map((item) => console.log(item.name))
     return (
         <div className='CategoryList'>
-            {mock?.map((item,index) => 
+            {data?.map((item,index) => 
             <>
                 <div className='category_lvl1' key={index}>
                     <span onClick={() => handleOpenLvl2(item.id)}>{item.name}</span>
                 </div>    
-                {item?.lvl2.map((lvl2,index2) =>
+                {item?.children.map((lvl2,index2) =>
                     <>
                     {activeLvl2 === item.id &&
                         <div className='category_lvl2' key={index2}>
                             <span onClick={() => handleOpenLvl3(lvl2.id)}>{lvl2.name}</span>
                         </div> 
                     }
-                    {lvl2?.lvl3.map((lvl3,index3) =>
+                    {lvl2?.children.map((lvl3,index3) =>
                     <>
                         {activeLvl3 === lvl2.id && activeLvl2 === item.id &&
                             <div className='category_lvl3' key={index3}>

@@ -1,15 +1,18 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import {
+    QueryClient,
+    QueryClientProvider,
+  } from 'react-query'
 import CatalogModule from './CatalogModule';
-import './CatalogModule.styles.scss';
 
 export default {
     title: 'Components/CatalogModule',
     component: CatalogModule
 } as ComponentMeta<typeof CatalogModule>;
 
-const Template: ComponentStory<typeof CatalogModule> = (args) => <CatalogModule/>;
+const queryClient = new QueryClient()
+const Template: ComponentStory<typeof CatalogModule> = (args) => <QueryClientProvider client={queryClient}><CatalogModule/></QueryClientProvider>;
 
 export const CatalogModule1 = Template.bind({});
 CatalogModule1.args = {};

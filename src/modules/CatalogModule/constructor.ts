@@ -4,5 +4,5 @@ import Input from '../../components/ui/Input/Input';
 import { API_BACKEND } from '../../utils/constants/API';
 import { onSuccessAlert } from '../../utils/sweetAlert/sweetAlert';
 import { APP_CONFIG } from '../../appconfig';
-import { ICategory } from '../HomeModule/constructor';
+import { ICategory } from '../../models/category.interface';
 export {Container, SelectBox, Input, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory}

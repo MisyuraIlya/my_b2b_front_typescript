@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Navbar.styles.scss';
-
+import { useHeader } from '../../context/HeaderProvider';
+import { ICategory } from '../../constructor';
 const mockData = [
     {id:1, category:'categoryA', imgLink:'https://amit-pastry-b2b.com/src/img/categories/9182132.jpg'},
     {id:2, category:'categoryB', imgLink:'https://amit-pastry-b2b.com/src/img/categories/9182132.jpg'},
@@ -27,22 +28,25 @@ const mockDataLvl2 = [
 ]
 const Navbar = () => {
     const [isMouseOn, setIsMouseOn] = useState(false);
-
-    const handleMouseEnter = () => {
+    const [modalItem, setModalItem] = useState<ICategory>()
+    const {data} = useHeader()
+    const handleMouseEnter = (item: ICategory) => {
       setIsMouseOn(true);
+      setModalItem(item)
     };
   
     const handleMouseLeave = () => {
       setIsMouseOn(false);
+      setModalItem()
     };
     return (
         <div onMouseLeave={handleMouseLeave}>
             <div className='Navbar' >
                 <div className='list'>
                     <ul>
-                        {mockData?.map((item,index) =>
-                            <li key={index} className="pointer" onMouseEnter={handleMouseEnter}>
-                                <p>{item.category}</p>
+                        {data?.map((item,index) =>
+                            <li key={index} className="pointer" onMouseEnter={() => handleMouseEnter(item)}>
+                                <p>{item.name}</p>
                             </li>
                         )}
                     </ul>
@@ -50,13 +54,13 @@ const Navbar = () => {
                 {isMouseOn &&
                 <div className='modal' >
                     <ul>
-                        {mockDataLvl2?.map((item,index) => 
+                        {modalItem?.children?.map((item,index) => 
                             <li key={index} className="pointer">
                                 <div className='img_cont center'>
-                                    <img src={item.imgLink} alt="" />
+                                    <img src={item.image} alt="" />
                                 </div>
                                 <div className='title_cont center'>
-                                    <p>{item.category}</p>
+                                    <p>{item.name}</p>
                                 </div>
                             </li>
                         )}

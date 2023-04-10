@@ -8,6 +8,7 @@ import LoginPage from '@pages/LoginPage/LoginPage';
 import RegistrationPage from '@pages/RegistrationPage/RegistrationPage';
 import Header from './components/layout/Header/Header';
 import AuthPage from './pages/AuthPage/AuthPage';
+import CatalogPage from './pages/CatalogPage/CatalogPage';
 import { HeaderModule } from './modules/HeaderModule';
 const RouterApp = () => {
     return (
@@ -20,11 +21,13 @@ const RouterApp = () => {
             <Link to="/post" data-testid="post-link">Post</Link>
             <Link to="/login" data-testid="cart-link">Login</Link>
             <Link to="/registration" data-testid="post-link">Registration</Link>
+            <Link to="/catalog" data-testid="post-link">Catalog</Link>
             <Routes>
                 <Route>
                     {/* <Route path="/" element={<HomePage/>} /> */}
                     <Route path='/auth' element={<AuthPage/>}/>
-                    {/* <Route path='/post' element={<PostPage/>}/> */}
+                    <Route path='/catalog' element={<CatalogPage/>}/>
+                    {/* <Route path='/catalog' element={<CatalogPage/>}/> */}
                     {/* <Route path='/login' element={<LoginPage/>}/> */}
                     {/* <Route path='/registration' element={<RegistrationPage/>}/> */}
                     {/* <Route path='/*' element={<ErrorPage/>}/> */}
