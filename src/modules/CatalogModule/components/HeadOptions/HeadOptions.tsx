@@ -3,18 +3,19 @@ import { SelectBox } from '../../constructor';
 import { MdFormatListBulleted, MdWindow } from "react-icons/md";
 import { Input } from '../../constructor';
 import { useForm } from "react-hook-form";
-
+import { useCatalog } from '../../context/CatalogProvider';
 const mockData = {id:1, total:'123'}
 type Inputs = {
     searchValue: string,
   };
 
 const HeadOptions = () => {
-
+    const {CatalogMethods,totalSize, categoryIds} = useCatalog()
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
 
     const select = (id:string) => {
-        console.log(id)
+        CatalogMethods.setTotalSize(id)
+        CatalogMethods.fetchAllProducts(categoryIds, id)
     }
     const select2 = (id:string) => {
         console.log(id)

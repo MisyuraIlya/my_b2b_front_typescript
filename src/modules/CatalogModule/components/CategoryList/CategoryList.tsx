@@ -26,8 +26,18 @@ const mock = [
 const CategoryList: FC = () => {
     const [activeLvl2, setActiveLvl2] = useState(0)
     const [activeLvl3, setActiveLvl3] = useState(0)
-    const {data} =useCatalog()
+    const {CatalogMethods, categoriesData} =useCatalog()
+    const [selectedIds, setSelectedIds] = useState({ lvl1: null, lvl2: null, lvl3: null });
+
+
     const handleOpenLvl2 = (id: number) => {
+        let selected = {
+            lvl1: id,
+            lvl2: null,
+            lvl3: null
+        }
+        setSelectedIds(selected);
+        CatalogMethods.fetchAllProducts(selected)
         if(activeLvl2 === id) {
             setActiveLvl2(0)
         } else {
@@ -37,15 +47,34 @@ const CategoryList: FC = () => {
     }
 
     const handleOpenLvl3 = (id: number) => {
+        let selected = {
+            lvl1: selectedIds.lvl1,
+            lvl2: id,
+            lvl3: null
+        }
+        setSelectedIds(selected);
+        CatalogMethods.fetchAllProducts(selected)
         if(activeLvl3 === id) {
             setActiveLvl2(0)
         } else {
             setActiveLvl3(id)
         }
     }
+
+    const handleOpenLvl3Cat = (id: number) => {
+        let selected = {
+            lvl1: selectedIds.lvl1,
+            lvl2: selectedIds.lvl2,
+            lvl3: id
+        }
+        setSelectedIds(selected);
+        CatalogMethods.fetchAllProducts(selected)
+    }
+
+
     return (
         <div className='CategoryList'>
-            {data?.map((item,index) => 
+            {categoriesData?.map((item,index) => 
             <>
                 <div className='category_lvl1' key={index}>
                     <span onClick={() => handleOpenLvl2(item.id)}>{item.name}</span>
@@ -61,7 +90,7 @@ const CategoryList: FC = () => {
                     <>
                         {activeLvl3 === lvl2.id && activeLvl2 === item.id &&
                             <div className='category_lvl3' key={index3}>
-                                <span>{lvl3.name}</span>
+                                <span onClick={() => handleOpenLvl3Cat(lvl3.id)}>{lvl3.name}</span>
                             </div>
                         }
                     </>

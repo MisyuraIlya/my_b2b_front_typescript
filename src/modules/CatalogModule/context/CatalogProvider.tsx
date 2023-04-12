@@ -5,12 +5,26 @@ import { API_BACKEND } from '../constructor';
 import { onSuccessAlert } from '../constructor';
 import { useQuery,  } from 'react-query';
 import { ICategory } from '../constructor';
+import { IProduct } from '../constructor';
+
+interface selectedIds {
+  lvl1: number | null,
+  lvl2: number | null,
+  lvl3: number | null
+}
 interface CatalogContextType {
   CatalogMethods: {
-
+    fetchAllProducts
+    setTotalSize
   };
-  loading: boolean;
-  data: ICategory[];
+  categoriesLoading: boolean;
+  categoriesData: ICategory[];
+  productsLoading: boolean;
+  // productsData: IProduct[];
+  products: IProduct[];
+  totalSize;
+  categoryIds: selectedIds;
+  loading: boolean
 }
 
 const CatalogContext = createContext<CatalogContextType | null>(null);
@@ -36,10 +50,11 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
   // state
   const [loading, setLoading] = useState(false);
   const [allowRegister, setAllowRegister] = useState(false);
-
+  const [products, setProducts] = useState([])
+  const [totalSize, setTotalSize] = useState(10)
+  const [categoryIds, setCategoryIds] = useState({})
   // Helpers
-
-  const { isLoading, error, data } = useQuery(
+  const { isLoading: isCategoriesLoading, error: categoriesError, data: categoriesData } = useQuery(
     'categories',
     () =>
       fetch('https://digitrade.store/my_test/src/index.php', {
@@ -62,14 +77,79 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
       staleTime: 5 * 60 * 1000, // 5 minutes
     }
   );
-  // Exports
-  const CatalogMethods = {
 
+
+  // const { isLoading: isProductsLoading, error: productsError, data: productsData } = useQuery(
+  //   'products',
+  //   () =>
+  //     fetch('https://digitrade.store/my_test/src/index.php', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         classPoint: 'ProductsController',
+  //         funcName: 'FetchProducts',
+  //         val: val
+
+  //       }),
+  //     }).then((res) =>
+  //       res.json().then((data) => {
+  //         console.log(data)
+  //         return data.data;
+  //       })
+  //     ),
+  //   {
+  //     useErrorBoundary: true,
+  //     cacheTime: 60 * 60 * 1000, // 1 hour
+  //     staleTime: 5 * 60 * 1000, // 5 minutes
+  //   }
+  // );
+  
+
+
+  // Exports
+  
+
+  const fetchAllProducts = async (selectedIds: selectedIds, totalPageSize: number = totalSize): Promise<IProduct[]> => {
+    setCategoryIds(selectedIds)
+    setLoading(true)
+    let val = {
+      lvl1: selectedIds.lvl1,
+      lvl2: selectedIds.lvl2,
+      lvl3: selectedIds.lvl3,
+      pageSize: totalPageSize ? totalPageSize : totalSize,
+      page: "1"
+    }
+    try {
+    const res = await axios.post(`${API_BACKEND}`, {
+      classPoint: 'ProductsController',
+      funcName: 'FetchProducts',
+      val: val
+    });
+    setProducts(res.data.data.data);
+    } catch(e) {
+      console.log(e)
+    } finally {
+      setLoading(false)
+    }
+
+  };
+
+  const CatalogMethods = {
+    fetchAllProducts,
+    setTotalSize
   };
   const value: CatalogContextType = {
     CatalogMethods,
-    loading,
-    data
+    categoriesLoading: isCategoriesLoading,
+    categoriesData,
+    // productsLoading: isProductsLoading,
+    // productsData,
+    products,
+    totalSize,
+    categoryIds,
+    loading
   };
 
   return <CatalogContext.Provider value={value} {...props} />;

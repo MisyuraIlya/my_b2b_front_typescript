@@ -5,4 +5,5 @@ import { API_BACKEND } from '../../utils/constants/API';
 import { onSuccessAlert } from '../../utils/sweetAlert/sweetAlert';
 import { APP_CONFIG } from '../../appconfig';
 import { ICategory } from '../../models/category.interface';
-export {Container, SelectBox, Input, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory}
+import { IProduct } from '../../models/product.interface';
+export {Container, SelectBox, Input, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory, IProduct}

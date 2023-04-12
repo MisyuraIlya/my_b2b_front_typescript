@@ -47,6 +47,7 @@
 20. npm i swiper
 21. npm i react-calendar
 22. npm i moment-timezone
+23. npm i react-loader-spinner
 # Prepare aliasing revolver
 need to configure it in tsconfig.json file and webpack.config.js file the same routes like
 

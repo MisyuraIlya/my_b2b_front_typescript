@@ -30,6 +30,8 @@ const Navbar = () => {
     const [isMouseOn, setIsMouseOn] = useState(false);
     const [modalItem, setModalItem] = useState<ICategory>()
     const {data} = useHeader()
+    const [selectedIds, setSelectedIds] = useState({ lvl1: null, lvl2: null, lvl3: null });
+
     const handleMouseEnter = (item: ICategory) => {
       setIsMouseOn(true);
       setModalItem(item)
@@ -37,15 +39,25 @@ const Navbar = () => {
   
     const handleMouseLeave = () => {
       setIsMouseOn(false);
-      setModalItem()
     };
+
+    const handleOpenLvl2 = (id: number) => {
+        setSelectedIds({ lvl1: id, lvl2: null, lvl3: null });
+    }
+
+    const handleOpenLvl3 = (id: number) => {
+        setSelectedIds({ ...selectedIds, lvl2: id, lvl3: null });
+    }
+
+    console.log(selectedIds)
+
     return (
         <div onMouseLeave={handleMouseLeave}>
             <div className='Navbar' >
                 <div className='list'>
                     <ul>
                         {data?.map((item,index) =>
-                            <li key={index} className="pointer" onMouseEnter={() => handleMouseEnter(item)}>
+                            <li key={index} className="pointer" onMouseEnter={() => handleMouseEnter(item)} onClick={() => handleOpenLvl2(item.id)}>
                                 <p>{item.name}</p>
                             </li>
                         )}
@@ -55,7 +67,7 @@ const Navbar = () => {
                 <div className='modal' >
                     <ul>
                         {modalItem?.children?.map((item,index) => 
-                            <li key={index} className="pointer">
+                            <li key={index} className="pointer" onClick={() => handleOpenLvl3(item.id)}>
                                 <div className='img_cont center'>
                                     <img src={item.image} alt="" />
                                 </div>
