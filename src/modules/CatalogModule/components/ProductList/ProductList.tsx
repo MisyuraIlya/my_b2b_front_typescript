@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './ProductList.styles.scss'
 import { useCatalog } from '../../context/CatalogProvider';
 import { TailSpin } from 'react-loader-spinner';
+import { Pagination } from '../../constructor';
 // export interface ProductListProps {
 //     ProductList: 
 // }
@@ -17,9 +18,10 @@ const mockData = [
 ]
 const ProductList = () => {
     const [active, setActive] = useState(false)
-    const {products,loading} = useCatalog()
+    const {CatalogMethods, products,loading, page, totalPages} = useCatalog()
     return (
-        <div className='ProductList'>
+        <>
+                <div className='ProductList'>
             {loading ?
             <div className='loader_container'>
                <TailSpin
@@ -93,6 +95,11 @@ const ProductList = () => {
             }
 
         </div>
+        {!loading &&
+        <Pagination totalPages={totalPages} currentPage={page} onPageChange={CatalogMethods.changePage} />
+        }
+        </>
+
     );
 };
 

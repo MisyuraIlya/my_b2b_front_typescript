@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CategoryList from './components/CategoryList/CategoryList';
 import HeadOptions from './components/HeadOptions/HeadOptions';
-import Pagination from './components/Pagination/Pagination';
 import ProductList from './components/ProductList/ProductList';
 import BrandList from './components/BrandList/BrandList';
 import { CatalogProvider } from './context/CatalogProvider';
 import './CatalogModule.styles.scss';
 
 const CatalogModule = () => {
+
     return (
             <CatalogProvider>
                 <div className='CatalogModule'>
@@ -19,7 +19,6 @@ const CatalogModule = () => {
                         <div className='col-lg-8'>
                             <HeadOptions/>
                             <ProductList/>
-                            <Pagination/>
                         </div>
                     </div>
                 </div>

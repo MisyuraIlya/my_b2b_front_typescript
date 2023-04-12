@@ -15,7 +15,8 @@ interface selectedIds {
 interface CatalogContextType {
   CatalogMethods: {
     fetchAllProducts
-    setTotalSize
+    setTotalSize,
+    changePage
   };
   categoriesLoading: boolean;
   categoriesData: ICategory[];
@@ -24,7 +25,9 @@ interface CatalogContextType {
   products: IProduct[];
   totalSize;
   categoryIds: selectedIds;
-  loading: boolean
+  loading: boolean,
+  page: number,
+  totalPages: number
 }
 
 const CatalogContext = createContext<CatalogContextType | null>(null);
@@ -53,6 +56,8 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
   const [products, setProducts] = useState([])
   const [totalSize, setTotalSize] = useState(10)
   const [categoryIds, setCategoryIds] = useState({})
+  const [page, setPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
   // Helpers
   const { isLoading: isCategoriesLoading, error: categoriesError, data: categoriesData } = useQuery(
     'categories',
@@ -111,7 +116,7 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
   // Exports
   
 
-  const fetchAllProducts = async (selectedIds: selectedIds, totalPageSize: number = totalSize): Promise<IProduct[]> => {
+  const fetchAllProducts = async (selectedIds: selectedIds, totalPageSize: number = totalSize, pageNumber: number = page): Promise<IProduct[]> => {
     setCategoryIds(selectedIds)
     setLoading(true)
     let val = {
@@ -119,15 +124,18 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
       lvl2: selectedIds.lvl2,
       lvl3: selectedIds.lvl3,
       pageSize: totalPageSize ? totalPageSize : totalSize,
-      page: "1"
+      page: pageNumber ? pageNumber : page
     }
+    console.log(val)
     try {
     const res = await axios.post(`${API_BACKEND}`, {
       classPoint: 'ProductsController',
       funcName: 'FetchProducts',
       val: val
     });
+    
     setProducts(res.data.data.data);
+    setTotalPages(res.data.data.totalPages)
     } catch(e) {
       console.log(e)
     } finally {
@@ -136,9 +144,16 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
 
   };
 
+  const changePage = (page: number) => {
+      setPage(page)
+      fetchAllProducts(categoryIds, totalSize, page)
+  }
+
   const CatalogMethods = {
     fetchAllProducts,
-    setTotalSize
+    setTotalSize,
+    changePage,
+    setTotalPages
   };
   const value: CatalogContextType = {
     CatalogMethods,
@@ -149,7 +164,9 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
     products,
     totalSize,
     categoryIds,
-    loading
+    loading,
+    page,
+    totalPages
   };
 
   return <CatalogContext.Provider value={value} {...props} />;
