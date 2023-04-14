@@ -7,4 +7,6 @@ import { onSuccessAlert } from '../../utils/sweetAlert/sweetAlert';
 import { APP_CONFIG } from '../../appconfig';
 import { ICategory } from '../../models/category.interface';
 import { IProduct } from '../../models/product.interface';
-export {Container, SelectBox, Input, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory, IProduct, Pagination}
+import Modal from '../../components/global/Modal/Modal';
+import PopUpCard from '../../components/global/PopUpCard/PopUpCard';
+export {Container, SelectBox, Input, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory, IProduct, Pagination, Modal, PopUpCard}

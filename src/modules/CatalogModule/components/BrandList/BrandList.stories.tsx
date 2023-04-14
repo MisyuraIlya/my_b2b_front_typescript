@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import { CatalogProvider } from '../../context/CatalogProvider';
+import { QueryClientProvider } from 'react-query';
 import BrandList from './BrandList';
 import './BrandList.styles.scss';
 
@@ -9,7 +10,7 @@ export default {
     component: BrandList
 } as ComponentMeta<typeof BrandList>;
 
-const Template: ComponentStory<typeof BrandList> = (args) => <BrandList/>;
+const Template: ComponentStory<typeof BrandList> = (args) => <CatalogProvider><BrandList/></CatalogProvider>;
 
 export const BrandList1 = Template.bind({});
 BrandList1.args = {};

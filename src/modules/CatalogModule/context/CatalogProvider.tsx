@@ -1,11 +1,12 @@
 // Global
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import axios from 'axios';
 import { API_BACKEND } from '../constructor';
 import { onSuccessAlert } from '../constructor';
 import { useQuery,  } from 'react-query';
 import { ICategory } from '../constructor';
 import { IProduct } from '../constructor';
+import { useDebounce } from 'use-debounce';
 
 interface selectedIds {
   lvl1: number | null,
@@ -16,18 +17,24 @@ interface CatalogContextType {
   CatalogMethods: {
     fetchAllProducts
     setTotalSize,
-    changePage
+    changePage,
+    setSearchValue,
+    setView
   };
   categoriesLoading: boolean;
   categoriesData: ICategory[];
   productsLoading: boolean;
   // productsData: IProduct[];
   products: IProduct[];
+  filteredData: IProduct[];
   totalSize;
   categoryIds: selectedIds;
   loading: boolean,
   page: number,
-  totalPages: number
+  totalPages: number,
+  searchValue: string,
+  totalItems: number,
+  view: boolean
 }
 
 const CatalogContext = createContext<CatalogContextType | null>(null);
@@ -53,11 +60,15 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
   // state
   const [loading, setLoading] = useState(false);
   const [allowRegister, setAllowRegister] = useState(false);
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState<IProduct[]>([])
   const [totalSize, setTotalSize] = useState(10)
   const [categoryIds, setCategoryIds] = useState({})
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
+  const [totalItems, setTotalItems] = useState(0)
+  const [view, setView] = useState(false)
+  const [searchValue, setSearchValue] = useState('')
+  const [filteredData, setFilteredData] = useState<IProduct[]>([])
   // Helpers
   const { isLoading: isCategoriesLoading, error: categoriesError, data: categoriesData } = useQuery(
     'categories',
@@ -82,7 +93,6 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
       staleTime: 5 * 60 * 1000, // 5 minutes
     }
   );
-
 
   // const { isLoading: isProductsLoading, error: productsError, data: productsData } = useQuery(
   //   'products',
@@ -114,7 +124,16 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
 
 
   // Exports
-  
+  const filterProducts = () => {
+    if(searchValue){
+      const filteredMachines = products.filter(val =>
+        val.name.includes(searchValue)
+      );
+      setFilteredData(filteredMachines)
+    } else {
+      setFilteredData([])
+    }
+  }
 
   const fetchAllProducts = async (selectedIds: selectedIds, totalPageSize: number = totalSize, pageNumber: number = page): Promise<IProduct[]> => {
     setCategoryIds(selectedIds)
@@ -133,9 +152,10 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
       funcName: 'FetchProducts',
       val: val
     });
-    
+    console.log(res)
     setProducts(res.data.data.data);
     setTotalPages(res.data.data.totalPages)
+    setTotalItems(res.data.data.totalItems)
     } catch(e) {
       console.log(e)
     } finally {
@@ -149,11 +169,17 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
       fetchAllProducts(categoryIds, totalSize, page)
   }
 
+  useEffect(() => {
+    filterProducts()
+  },[searchValue])
+
   const CatalogMethods = {
     fetchAllProducts,
     setTotalSize,
     changePage,
-    setTotalPages
+    setTotalPages,
+    setSearchValue,
+    setView
   };
   const value: CatalogContextType = {
     CatalogMethods,
@@ -166,7 +192,11 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
     categoryIds,
     loading,
     page,
-    totalPages
+    totalPages,
+    searchValue,
+    filteredData,
+    totalItems,
+    view
   };
 
   return <CatalogContext.Provider value={value} {...props} />;

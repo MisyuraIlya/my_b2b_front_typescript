@@ -48,6 +48,7 @@
 21. npm i react-calendar
 22. npm i moment-timezone
 23. npm i react-loader-spinner
+24. npm i use-debounce
 # Prepare aliasing revolver
 need to configure it in tsconfig.json file and webpack.config.js file the same routes like
 

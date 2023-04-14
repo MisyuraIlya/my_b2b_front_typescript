@@ -27,4 +27,16 @@
             padding: 0 10px 0 10px;
         }
     }
+
+    svg {
+        padding: 5px;
+        cursor: pointer;
+    }
+    .selected {
+        svg {
+            background-color: #e8e7e7;
+            border-radius: 5px;
+        }
+ 
+    }
 }

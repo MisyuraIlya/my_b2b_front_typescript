@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
-import './ProductList.styles.scss'
+import './GroupViewProductList.styles.scss'
 import { useCatalog } from '../../context/CatalogProvider';
 import { TailSpin } from 'react-loader-spinner';
-import { Pagination } from '../../constructor';
-// export interface ProductListProps {
-//     ProductList: 
-// }
-const mockData = [
-    {id:1, sky:'123Asd', name:'productA', price:10, discountPrice:5 ,image:'https://churishop.co.il/src/img/productsComp/10351010.jpg' },
-    {id:2, sky:'123Asd', name:'productB', price:10, discountPrice:5 ,image:'https://churishop.co.il/src/img/productsComp/10351010.jpg' },
-    {id:3, sky:'123Ass', name:'productC', price:10, discountPrice:5 ,image:'https://churishop.co.il/src/img/productsComp/10351010.jpg'},
-    {id:4, sky:'123Asd', name:'productD', price:10, discountPrice:5 ,image:'https://churishop.co.il/src/img/productsComp/10351010.jpg' },
-    {id:5, sky:'123Asd', name:'productA', price:10, discountPrice:5 ,image:'https://churishop.co.il/src/img/productsComp/10351010.jpg' },
-    {id:6, sky:'123Asd', name:'productB', price:10, discountPrice:5 ,image:'https://churishop.co.il/src/img/productsComp/10351010.jpg' },
-    {id:7, sky:'123Ass', name:'productC', price:10, discountPrice:5 ,image:'https://churishop.co.il/src/img/productsComp/10351010.jpg'},
-    {id:8, sky:'123Asd', name:'productD', price:10, discountPrice:5 ,image:'https://churishop.co.il/src/img/productsComp/10351010.jpg' },
-]
-const ProductList = () => {
+import { IProduct, Pagination } from '../../constructor';
+import {Modal, PopUpCard} from '../../constructor';
+const GroupViewProductList = () => {
     const [active, setActive] = useState(false)
-    const {CatalogMethods, products,loading, page, totalPages} = useCatalog()
+    const {CatalogMethods, products,loading, page, totalPages, filteredData, view} = useCatalog()
+    const [choosedProduct, setChoosedProduct] = useState({})
+    const [openModal, setOpenModal] = useState(false)
+    const handleClose = () => {
+        setOpenModal(false)
+    }
+    const handleOpenModal = (item: IProduct) => {
+        setOpenModal(true)
+        setChoosedProduct(item)
+    }
     return (
         <>
-                <div className='ProductList'>
+        {!view && 
+        
+        <>
+        <div className='GroupViewProductList'>
             {loading ?
             <div className='loader_container'>
                <TailSpin
@@ -35,11 +35,10 @@ const ProductList = () => {
                 visible={true}
                 />
             </div>    
-
             :
                 <div className='flex-container'>
-                    {products?.map((item,index) => 
-                        <div className='col-lg-3'  key={index}>
+                    {(filteredData.length > 0 ? filteredData : products)?.map((item,index) => 
+                        <div className='col-lg-3'  key={index} onClick={() => handleOpenModal(item)}>
                             <div className='card'>
                                 <div className='image_block'>
                                     <img src={item.image} />
@@ -84,12 +83,9 @@ const ProductList = () => {
                                         </div>    
                                     </div>
                                     }
-
-
                                 </div>    
                             </div>
                         </div>    
-
                     )}
                 </div>
             }
@@ -98,9 +94,15 @@ const ProductList = () => {
         {!loading &&
         <Pagination totalPages={totalPages} currentPage={page} onPageChange={CatalogMethods.changePage} />
         }
+        <Modal isOpen={openModal} onClose={handleClose}>
+            <PopUpCard data={choosedProduct}/>
+        </Modal>
+        </>
+        }
+
         </>
 
     );
 };
 
-export default ProductList;
+export default GroupViewProductList;

@@ -5,14 +5,11 @@ import { Input } from '../../constructor';
 import { useForm } from "react-hook-form";
 import { useCatalog } from '../../context/CatalogProvider';
 const mockData = {id:1, total:'123'}
-type Inputs = {
-    searchValue: string,
-  };
+
 
 const HeadOptions = () => {
-    const {CatalogMethods,totalSize, categoryIds} = useCatalog()
-    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
-
+    const {CatalogMethods,totalSize, categoryIds, searchValue, totalItems, view} = useCatalog()
+    
     const select = (id:string) => {
         CatalogMethods.setTotalSize(id)
         CatalogMethods.fetchAllProducts(categoryIds, id)
@@ -24,11 +21,11 @@ const HeadOptions = () => {
         <div className='HeadOptions'>
             <div className='flex-container content'>
                 <div className='col-lg-2 center'>
-                    <p>נמצאו: {mockData.total} </p>
+                    <p>נמצאו: {totalItems}</p>
                 </div>
                 <div className='col-lg-4 center'>
                     <div className='search'>
-                        <Input type='text' placeholder='חיפוש'  hookForm={{...register("searchValue")}} />
+                        <input type='text' placeholder='find' value={searchValue} onChange={(e) => CatalogMethods.setSearchValue(e.target.value)}/>
                     </div>
                 </div>
                 <div className='col-lg-2 center'>
@@ -50,11 +47,11 @@ const HeadOptions = () => {
                 <div className='col-lg-2 center'>
                     <p>תצוגה:</p>
                     <div className='views'>
-                        <div className='icon'>
-                            <MdFormatListBulleted size={24}/>
+                        <div className={`icon ${view ? 'selected' : null}`}>
+                            <MdFormatListBulleted size={24} onClick={() => CatalogMethods.setView(true)}/>
                         </div>
-                        <div className='icon'>
-                            <MdWindow size={24} />
+                        <div className={`icon ${view ? null : 'selected'}`}>
+                            <MdWindow size={24} onClick={() => CatalogMethods.setView(false)}/>
                         </div>
                     </div>
                 </div>  
