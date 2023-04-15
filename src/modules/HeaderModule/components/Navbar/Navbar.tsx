@@ -49,7 +49,6 @@ const Navbar = () => {
         setSelectedIds({ ...selectedIds, lvl2: id, lvl3: null });
     }
 
-    console.log(selectedIds)
 
     return (
         <div onMouseLeave={handleMouseLeave}>

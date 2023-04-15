@@ -39,7 +39,9 @@ const GroupViewProductList = () => {
             :
                 <div className='flex-container'>
                     {(filteredData.length > 0 ? filteredData : products)?.map((item,index) => 
-                        <div className='col-lg-3'  key={index} onClick={() => handleOpenModal(item)}>
+                        <div className='col-lg-3'  key={index} 
+                        // onClick={() => handleOpenModal(item)}
+                        >
                             <div className='card'>
                                 <div className='image_block'>
                                     <img src={item.image} />
@@ -60,33 +62,9 @@ const GroupViewProductList = () => {
                                         </div>    
                                     </div>    
                                 </div>    
-                                <div className='addToCart_block'>
-                                    {!active ?
-                                        <div className='add' onClick={() => setActive(!active)}>
-                                            <span>הוספה לסל</span>
-                                        </div>  
-                                    :
-                                    <div className='flex-container incart'>
-                                        <div className='col-lg-4'>
-                                            <div className='increase'>
-                                                <span>+</span>
-                                            </div>    
-                                        </div>   
-                                        <div className='col-lg-4'>
-                                            <div className='quantity'>
-                                                <span>10</span>
-                                            </div>    
-                                        </div>    
-                                        <div className='col-lg-4'>
-                                            <div className='decrease'> 
-                                                <span>-</span>
-                                            </div>    
-                                        </div>    
-                                    </div>
-                                    }
-                                </div>    
+                                <AddToCart1 item={item} />
+  
                             </div>
-                            {/* <AddToCart1 itemId={item.id} /> */}
                         </div>    
                     )}
                 </div>

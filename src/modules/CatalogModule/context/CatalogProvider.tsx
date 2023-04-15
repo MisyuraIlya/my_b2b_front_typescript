@@ -145,14 +145,12 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
       pageSize: totalPageSize ? totalPageSize : totalSize,
       page: pageNumber ? pageNumber : page
     }
-    console.log(val)
     try {
     const res = await axios.post(`${API_BACKEND}`, {
       classPoint: 'ProductsController',
       funcName: 'FetchProducts',
       val: val
     });
-    console.log(res)
     setProducts(res.data.data.data);
     setTotalPages(res.data.data.totalPages)
     setTotalItems(res.data.data.totalItems)

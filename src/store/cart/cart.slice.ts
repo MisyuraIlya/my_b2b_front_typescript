@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction, nanoid } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction, nanoid, current } from "@reduxjs/toolkit"
 import { IProduct } from "@/models/product.interface"
 import { ICart } from "@/models/cart.interface";
-
+import cartLocalStorage from "@/services/LocalStorage/CartLocalStorage";
 interface CartState {
     items: ICart[];
   }
@@ -21,6 +21,7 @@ export const cartSlice = createSlice({
             } else {
               state.items.push({ id: nanoid(), product: action.payload, quantity: 1 });
             }
+            cartLocalStorage.setCart(current(state).items)
           },
           increaseQuantity: (state, action: PayloadAction<number>) => {
             const itemIndex = state.items.findIndex(item => item.product.id === action.payload);
@@ -32,6 +33,7 @@ export const cartSlice = createSlice({
                 return item;
               });
             }
+            cartLocalStorage.setCart(current(state).items)
           },
           decreaseQuantity: (state, action: PayloadAction<number>) => {
             const itemIndex = state.items.findIndex(item => item.product.id === action.payload);
@@ -48,9 +50,12 @@ export const cartSlice = createSlice({
                 state.items = state.items.filter(item => item.product.id !== action.payload);
               }
             }
+            cartLocalStorage.setCart(current(state).items)
           },
           removeItem: (state, action: PayloadAction<number>) => {
             state.items = state.items.filter(item => item.product.id !== action.payload);
+
+            cartLocalStorage.setCart(current(state).items)
           }
     }
 })
