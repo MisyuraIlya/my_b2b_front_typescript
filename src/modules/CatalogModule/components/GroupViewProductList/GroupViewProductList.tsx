@@ -4,6 +4,7 @@ import { useCatalog } from '../../context/CatalogProvider';
 import { TailSpin } from 'react-loader-spinner';
 import { IProduct, Pagination } from '../../constructor';
 import {Modal, PopUpCard} from '../../constructor';
+import {AddToCart1} from '../../constructor';
 const GroupViewProductList = () => {
     const [active, setActive] = useState(false)
     const {CatalogMethods, products,loading, page, totalPages, filteredData, view} = useCatalog()
@@ -85,6 +86,7 @@ const GroupViewProductList = () => {
                                     }
                                 </div>    
                             </div>
+                            {/* <AddToCart1 itemId={item.id} /> */}
                         </div>    
                     )}
                 </div>

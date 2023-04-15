@@ -16,12 +16,14 @@ TODO ADMIN PANEL -
 TODO dragging calendar [v]
 TODO create global serach input 
 TODO create modal [v]
-
+TODO FRONTEND JWT [v]
+TODO CREATE STROE REDUX
+TODO GLOBAL ADD TO CART
 
 BACKEND
 TODO create DRAFTS
 TODO create Brand Table
-TODO JWT
+TODO JWT[v]
 
 FUNCITONALLITY:
-TODO FETCH FROM DB CATEGORIES WITH 3 lvl chidlren from 2 lvls
+TODO FETCH FROM DB CATEGORIES WITH 3 lvl chidlren from 2 lvls [v]

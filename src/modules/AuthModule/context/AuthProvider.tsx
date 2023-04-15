@@ -89,7 +89,12 @@ const AuthProvider: React.FC<AuthProviderProps> = (props) => {
         }
     };
     try {
-      const data = axios.post(API_BACKEND, postData)
+      const data = await axios.post(API_BACKEND, postData)
+      const accessToken = data.data.data.accessToken;
+      const refreshToken = data.data.data.refreeshToken;
+      debugger
+      document.cookie = `access_token=${accessToken}; path=/;`;
+      document.cookie = `refresh_token=${refreshToken}; path=/;`;
     } catch (e) {
       console.log(e)
     } finally {

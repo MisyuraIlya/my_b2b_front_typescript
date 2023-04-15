@@ -1,0 +1,73 @@
+@import '../../../App.scss';
+.AddToCart1{
+    direction: rtl;
+    cursor: pointer;
+    .notActive{
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span{
+            padding: 10px;
+        }
+
+        &:hover {
+            background-color: black;
+            span {
+                color: white;
+            }
+        }
+    }
+
+    .active{
+        border: 1px solid black;
+        text-align: center;
+        .value{
+            padding: 10px 0 10px 0;
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            /* Firefox */
+            input[type=number] {
+            -moz-appearance: textfield;
+            }
+            input {
+                font-size: 20px;
+                width: 100%;
+                text-align: center;
+                border: none;
+                outline: none;
+                
+            }
+        }
+
+        .increase {
+            padding: 10px 0 10px 0;
+            border-left: 1px solid black;
+            font-size: 22px;
+            text-align: center;
+            &:hover{
+                background-color: black;
+                border: none;
+                span {
+                    color: white;
+                } 
+            }
+        }
+
+        .decrease{
+            padding: 10px 0 10px 0;
+            border-right: 1px solid black;
+            font-size: 22px;
+            &:hover{
+                background-color: black;
+                span {
+                    color: white;
+                } 
+            }
+        }
+    }
+}
