@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './GroupViewProductList.styles.scss'
 import { useCatalog } from '../../context/CatalogProvider';
 import { TailSpin } from 'react-loader-spinner';
-import { IProduct, Pagination } from '../../constructor';
+import { IProduct, Pagination , defaultProduct} from '../../constructor';
 import {Modal, PopUpCard, AddToCart} from '../../constructor';
+
 const GroupViewProductList = () => {
     const [active, setActive] = useState(false)
     const {CatalogMethods, products,loading, page, totalPages, filteredData, view} = useCatalog()
-    const [choosedProduct, setChoosedProduct] = useState({})
+    const [choosedProduct, setChoosedProduct] = useState<IProduct>(defaultProduct);
     const [openModal, setOpenModal] = useState(false)
     const handleClose = () => {
         setOpenModal(false)
@@ -61,7 +62,7 @@ const GroupViewProductList = () => {
                                         </div>    
                                     </div>    
                                 </div>    
-                                <AddToCart item={item} type={2} />
+                                <AddToCart item={item} type={1} />
   
                             </div>
                         </div>    

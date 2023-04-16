@@ -19,6 +19,12 @@ const mockData = [
     {id:14, category:'category7', imgLink:'https://amit-pastry-b2b.com/src/img/categories/9182132.jpg'},
 ]
 
+interface selectedIds {
+    lvl1: number | null,
+    lvl2: number | null,
+    lvl3: number | null
+  }
+  
 const mockDataLvl2 = [
     {id:1, category:'categoryA', imgLink:'https://amit-pastry-b2b.com/src/img/categories/9182132.jpg'},
     {id:2, category:'categoryB', imgLink:'https://amit-pastry-b2b.com/src/img/categories/9182132.jpg'},
@@ -30,7 +36,7 @@ const Navbar = () => {
     const [isMouseOn, setIsMouseOn] = useState(false);
     const [modalItem, setModalItem] = useState<ICategory>()
     const {data} = useHeader()
-    const [selectedIds, setSelectedIds] = useState({ lvl1: null, lvl2: null, lvl3: null });
+    const [selectedIds, setSelectedIds] = useState<selectedIds>({ lvl1: null, lvl2: null, lvl3: null });
 
     const handleMouseEnter = (item: ICategory) => {
       setIsMouseOn(true);
@@ -42,7 +48,7 @@ const Navbar = () => {
     };
 
     const handleOpenLvl2 = (id: number) => {
-        setSelectedIds({ lvl1: id, lvl2: null, lvl3: null });
+        setSelectedIds({ lvl1: id , lvl2: null, lvl3: null });
     }
 
     const handleOpenLvl3 = (id: number) => {

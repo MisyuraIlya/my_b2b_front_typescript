@@ -27,8 +27,8 @@ const mock = [
 const CategoryList: FC = () => {
     const [activeLvl2, setActiveLvl2] = useState(0)
     const [activeLvl3, setActiveLvl3] = useState(0)
-    const {CatalogMethods, categoriesData} =useCatalog()
-    const [selectedIds, setSelectedIds] = useState({ lvl1: null, lvl2: null, lvl3: null });
+    const {CatalogMethods, categoriesData, totalSize, page} =useCatalog()
+    const [selectedIds, setSelectedIds] = useState<{lvl1: number | null, lvl2: number | null, lvl3: number | null}>({ lvl1: null, lvl2: null, lvl3: null });
 
 
     const handleOpenLvl2 = (id: number) => {
@@ -38,7 +38,7 @@ const CategoryList: FC = () => {
             lvl3: null
         }
         setSelectedIds(selected);
-        CatalogMethods.fetchAllProducts(selected)
+        CatalogMethods.fetchAllProducts(selected,totalSize,page )
         if(activeLvl2 === id) {
             setActiveLvl2(0)
         } else {
@@ -54,7 +54,7 @@ const CategoryList: FC = () => {
             lvl3: null
         }
         setSelectedIds(selected);
-        CatalogMethods.fetchAllProducts(selected)
+        CatalogMethods.fetchAllProducts(selected,totalSize,page)
         if(activeLvl3 === id) {
             setActiveLvl2(0)
         } else {
@@ -69,37 +69,37 @@ const CategoryList: FC = () => {
             lvl3: id
         }
         setSelectedIds(selected);
-        CatalogMethods.fetchAllProducts(selected)
+        CatalogMethods.fetchAllProducts(selected,totalSize,page)
     }
 
 
     return (
         <div className='CategoryList'>
             {categoriesData?.map((item,index) => 
-            <>
+            <div key={index}>
                 <div className='category_lvl1' key={index}>
                     <span onClick={() => handleOpenLvl2(item.id)}>{item.name}</span>
                 </div>    
-                {item?.children.map((lvl2,index2) =>
-                    <>
+                {item?.children?.map((lvl2,index2) =>
+                    <div key={index2}>
                     {activeLvl2 === item.id &&
                         <div className='category_lvl2' key={index2}>
                             <span onClick={() => handleOpenLvl3(lvl2.id)}>{lvl2.name}</span>
                         </div> 
                     }
-                    {lvl2?.children.map((lvl3,index3) =>
-                    <>
+                    {lvl2?.children?.map((lvl3,index3) =>
+                    <div key={index3}>
                         {activeLvl3 === lvl2.id && activeLvl2 === item.id &&
                             <div className='category_lvl3' key={index3}>
                                 <span onClick={() => handleOpenLvl3Cat(lvl3.id)}>{lvl3.name}</span>
                             </div>
                         }
-                    </>
+                    </div>
 
                     )}  
-                    </>
+                    </div>
                 )}
-            </>
+            </div>
 
             )}
         </div>

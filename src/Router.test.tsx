@@ -8,7 +8,7 @@ import '@testing-library/jest-dom'
 
 describe('React Router', () => {
     test('should render Home page on default route', () => {
-        const store = setupStore();
+        const { store } = setupStore();
         render(
             <Provider store={store}>
                 <MemoryRouter initialEntries={['/']}>
@@ -22,7 +22,7 @@ describe('React Router', () => {
     });
   
     test('should render Cart page on /cart route', () => {
-        const store = setupStore();
+        const { store } = setupStore();
         render(
             <Provider store={store}>
                 <MemoryRouter initialEntries={['/cart']}>
@@ -35,7 +35,7 @@ describe('React Router', () => {
     });
   
     test('should render Post page on /post route', () => {
-        const store = setupStore();
+        const { store } = setupStore();
         render(
             <Provider store={store}>
                 <MemoryRouter initialEntries={['/post']}>
@@ -49,7 +49,7 @@ describe('React Router', () => {
     });
   
     test('should render Error page on invalid route', () => {
-        const store = setupStore();
+        const { store } = setupStore();
         render(
             <Provider store={store}>
                 <MemoryRouter initialEntries={['/invalid']}>
@@ -63,7 +63,7 @@ describe('React Router', () => {
     });
   
     test('should navigate to Home page on Home link click', () => {
-        const store = setupStore();
+        const { store } = setupStore();
         render(
             <Provider store={store}>
                 <MemoryRouter initialEntries={['/cart']}>
@@ -79,7 +79,7 @@ describe('React Router', () => {
     });
   
     test('should navigate to Cart page on Cart link click', () => {
-        const store = setupStore();
+        const { store } = setupStore();
         render(
             <Provider store={store}>
                 <MemoryRouter initialEntries={['/']}>
@@ -95,7 +95,7 @@ describe('React Router', () => {
     });
   
     test('should navigate to Post page on Post link click', () => {
-        const store = setupStore();
+        const { store } = setupStore();
         render(
             <Provider store={store}>
                 <MemoryRouter initialEntries={['/']}>

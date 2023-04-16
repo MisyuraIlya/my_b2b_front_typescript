@@ -3,11 +3,11 @@ import './ListViewProductList.styles.scss'
 import { useCatalog } from '../../context/CatalogProvider';
 import { TailSpin } from 'react-loader-spinner';
 import {Modal, PopUpCard} from '../../constructor';
-import { IProduct, Pagination } from '../../constructor';
+import { IProduct, Pagination, defaultProduct } from '../../constructor';
 const ListViewProductList = () => {
 
     const {CatalogMethods, products,loading, page, totalPages, filteredData, view} = useCatalog()
-    const [choosedProduct, setChoosedProduct] = useState({})
+    const [choosedProduct, setChoosedProduct] = useState<IProduct>(defaultProduct);
     const [openModal, setOpenModal] = useState(false)
     const handleClose = () => {
         setOpenModal(false)

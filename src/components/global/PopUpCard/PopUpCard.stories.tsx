@@ -65,5 +65,6 @@ const data = {
 
 export const PopUpCard1 = Template.bind({});
 PopUpCard1.args = {
-    data: data
+    //TODO
+    // data: data
 };

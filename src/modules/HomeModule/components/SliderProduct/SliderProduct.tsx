@@ -4,7 +4,7 @@ import { IProduct } from '../../constructor';
 import './SliderProduct.styles.scss';
 interface SliderProductProps {
     slides: number;
-    data: Array<IProduct>
+    data?: Array<IProduct>
 }
 
 const SliderProduct: FC<SliderProductProps> = ({slides, data}) => {

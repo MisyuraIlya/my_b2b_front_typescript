@@ -12,7 +12,59 @@ export interface IProduct {
     packQuant: number
     barcode: string
     unpublished: boolean
-    createdAt: Date
-    updatedAt: Date
+    createdAt: IDate
+    updatedAt: IDate
 
 }
+
+interface IDate {
+    date: string
+    timezone: string,
+    timezone_type: number
+}
+
+export const defaultProduct: IProduct = {
+    id: 0,
+    category: {
+      id: 0,
+      name: '',
+      level: 0,
+      image: '',
+      parent: [],
+      children: [],
+      createdAt: {
+        date: '',
+        timezone: '',
+        timezone_type: 0
+      },
+      updatedAt: {
+        date: '',
+        timezone: '',
+        timezone_type: 0
+      }
+    },
+    priceListBase: {
+      id: 0,
+      price: 0,
+      discount: 0,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    sku: '',
+    name: '',
+    image: '',
+    description: '',
+    packQuant: 0,
+    barcode: '',
+    unpublished: false,
+    createdAt: {
+      date: '',
+      timezone: '',
+      timezone_type: 0
+    },
+    updatedAt: {
+      date: '',
+      timezone: '',
+      timezone_type: 0
+    }
+  };

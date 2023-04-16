@@ -12,8 +12,9 @@ const Template: ComponentStory<typeof AddToCart2> = (args) => <AddToCart2 {...ar
 
 export const Primary = Template.bind({});
 Primary.args = {
-    Primary: true,
-    children: 'Какой то текст1'
+    // TODO
+    // Primary: true,
+    // children: 'Какой то текст1'
 };
 
 

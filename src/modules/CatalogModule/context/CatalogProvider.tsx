@@ -15,19 +15,18 @@ interface selectedIds {
 }
 interface CatalogContextType {
   CatalogMethods: {
-    fetchAllProducts
-    setTotalSize,
-    changePage,
-    setSearchValue,
-    setView
+    fetchAllProducts: (selectedIds: selectedIds, totalPageSize: number, pageNumber: number ) => void,
+    setTotalSize: (size: number) => void,
+    changePage: (page: number) => void,
+    setSearchValue: (value: string) => void,
+    setView: (view: boolean) => void
   };
   categoriesLoading: boolean;
   categoriesData: ICategory[];
-  productsLoading: boolean;
   // productsData: IProduct[];
   products: IProduct[];
   filteredData: IProduct[];
-  totalSize;
+  totalSize: number;
   categoryIds: selectedIds;
   loading: boolean,
   page: number,
@@ -62,7 +61,7 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
   const [allowRegister, setAllowRegister] = useState(false);
   const [products, setProducts] = useState<IProduct[]>([])
   const [totalSize, setTotalSize] = useState(10)
-  const [categoryIds, setCategoryIds] = useState({})
+  const [categoryIds, setCategoryIds] = useState<{lvl1: number | null, lvl2: number | null, lvl3: number | null}>({ lvl1: null, lvl2: null, lvl3: null });
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
   const [totalItems, setTotalItems] = useState(0)
@@ -135,7 +134,7 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
     }
   }
 
-  const fetchAllProducts = async (selectedIds: selectedIds, totalPageSize: number = totalSize, pageNumber: number = page): Promise<IProduct[]> => {
+  const fetchAllProducts = async (selectedIds: selectedIds, totalPageSize: number = totalSize, pageNumber: number = page) => {
     setCategoryIds(selectedIds)
     setLoading(true)
     let val = {
@@ -183,7 +182,6 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
     CatalogMethods,
     categoriesLoading: isCategoriesLoading,
     categoriesData,
-    // productsLoading: isProductsLoading,
     // productsData,
     products,
     totalSize,

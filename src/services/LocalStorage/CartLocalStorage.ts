@@ -18,36 +18,36 @@ const addItem=(item:ICart)=>{
     window.localStorage.setItem(NAME_ITEM,JSON.stringify(data));
   }
 }
-const removeItem=(id:number)=>{
-  let items=getCart();
-  const newItems = items.filter(x=>x.Id!==id);
-  window.localStorage.setItem(NAME_ITEM, JSON.stringify(newItems));
-}
-const editItem=(item:number)=>{
-  let items=getCart();
-  for(let i=0;i<items.length;i++){
-    if(items[i].Id==item.Id){
-      items[i]={ ...item };
-      break;
-    }
-  }
-  window.localStorage.setItem(NAME_ITEM, JSON.stringify(items));
-}
+// const removeItem=(id:number)=>{
+//   let items=getCart();
+//   const newItems = items.filter(x=>x.Id!==id);
+//   window.localStorage.setItem(NAME_ITEM, JSON.stringify(newItems));
+// }
+// const editItem=(item:number)=>{
+//   let items=getCart();
+//   for(let i=0;i<items.length;i++){
+//     if(items[i].Id==item.Id){
+//       items[i]={ ...item };
+//       break;
+//     }
+//   }
+//   window.localStorage.setItem(NAME_ITEM, JSON.stringify(items));
+// }
 const clear=()=>{
   window.localStorage.removeItem(NAME_ITEM);
 }
-const getItem=(id:number)=>{
-  const cart=getCart();
-  return (cart ? cart.find(x=>x.Id==id) : null);
-}
+// const getItem=(id:number)=>{
+//   const cart=getCart();
+//   return (cart ? cart.find(x=>x.Id==id) : null);
+// }
 
 const cartLocalStorage = {
   getCart: getCart,
-  getItem: getItem,
+  // getItem: getItem,
   addItem: addItem,
-  removeItem: removeItem,
+  // removeItem: removeItem,
   clear: clear,
-  editItem: editItem,
+  // editItem: editItem,
   setCart: setCart
 }
 

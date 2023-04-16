@@ -5,7 +5,8 @@ interface AddToCart1Props {
     item: IProduct;
     handleAddItem: (product: IProduct) => void;
     handleIncreaseQuantity: (id: number) => void;
-    getCartItem: (productId: number) => void;
+    // TODO 
+    getCartItem: (productId: number) => { quantity: number } | undefined;
     handleDecreaseQuantity: (id: number) => void;
     onEdit: (quantity: number) => void;
 }

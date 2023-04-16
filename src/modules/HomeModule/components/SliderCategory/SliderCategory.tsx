@@ -5,7 +5,7 @@ import './SliderCategory.styles.scss';
 
 interface SliderCategoryProps {
     slides: number;
-    data: Array<ICategory>
+    data?: Array<ICategory>
 }
 
 const SliderCategory: FC<SliderCategoryProps> = ({slides, data}) => {

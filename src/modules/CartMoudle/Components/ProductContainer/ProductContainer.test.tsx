@@ -15,7 +15,7 @@ jest.mock("axios");
 
 describe("ExampleComponent", () => {
   
-  const store = setupStore();
+  const {store} = setupStore();
 
   afterEach(() => {
     jest.resetAllMocks();

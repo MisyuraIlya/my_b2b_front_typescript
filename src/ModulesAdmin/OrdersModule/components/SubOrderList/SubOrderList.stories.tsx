@@ -9,7 +9,7 @@ export default {
     component: SubOrderList
 } as ComponentMeta<typeof SubOrderList>;
 
-const Template: ComponentStory<typeof SubOrderList> = (args) => <SubOrderList/>;
+const Template: ComponentStory<typeof SubOrderList> = (args) => <SubOrderList Products={[]}/>;
 
 export const SubOrderList1 = Template.bind({});
 SubOrderList1.args = {};
