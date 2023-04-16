@@ -1,5 +1,5 @@
 @import '../../../../App.scss';
-.ListViewGroupViewProductList{
+.GroupViewProductList{
     .head{
         border-bottom: 3px solid black;
     }
@@ -11,9 +11,18 @@
     }
 
     .card {
-        display: flex;
-        img {
-            width: 80%;
+        text-align: center;
+        margin: 5px;
+        .card_content{
+            cursor: pointer;
+            img {
+                width: 80%;
+            }
+
+            .card_content_info{
+                min-height: 100px;
+            }
         }
+
     }
 }

@@ -19,7 +19,7 @@ TODO create modal [v]
 TODO FRONTEND JWT [v]
 TODO CREATE STROE REDUX for cart with localstorae [v]
 TODO GLOBAL ADD TO CART [v]
-
+TODO FIX CATEGORY LIST 
 BACKEND
 TODO create DRAFTS
 TODO create Brand Table

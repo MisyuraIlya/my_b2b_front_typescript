@@ -22,7 +22,7 @@ const HeadOptions = () => {
         <div className='HeadOptions'>
             <div className='flex-container content'>
                 <div className='col-lg-2 center'>
-                    <p>נמצאו: {totalItems}</p>
+                    <p>נמצאו: {totalItems} מוצרים</p>
                 </div>
                 <div className='col-lg-4 center'>
                     <div className='search'>
