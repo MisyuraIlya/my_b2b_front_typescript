@@ -9,5 +9,5 @@ import { ICategory } from '../../models/category.interface';
 import { IProduct } from '../../models/product.interface';
 import Modal from '../../components/global/Modal/Modal';
 import PopUpCard from '../../components/global/PopUpCard/PopUpCard';
-import AddToCart1 from '../../components/ui/AddToCart1/AddToCart1';
-export {Container, SelectBox, Input, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory, IProduct, Pagination, Modal, PopUpCard,AddToCart1}
+import AddToCart from '../../components/global/AddToCart/AddToCart';
+export {Container, SelectBox, Input, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory, IProduct, Pagination, Modal, PopUpCard,AddToCart}

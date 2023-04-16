@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import './Pagination.styles.scss'
 type PaginationProps = {
   totalPages: number;
   currentPage: number;

@@ -4,6 +4,7 @@ import { MdFormatListBulleted, MdWindow } from "react-icons/md";
 import { Input } from '../../constructor';
 import { useForm } from "react-hook-form";
 import { useCatalog } from '../../context/CatalogProvider';
+import './HeadOptions.styles.scss';
 const mockData = {id:1, total:'123'}
 
 

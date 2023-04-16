@@ -23,6 +23,7 @@
 
 6. npm install @reduxjs/toolkit
 7. npm install react-redux
+8. npm i redux-persist - for redux working with localstorage and cashe
 7. npm i react-query
 8. npm install react-hook-form
 <!-- if using rtk query dont install -->

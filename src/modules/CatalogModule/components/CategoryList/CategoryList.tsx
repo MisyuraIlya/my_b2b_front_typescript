@@ -1,5 +1,6 @@
 import React, {FC, useState} from 'react';
 import { useCatalog } from '../../context/CatalogProvider';
+import './CategoryList.styles.scss';
 export interface mockCategorylvl1 {
     id: number
     name:string

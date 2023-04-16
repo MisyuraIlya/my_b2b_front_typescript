@@ -1,42 +1,16 @@
 import React, { FC } from 'react';
 import './AddToCart1.styles.scss'
-import { useActions } from '../../../hooks/useActions';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { IProduct } from '../../../models/product.interface';
 interface AddToCart1Props { 
     item: IProduct;
-    // isInCart: boolean;
-    // quantity: number;
-    // onAddToCart: (id: number) => void;
-    // onIncrease: () => void;
-    // onDecrease: () => void;
-    // onEdit: (value: number) => void;
+    handleAddItem: (product: IProduct) => void;
+    handleIncreaseQuantity: (id: number) => void;
+    getCartItem: (productId: number) => void;
+    handleDecreaseQuantity: (id: number) => void;
+    onEdit: (quantity: number) => void;
 }
-const AddToCart1: FC<AddToCart1Props> = ({item}) => {
-    const {cart} = useTypedSelector(state => state)
+const AddToCart1: FC<AddToCart1Props> = ({item, handleAddItem, handleIncreaseQuantity, getCartItem, handleDecreaseQuantity, onEdit}) => {
 
-    const {addItem, removeItem, increaseQuantity, decreaseQuantity} = useActions()
-
-    const getCartItem = (productId: number) => {
-        const data = cart.items.find((item) => item.product.id === productId)
-        return data
-      };
-      
-    const handleAddItem = (product: IProduct) => {
-        addItem(product);
-    };
-
-    const handleIncreaseQuantity = (id: number) => {
-        increaseQuantity(id);
-    };
-
-    const handleDecreaseQuantity = (id: number) => {
-        decreaseQuantity(id);
-    };
-
-    const handleRemoveItem = (id: number) => {
-        removeItem(id);
-    };
     return (
         <div className='AddToCart1'>
             { !(Boolean(getCartItem(item.id))) ?       
@@ -53,8 +27,7 @@ const AddToCart1: FC<AddToCart1Props> = ({item}) => {
                         </div>    
                         <div className='col-lg-4'>
                             <div className='value'>
-                                <span>{getCartItem(item.id)?.quantity}</span>
-                                {/* <input type="number" value={{getCartItem(product.id)?.quantity}} onChange={(e) => onEdit(parseInt(e.target.value))}  /> */}
+                                <input type="number" value={getCartItem(item.id)?.quantity} onChange={(e) => onEdit(parseInt(e.target.value))}  />
                             </div>    
                         </div>   
                         <div className='col-lg-4'>

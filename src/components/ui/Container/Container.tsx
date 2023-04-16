@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-
+import './Container.styles.scss'
 export interface ContainerProps {
     children: any;
 }

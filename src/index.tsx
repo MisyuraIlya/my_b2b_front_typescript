@@ -12,7 +12,7 @@ import {
     QueryClientProvider,
   } from 'react-query'
 
-const store = setupStore();
+const {store} = setupStore();
 const queryClient = new QueryClient()
 
 const root = ReactDOM.createRoot(

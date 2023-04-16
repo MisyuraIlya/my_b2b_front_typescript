@@ -17,8 +17,8 @@ TODO dragging calendar [v]
 TODO create global serach input 
 TODO create modal [v]
 TODO FRONTEND JWT [v]
-TODO CREATE STROE REDUX
-TODO GLOBAL ADD TO CART
+TODO CREATE STROE REDUX for cart with localstorae [v]
+TODO GLOBAL ADD TO CART [v]
 
 BACKEND
 TODO create DRAFTS
@@ -27,3 +27,12 @@ TODO JWT[v]
 
 FUNCITONALLITY:
 TODO FETCH FROM DB CATEGORIES WITH 3 lvl chidlren from 2 lvls [v]
+
+
+
+
+
+
+
+
+

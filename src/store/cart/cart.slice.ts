@@ -21,7 +21,6 @@ export const cartSlice = createSlice({
             } else {
               state.items.push({ id: nanoid(), product: action.payload, quantity: 1 });
             }
-            cartLocalStorage.setCart(current(state).items)
           },
           increaseQuantity: (state, action: PayloadAction<number>) => {
             const itemIndex = state.items.findIndex(item => item.product.id === action.payload);
@@ -33,7 +32,6 @@ export const cartSlice = createSlice({
                 return item;
               });
             }
-            cartLocalStorage.setCart(current(state).items)
           },
           decreaseQuantity: (state, action: PayloadAction<number>) => {
             const itemIndex = state.items.findIndex(item => item.product.id === action.payload);
@@ -50,12 +48,25 @@ export const cartSlice = createSlice({
                 state.items = state.items.filter(item => item.product.id !== action.payload);
               }
             }
-            cartLocalStorage.setCart(current(state).items)
           },
           removeItem: (state, action: PayloadAction<number>) => {
             state.items = state.items.filter(item => item.product.id !== action.payload);
-
-            cartLocalStorage.setCart(current(state).items)
+          },
+          editItem: (state, action: PayloadAction<{ id: number, quantity: number }>) => {
+            const itemIndex = state.items.findIndex(item => item.product.id === action.payload.id);
+            if (itemIndex >= 0) {
+              const item = state.items[itemIndex];
+              if (action.payload.quantity > 0) {
+                state.items = state.items.map((item, index) => {
+                  if (index === itemIndex) {
+                    return { ...item, quantity: action.payload.quantity };
+                  }
+                  return item;
+                });
+              } else {
+                state.items = state.items.filter(item => item.product.id !== action.payload.id);
+              }
+            }
           }
     }
 })

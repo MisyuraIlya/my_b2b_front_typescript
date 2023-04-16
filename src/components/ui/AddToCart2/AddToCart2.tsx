@@ -1,29 +1,37 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import './AddToCart2.styles.scss'
-const AddToCart2 = () => {
-    const [active, setActive] = useState(false)
-    const [number, setNumber] = useState('0')
+import { IProduct } from '../../../models/product.interface';
+interface AddToCart2Props { 
+    item: IProduct;
+    handleAddItem: (product: IProduct) => void;
+    handleIncreaseQuantity: (id: number) => void;
+    getCartItem: (productId: number) => void;
+    handleDecreaseQuantity: (id: number) => void;
+    onEdit: (quantity: number) => void;
+}
+const AddToCart2: FC<AddToCart2Props> = ({item, handleAddItem, handleIncreaseQuantity, getCartItem, handleDecreaseQuantity, onEdit}) => {
+
     return (
         <div className='AddToCart2'>
-            { !active ?       
-                <div className='notActive' onClick={() => setActive(true)}>
+            { !(Boolean(getCartItem(item.id))) ?       
+                <div className='notActive' onClick={() => handleAddItem(item)}>
                     <span>הוספה לסל</span>
                 </div>
             :
                 <div className='active'>
                     <div className='flex-container'>
                         <div className='col-lg-4'>
-                            <div className='increase'>
+                            <div className='increase' onClick={() => handleIncreaseQuantity(item.id)}>
                                 <span>+</span>
                             </div>    
                         </div>    
                         <div className='col-lg-4'>
                             <div className='value'>
-                                <input type="number" value={number} onChange={(e) => setNumber(e.target.value)} />
+                            <input type="number" value={getCartItem(item.id)?.quantity} onChange={(e) => onEdit(parseInt(e.target.value))}  />
                             </div>    
                         </div>   
                         <div className='col-lg-4'>
-                            <div className='decrease'>
+                            <div className='decrease' onClick={() => handleDecreaseQuantity(item.id)}>
                                 <span>-</span>
                             </div>    
                         </div>   

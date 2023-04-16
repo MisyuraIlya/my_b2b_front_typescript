@@ -3,8 +3,7 @@ import './GroupViewProductList.styles.scss'
 import { useCatalog } from '../../context/CatalogProvider';
 import { TailSpin } from 'react-loader-spinner';
 import { IProduct, Pagination } from '../../constructor';
-import {Modal, PopUpCard} from '../../constructor';
-import {AddToCart1} from '../../constructor';
+import {Modal, PopUpCard, AddToCart} from '../../constructor';
 const GroupViewProductList = () => {
     const [active, setActive] = useState(false)
     const {CatalogMethods, products,loading, page, totalPages, filteredData, view} = useCatalog()
@@ -62,7 +61,7 @@ const GroupViewProductList = () => {
                                         </div>    
                                     </div>    
                                 </div>    
-                                <AddToCart1 item={item} />
+                                <AddToCart item={item} type={2} />
   
                             </div>
                         </div>    
