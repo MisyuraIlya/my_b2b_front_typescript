@@ -5,8 +5,9 @@
   cursor: pointer;
   
   .selected-option{
+    min-width: 50px;
     border: 1px solid rgba(65,67,106,.21);
-    padding: 5px 15px 5px 10px;
+    padding: 8px 15px 8px 10px;
     display: flex;
     justify-content: center;
     align-items: center;

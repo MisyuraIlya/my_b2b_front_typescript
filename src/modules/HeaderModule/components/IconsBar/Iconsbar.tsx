@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { MdShoppingCart, MdPerson, MdShoppingBag, MdOutlineShoppingBag, MdOutlineSettings } from "react-icons/md";
 import { Button } from '../../constructor';
+import { useNavigate } from 'react-router-dom'; 
 import './Iconsbar.styles.scss';
 const Iconsbar = () => {
     const [isMouseOn, setIsMouseOn] = useState(false);
-
+    const navigate = useNavigate()
     const handleMouseEnter = () => {
       setIsMouseOn(true);
     };
@@ -14,7 +15,7 @@ const Iconsbar = () => {
     };
     return (
         <div className='Iconsbar'>
-            <div className='myPadding pointer'>
+            <div className='myPadding pointer' onClick={() => navigate('/cart')}>
                 <MdShoppingCart/>
             </div>
             <div className='myPadding ' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -25,7 +26,7 @@ const Iconsbar = () => {
                         <div className='btn_logout center'> 
                             <Button>Log out</Button>
                         </div>    
-                        <div className='card pointer'>
+                        <div className='card pointer' onClick={() => navigate('/profile')}>
                             <div className='card_img center'>
                                 <MdPerson/>
                             </div>    
@@ -33,7 +34,7 @@ const Iconsbar = () => {
                                 <p>profile</p>
                             </div>    
                         </div> 
-                        <div className='card pointer'>
+                        <div className='card pointer' onClick={() => navigate('/documents')}>
                             <div className='card_img center'>
                                 <MdShoppingBag/>
                             </div>    
@@ -41,7 +42,7 @@ const Iconsbar = () => {
                                 <p>orders</p>
                             </div>    
                         </div> 
-                        <div className='card pointer'>
+                        <div className='card pointer' >
                             <div className='card_img center'>
                                 <MdOutlineShoppingBag/>
                             </div>    
@@ -62,7 +63,7 @@ const Iconsbar = () => {
                 </div>
                 }
             </div>
-            <div className='myPadding pointer'>
+            <div className='myPadding pointer' onClick={() => navigate('/catalog')}>
                 <MdShoppingBag/>
             </div>
         </div>

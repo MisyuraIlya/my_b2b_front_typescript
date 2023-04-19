@@ -1,6 +1,5 @@
-import CartModule from '@modules/CartMoudle/CartModule';
 import React from 'react';
-
+import { CartModule } from '@/modules/CartModule';
 const CartPage = () => {
     return (
         <div data-testid="cart-page">

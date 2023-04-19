@@ -7,11 +7,12 @@ import Searchbar from './components/Searchbar/Searchbar';
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import { HeaderProvider } from './context/HeaderProvider';
-
+import { useNavigate } from 'react-router-dom';
 const HeaderModule = () => {
+    const navigate = useNavigate()
     return (
         <HeaderProvider>
-            <div className='HeaderModule relative'>
+            <div className='HeaderModule'>
                 <Container>
                     <div className='flex-container'>
                         <div className='col-lg-4 center'>
@@ -21,7 +22,7 @@ const HeaderModule = () => {
                             <Searchbar/>
                         </div>
                         <div className='col-lg-4 center'>
-                            <img src="https://amit-pastry-b2b.com/src/img/logo.png" alt="logo" style={{width:'45px'}}/>
+                            <img src="https://amit-pastry-b2b.com/src/img/logo.png" alt="logo" style={{width:'45px'}} onClick={() => navigate('/')}/>
                         </div>  
                     </div>
                     <Navbar/>

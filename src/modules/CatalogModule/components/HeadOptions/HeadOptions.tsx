@@ -4,7 +4,10 @@ import { MdFormatListBulleted, MdWindow } from "react-icons/md";
 import { Input } from '../../constructor';
 import { useForm } from "react-hook-form";
 import { useCatalog } from '../../context/CatalogProvider';
+import {SearchInput} from '../../constructor';
 import './HeadOptions.styles.scss';
+
+import { FaSearch } from 'react-icons/fa';
 const mockData = {id:1, total:'123'}
 
 
@@ -18,6 +21,10 @@ const HeadOptions = () => {
     const select2 = (id:string) => {
         console.log(id)
     }
+
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        CatalogMethods.setSearchValue(event.target.value);
+      }
     return (
         <div className='HeadOptions'>
             <div className='flex-container content'>
@@ -26,7 +33,7 @@ const HeadOptions = () => {
                 </div>
                 <div className='col-lg-4 center'>
                     <div className='search'>
-                        <input type='text' placeholder='find' value={searchValue} onChange={(e) => CatalogMethods.setSearchValue(e.target.value)}/>
+                        <SearchInput searchState={searchValue} onSearchChange={handleSearchChange}/>
                     </div>
                 </div>
                 <div className='col-lg-2 center'>

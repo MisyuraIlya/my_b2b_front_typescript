@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ICategory } from '../../constructor';
 import './SliderCategory.styles.scss';
+import 'swiper/css';
 
 interface SliderCategoryProps {
     slides: number;
@@ -11,13 +12,16 @@ interface SliderCategoryProps {
 const SliderCategory: FC<SliderCategoryProps> = ({slides, data}) => {
     return (
         <div className='SliderCategory'>
+        <div>
+            <h4>קטגוריות</h4>
+        </div>
         <Swiper
-        spaceBetween={50}
+        spaceBetween={1}
         slidesPerView={slides}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
         loop={true}
-        speed={500}
+        speed={10}
         autoplay={true}
         >
             {data?.map((item,index) => 

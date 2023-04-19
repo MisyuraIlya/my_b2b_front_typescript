@@ -1,5 +1,9 @@
 @import './components/layout/Header/Header.styles.scss';
 
+body{
+	margin: 0;
+	padding: 0;
+}
 .flex-container {
 	display: flex;
 	flex-direction: row;

@@ -11,5 +11,5 @@ import { defaultProduct } from '../../models/product.interface';
 import Modal from '../../components/global/Modal/Modal';
 import PopUpCard from '../../components/global/PopUpCard/PopUpCard';
 import AddToCart from '../../components/global/AddToCart/AddToCart';
-
-export {Container, SelectBox, Input, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory, IProduct, Pagination, Modal, PopUpCard,AddToCart, defaultProduct}
+import SearchInput from '../../components/ui/SearchInput/SearchInput';
+export {Container, SelectBox, Input, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory, IProduct, Pagination, Modal, PopUpCard,AddToCart, defaultProduct, SearchInput}

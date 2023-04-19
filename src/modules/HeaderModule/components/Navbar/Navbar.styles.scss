@@ -7,6 +7,8 @@
         width: 100%;
         overflow: auto;
         ul {
+            margin: 0;
+            
             display: flex;
             align-items: center;
             position: relative;
@@ -20,7 +22,7 @@
 
     .modal{
         position: absolute;
-        top: 100%;
+        top: 80%;
         background: #fff;
         right: 0;
         left: 0;
@@ -31,9 +33,14 @@
             list-style-type: none;
             display: flex;
             li{
+                display: flex;
+                min-width: 200px;
+                max-width: 200px;
+                justify-content: center;
+                align-items: center;
                 .img_cont{
                     img {
-                        width: 100%;
+                        width: 80%;
                     }
                 }
                 .title_cont{

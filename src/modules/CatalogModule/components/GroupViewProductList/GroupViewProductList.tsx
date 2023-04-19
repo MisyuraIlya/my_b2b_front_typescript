@@ -4,7 +4,6 @@ import { useCatalog } from '../../context/CatalogProvider';
 import { TailSpin } from 'react-loader-spinner';
 import { IProduct, Pagination , defaultProduct} from '../../constructor';
 import {Modal, PopUpCard, AddToCart} from '../../constructor';
-
 const GroupViewProductList = () => {
     const {CatalogMethods, products,loading, page, totalPages, filteredData, view} = useCatalog()
     const [choosedProduct, setChoosedProduct] = useState<IProduct>(defaultProduct);

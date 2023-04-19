@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Navbar.styles.scss';
 import { useHeader } from '../../context/HeaderProvider';
-import { ICategory } from '../../constructor';
+import { ICategory, Z_INDEX } from '../../constructor';
 const mockData = [
     {id:1, category:'categoryA', imgLink:'https://amit-pastry-b2b.com/src/img/categories/9182132.jpg'},
     {id:2, category:'categoryB', imgLink:'https://amit-pastry-b2b.com/src/img/categories/9182132.jpg'},
@@ -55,7 +55,6 @@ const Navbar = () => {
         setSelectedIds({ ...selectedIds, lvl2: id, lvl3: null });
     }
 
-
     return (
         <div onMouseLeave={handleMouseLeave}>
             <div className='Navbar' >
@@ -69,15 +68,17 @@ const Navbar = () => {
                     </ul>
                 </div>
                 {isMouseOn &&
-                <div className='modal' >
+                <div className='modal' style={{zIndex:Z_INDEX.NAVBAR}} >
                     <ul>
                         {modalItem?.children?.map((item,index) => 
-                            <li key={index} className="pointer" onClick={() => handleOpenLvl3(item.id)}>
-                                <div className='img_cont center'>
-                                    <img src={item.image} alt="" />
-                                </div>
-                                <div className='title_cont center'>
-                                    <p>{item.name}</p>
+                            <li key={index} className="pointer" onClick={() => handleOpenLvl3(item.id)} >
+                                <div>
+                                    <div className='img_cont center'>
+                                        <img src={item.image} alt="" />
+                                    </div>
+                                    <div className='title_cont center'>
+                                        <p>{item.name}</p>
+                                    </div>
                                 </div>
                             </li>
                         )}
