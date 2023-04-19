@@ -1,7 +1,10 @@
 import React from 'react';
+import { useCart } from '../../constructor';
 import './Invoice.styles.scss';
 const mockData = {total:190.50, discount:10, tax:30}
 const Invoice = () => {
+    const { total, tax, totalBeforeTax, totalBeforeDiscount, discount, totalAfterDiscount} = useCart()
+    console.log('total, tax',total, tax)
     return (
         <div className='Invoice'>
             <h4>פרטי הזמנה</h4>
@@ -12,7 +15,7 @@ const Invoice = () => {
                         <span>סה״כ לפני מע״מ</span>
                     </div>
                     <div className='price'>
-                        <span>₪{mockData.total}</span>
+                        <span>₪{totalBeforeTax}</span>
                     </div>
                 </div>
                 <div className='cont_block'>
@@ -20,17 +23,25 @@ const Invoice = () => {
                         <span>הנחה כללית: </span>
                     </div>
                     <div className='price'>
-                        <span>%{mockData.discount}</span>
+                        <span>%{discount}</span>
                     </div>
                 </div>
             </div>
             <div className='second_block'>
                 <div className='cont_block'>
                     <div className='title'>
+                        <span>סה״כ לפני הנחה</span>
+                    </div>
+                    <div className='price'>
+                        <span>₪{totalBeforeDiscount}</span>
+                    </div>
+                </div>
+                <div className='cont_block'>
+                    <div className='title'>
                         <span>סה״כ אחרי הנחה</span>
                     </div>
                     <div className='price'>
-                        <span>₪{mockData.tax}</span>
+                        <span>₪{totalAfterDiscount}</span>
                     </div>
                 </div>
                 <div className='cont_block'>
@@ -38,7 +49,17 @@ const Invoice = () => {
                         <span>מע״מ </span>
                     </div>
                     <div className='price'>
-                        <span>{mockData.tax}</span>
+                        <span>{tax}</span>
+                    </div>
+                </div>
+            </div>
+            <div className='second_block'>
+                <div className='cont_block'>
+                    <div className='title'>
+                        <span>משלוח</span>
+                    </div>
+                    <div className='price'>
+                        <span>1000</span>
                     </div>
                 </div>
             </div>
@@ -48,7 +69,7 @@ const Invoice = () => {
                         <span>מחיר לתשלום</span>
                     </div>
                     <div className='price'>
-                        <span className='sum'>₪{mockData.total}</span>
+                        <span className='sum'>₪{total}</span>
                     </div>
                 </div>
             </div>

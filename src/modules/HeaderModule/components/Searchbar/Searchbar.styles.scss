@@ -1,4 +1,5 @@
 .searchModule{
+    direction: rtl;
     position: relative;
     width: 100%;
     .Searchbar{
@@ -14,6 +15,8 @@
             width: 100%;
             border: none;
         }
+
+        
         
         .modal {
             z-index: 1;

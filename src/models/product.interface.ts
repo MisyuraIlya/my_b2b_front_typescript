@@ -4,7 +4,7 @@ import { IPriceListBase } from "./priceListBase.interface";
 export interface IProduct {
     id: number;
     category: ICategory
-    priceListBase: IPriceListBase
+    price: IPriceListBase
     sku: string
     name: string
     image: string
@@ -43,7 +43,7 @@ export const defaultProduct: IProduct = {
         timezone_type: 0
       }
     },
-    priceListBase: {
+    price: {
       id: 0,
       price: 0,
       discount: 0,
