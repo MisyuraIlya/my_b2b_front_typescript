@@ -24,6 +24,7 @@
 6. npm install @reduxjs/toolkit
 7. npm install react-redux
 8. npm i redux-persist - for redux working with localstorage and cashe
+8. npm i @tanstack/react-query
 7. npm i react-query
 8. npm install react-hook-form
 <!-- if using rtk query dont install -->
@@ -39,8 +40,11 @@
 <!-- install webpack and sass -->
 13. npm install webpack webpack-cli --save-dev
 14. npx webpack-cli init
-15. npm install axios
-
+15. npm install axios 
+15. npm install clsx
+15. npm install -D @types/js-cookie
+16. npx tailwindcss init
+15. npm install -D tailwindcss
 16. npm install sweetalert2
 17. npm install react-icons --save
 18. npm i react-pro-sidebar

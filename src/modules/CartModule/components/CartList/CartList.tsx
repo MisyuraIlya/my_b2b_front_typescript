@@ -33,6 +33,9 @@ const CartList = () => {
                 <div className='title'>
                     <h4>סיכום הזמנה</h4>
                 </div>
+                <h1 className="text-1xl font-bold">
+      Hello world!
+    </h1>
                 <div className='options'>
                     <div className='btn'>
                         <Button2 Primary={false}>שמור טיוטה</Button2>

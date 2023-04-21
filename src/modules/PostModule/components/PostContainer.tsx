@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {postAPI} from "../../../services/PostService";
+import {postAPI} from "../../../services/PostServiceOld";
 
 import { IPost } from '@/models/post.interface';
 

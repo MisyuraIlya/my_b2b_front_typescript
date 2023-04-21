@@ -1,8 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { postAPI } from '@/services/PostService'
-import { productAPI } from "@/services/ProductService";
+import { postAPI } from '@/services/PostServiceOld'
+import { productAPI } from "@/services/ProductServiceOld";
 import { cartReducer } from "@/store/cart/cart.slice";
 
 const rootReducer = combineReducers({
