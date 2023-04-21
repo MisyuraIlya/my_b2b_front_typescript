@@ -1,6 +1,8 @@
 import React from 'react';
 import { useCart } from '../../constructor';
 import './Invoice.styles.scss';
+import DeliverySelectBox from '../DeliverySelectBox/DeliverySelectBox';
+import {Button2} from '../../constructor';
 const mockData = {total:190.50, discount:10, tax:30}
 const Invoice = () => {
     const { total, tax, totalBeforeTax, totalBeforeDiscount, discount, totalAfterDiscount} = useCart()
@@ -73,7 +75,10 @@ const Invoice = () => {
                     </div>
                 </div>
             </div>
-
+            <DeliverySelectBox/>
+            <div className='center'>
+                <Button2 Primary={false}>Send</Button2>
+            </div>
         </div>
     );
 };

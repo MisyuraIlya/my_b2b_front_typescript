@@ -7,4 +7,5 @@ import PopUpCard from '../../components/global/PopUpCard/PopUpCard';
 import type {IProduct} from '../../models/product.interface';
 import { defaultProduct } from '../../models/product.interface';
 import { useCart } from '@/hooks/useCart';
-export {Button2, AddToCart, useActions, useTypedSelector, Modal ,PopUpCard, IProduct, defaultProduct,useCart}
+import TextArea from '@/components/ui/TextArea/TextArea';
+export {Button2, AddToCart, useActions, useTypedSelector, Modal ,PopUpCard, IProduct, defaultProduct,useCart, TextArea}
