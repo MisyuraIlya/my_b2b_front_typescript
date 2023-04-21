@@ -43,6 +43,7 @@
 15. npm install axios 
 15. npm install clsx
 15. npm install -D @types/js-cookie
+15. npm install js-cookie --save
 16. npx tailwindcss init
 15. npm install -D tailwindcss
 16. npm install sweetalert2

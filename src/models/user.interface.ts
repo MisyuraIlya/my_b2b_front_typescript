@@ -17,16 +17,22 @@ export interface IUser {
     updatedAt: Date
 }
 
+export interface IUserState {
+    email: string
+}
 export interface ITokens {
     accessToken: string
     refreshToken: string
 }
 
-export interface IAuthResponse extends ITokens {
-    user: IUser
+export interface IInitialState {
+    user: IUserState | null
+    isLoading: boolean
 }
-
 export interface IEmailPassword {
     email: string
     passwrod: string
+}
+export interface IAuthResponse extends ITokens {
+    user: IUser
 }

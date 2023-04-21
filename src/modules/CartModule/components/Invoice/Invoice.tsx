@@ -5,11 +5,10 @@ import DeliverySelectBox from '../DeliverySelectBox/DeliverySelectBox';
 import {Button2} from '../../constructor';
 const mockData = {total:190.50, discount:10, tax:30}
 const Invoice = () => {
-    const { total, tax, totalBeforeTax, totalBeforeDiscount, discount, totalAfterDiscount} = useCart()
-    console.log('total, tax',total, tax)
+    // const { total, tax, totalBeforeTax, totalBeforeDiscount, discount, totalAfterDiscount} = useCart()
     return (
         <div className='Invoice'>
-            <h4>פרטי הזמנה</h4>
+            {/* <h4>פרטי הזמנה</h4>
 
             <div className='first_block'>
                 <div className='cont_block'>
@@ -78,7 +77,7 @@ const Invoice = () => {
             <DeliverySelectBox/>
             <div className='center'>
                 <Button2 Primary={false}>Send</Button2>
-            </div>
+            </div> */}
         </div>
     );
 };

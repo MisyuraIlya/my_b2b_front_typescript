@@ -20,7 +20,7 @@ const DeliverySelectBox = () => {
 
     return (
         <div className='DeliverySelectBox'>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            {/* <form onSubmit={handleSubmit(onSubmit)}>
             <Controller
                     name="Date"
                     control={control}
@@ -42,7 +42,7 @@ const DeliverySelectBox = () => {
                 />
                 {errors.messagee && <span>{errors.messagee.message}</span>}
                 <button type="submit">Submit</button>
-            </form>
+            </form> */}
 
         </div>
     );

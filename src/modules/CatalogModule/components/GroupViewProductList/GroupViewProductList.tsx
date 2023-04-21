@@ -60,7 +60,7 @@ const GroupViewProductList = () => {
                                         </div>    
                                     </div>  
                                 </div>    
-                                <AddToCart item={item} type={1} />
+                                {/* <AddToCart item={item} type={1} /> */}
                             </div>
                         </div>    
                     )}

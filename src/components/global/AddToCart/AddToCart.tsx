@@ -12,36 +12,36 @@ const AddToCart: FC<AddToCartProps> = ({item,type}) => {
 
     const {cart} = useTypedSelector(state => state)
 
-    const {addItem, removeItem, increaseQuantity, decreaseQuantity, editItem} = useActions()
+    // const {addItem, removeItem, increaseQuantity, decreaseQuantity, editItem} = useActions()
 
-    const getCartItem = (productId: number) => {
-        const data = cart.items.find((item) => item.product.id === productId)
-        return data
-      };
+    // const getCartItem = (productId: number) => {
+    //     const data = cart.items.find((item) => item.product.id === productId)
+    //     return data
+    //   };
       
-    const handleAddItem = (product: IProduct) => {
-        addItem(product);
-    };
+    // const handleAddItem = (product: IProduct) => {
+    //     addItem(product);
+    // };
 
-    const handleIncreaseQuantity = (id: number) => {
-        increaseQuantity(id);
-    };
+    // const handleIncreaseQuantity = (id: number) => {
+    //     increaseQuantity(id);
+    // };
 
-    const handleDecreaseQuantity = (id: number) => {
-        decreaseQuantity(id);
-    };
+    // const handleDecreaseQuantity = (id: number) => {
+    //     decreaseQuantity(id);
+    // };
 
-    const handleRemoveItem = (id: number) => {
-        removeItem(id);
-    };
+    // const handleRemoveItem = (id: number) => {
+    //     removeItem(id);
+    // };
 
-    const onEdit = (quantity: number) => {
-        editItem({id: item.id, quantity: quantity})
-    }
+    // const onEdit = (quantity: number) => {
+    //     editItem({id: item.id, quantity: quantity})
+    // }
 
     return (
         <>
-            {type == 1 ? 
+            {/* {type == 1 ? 
             <AddToCart1
             item={item}
             handleAddItem={handleAddItem}
@@ -58,7 +58,7 @@ const AddToCart: FC<AddToCartProps> = ({item,type}) => {
             getCartItem={getCartItem}
             handleDecreaseQuantity={handleDecreaseQuantity}
             onEdit={onEdit}
-            />}
+            />} */}
         </>
     );
 };

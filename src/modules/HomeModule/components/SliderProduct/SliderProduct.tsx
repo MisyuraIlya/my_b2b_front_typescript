@@ -47,7 +47,7 @@ const SliderProduct: FC<SliderProductProps> = ({slides, data}) => {
                             <p>{item.packQuant} יח במארז</p>
                             <p>{item.sku} מק״ט</p>
                         </div>
-                        <AddToCart item={item} type={1}/>
+                        {/* <AddToCart item={item} type={1}/> */}
                     </div>
                 </SwiperSlide>
             )}

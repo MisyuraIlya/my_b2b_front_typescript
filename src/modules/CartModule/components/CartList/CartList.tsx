@@ -15,7 +15,7 @@ import {PopUpCard,Modal} from '../../constructor';
 const CartList = () => {
 
     const {cart} = useTypedSelector(state => state)
-    const {removeItem} = useActions()
+    // const {removeItem} = useActions()
     const [choosedProduct, setChoosedProduct] = useState<IProduct>(defaultProduct);
     const [openModal, setOpenModal] = useState(false)
     const handleClose = () => {
@@ -76,14 +76,16 @@ const CartList = () => {
                     return(
                         <div className='item_card' key={index}>
                             <div className='flex-container content'>
-                                <div className='col-lg-1 trash' onClick={() => removeItem(item.product.id)}>
+                                <div className='col-lg-1 trash'
+                                //  onClick={() => removeItem(item.product.id)}
+                                 >
                                 <UseAnimations 
                                     animation={trash2}
                                     size={35}
                                     />   
                                 </div>    
                                 <div className='col-lg-2 center'>
-                                    <AddToCart type={2} item={item.product}/>
+                                    {/* <AddToCart type={2} item={item.product}/> */}
                                 </div>    
                                 <div className='col-lg-2'>
                                     <div className='img_block' onClick={() => handleOpenModal(item.product)}>

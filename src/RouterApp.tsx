@@ -15,8 +15,10 @@ import DocumentsPage from './pages/DocumentsPage/DocumentsPage';
 const RouterApp = () => {
     return (
         <div>
+            <h4>שלום לכולם</h4>
+
             {/* <Header/> */}
-            <HeaderModule/>
+            {/* <HeaderModule/> */}
             {/* <AuthPage/> */}
             {/* <Link to="/" data-testid="home-link">Home</Link>
             <Link to="/auth" data-testid="cart-link">auth</Link>
@@ -24,7 +26,7 @@ const RouterApp = () => {
             <Link to="/login" data-testid="cart-link">Login</Link>
             <Link to="/registration" data-testid="post-link">Registration</Link>
             <Link to="/catalog" data-testid="post-link">Catalog</Link> */}
-            <main style={{paddingTop:'100px'}}>
+            {/* <main style={{paddingTop:'100px'}}>
                 <Routes>
                     <Route>
                         <Route path="/" element={<HomePage/>} />
@@ -33,15 +35,14 @@ const RouterApp = () => {
                         <Route path='/profile' element={<ProfilePage/>}/>
                         <Route path='/documents' element={<DocumentsPage/>}/>
                         <Route path='/cart' element={<CartPage/>}/>
-                        {/* <Route path='/catalog' element={<CatalogPage/>}/> */}
-                        {/* <Route path='/login' element={<LoginPage/>}/> */}
-                        {/* <Route path='/registration' element={<RegistrationPage/>}/> */}
-                        {/* <Route path='/*' element={<ErrorPage/>}/> */}
+                        <Route path='/catalog' element={<CatalogPage/>}/>
+                        <Route path='/login' element={<LoginPage/>}/>
+                        <Route path='/registration' element={<RegistrationPage/>}/>
+                        <Route path='/*' element={<ErrorPage/>}/>
 
                     </Route>
                 </Routes>
-            </main>
-
+            </main> */}
         </div>
     );
 };
