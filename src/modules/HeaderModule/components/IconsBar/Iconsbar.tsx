@@ -24,7 +24,7 @@ const Iconsbar = () => {
                 <div className='modal center'>
                     <div className='content'>
                         <div className='btn_logout center'> 
-                            <Button>Log out</Button>
+                            <Button variant="dark">Log out</Button>
                         </div>    
                         <div className='card pointer' onClick={() => navigate('/profile')}>
                             <div className='card_img center'>

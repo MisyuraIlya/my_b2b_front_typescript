@@ -24,7 +24,7 @@ const Head = () => {
                     <MyCalendar date={toDate} onChangeDate={setToDate}/>
                 </div>
                 <div className='col-lg-2 center'>
-                    <Input type='text' placeholder='חיפוש' hookForm={{...register("searchValue")}}/>
+                    {/* <Input type='text' placeholder='חיפוש' hookForm={{...register("searchValue")}}/> */}
                 </div>
                 <div className='col-lg-2 center'>
                     <div className='wrap'>

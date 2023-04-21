@@ -25,13 +25,13 @@ const RestorePasswordForm = () => {
         <div className='RestorePasswordForm'>
             <form onSubmit={handleSubmit(handleClick)}>
                 <div className='field'>
-                    <Input hookForm={{...register("password")}} type='password' placeholder='password'/>
+                    {/* <Input hookForm={{...register("password")}} type='password' placeholder='password'/> */}
                 </div>
                 <div className='field'>
-                    <Input hookForm={{...register("secondPassword")}} type='password' placeholder='secondPassword'/>
+                    {/* <Input hookForm={{...register("secondPassword")}} type='password' placeholder='secondPassword'/> */}
                 </div>
                 <div className='button'>
-                    <Button>Validate</Button>
+                    <Button variant='dark'>Validate</Button>
                 </div>
             </form>
         </div>

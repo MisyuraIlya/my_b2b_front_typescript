@@ -1,12 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 import './Heading.styles.scss';
-const Heading: FC<{
-    title: string
+import cn from 'clsx'
+interface IHeading {
     className?: string
-}> = ({ title, className = '' }) => {
+}
+const Heading: FC<PropsWithChildren<IHeading>> = ({ className, children  }) => {
     return (
-        <h1 className={`Heading ${className}`}>
-            {title}
+        <h1 className={cn('font-semibold text-3xl' ,className)}>
+            {children}
         </h1>
     );
 };

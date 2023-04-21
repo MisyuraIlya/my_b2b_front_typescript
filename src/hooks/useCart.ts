@@ -1,5 +1,5 @@
 import { TypedUseSelectorHook, useSelector } from "react-redux";
-import {ICart} from '../../models/cart.interface';
+import {ICart} from '../models/cart.interface';
 // import { RootState } from "@/store/store";
 
 export const useCart = () => {

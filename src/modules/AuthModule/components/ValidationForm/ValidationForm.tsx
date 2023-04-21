@@ -23,13 +23,13 @@ const ValidationForm = () => {
         <div className='ValidationForm'>
             <form onSubmit={handleSubmit(handleClick)}>
                 <div className='field'>
-                    <Input hookForm={{...register("userExId")}} type='text' placeholder='userExId'/>
+                    {/* <Input hookForm={{...register("userExId")}} type='text' placeholder='userExId'/> */}
                 </div>
                 <div className='field'>
-                    <InputIcon hookForm={{...register("phone")}} eye={true} myType='text' placeholder='phone' imgLink={'https://lfayou.com/src/img/icons/eye.svg'}/>
+                    {/* <InputIcon hookForm={{...register("phone")}} eye={true} myType='text' placeholder='phone' imgLink={'https://lfayou.com/src/img/icons/eye.svg'}/> */}
                 </div>
                 <div className='button'>
-                    <Button>Validate</Button>
+                    <Button variant='dark'>Validate</Button>
                 </div>
             </form>
         </div>

@@ -27,7 +27,7 @@ const RegistrationForm = () => {
             <div className='RegistrationForm'>
                 <form onSubmit={handleSubmit(handleClick)}>
                     <div className='field'>
-                        <Input hookForm={{...register("mail")}} type='text' placeholder='username'/>
+                        {/* <Input hookForm={{...register("mail")}} type='text' placeholder='username'/> */}
                     </div>
                     <div className='field'>
                         <InputIcon hookForm={{...register("password")}} eye={true} myType='password' placeholder='password' imgLink={'https://lfayou.com/src/img/icons/eye.svg'}/>
@@ -36,7 +36,7 @@ const RegistrationForm = () => {
                         <InputIcon hookForm={{...register("secondPassword")}} eye={true} myType='password' placeholder='second password' imgLink={'https://lfayou.com/src/img/icons/eye.svg'}/>
                     </div>
                     <div className='button'>
-                        <Button>Registration</Button>
+                        <Button variant='dark'>Registration</Button>
                     </div>
                 </form>
             </div>

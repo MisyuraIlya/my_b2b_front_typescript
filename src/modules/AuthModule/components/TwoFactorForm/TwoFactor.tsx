@@ -27,7 +27,7 @@ const TwoFactor = () => {
                     <InputIcon hookForm={{...register("email")}} eye={true} myType='text' placeholder='email' imgLink={'https://lfayou.com/src/img/icons/eye.svg'}/>
                 </div>
                 <div className='button'>
-                    <Button>Validate</Button>
+                    <Button variant='dark'>Validate</Button>
                 </div>
             </form>
         </div>

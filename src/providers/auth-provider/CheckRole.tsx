@@ -1,6 +1,6 @@
 import React, {FC, PropsWithChildren} from 'react'
 import { TypeComponentAuthFileds } from './auth-page.types'
-import { useAuth } from '@/components/hooks/useAuth'
+import { useAuth } from '@/hooks/useAuth'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 const CheckRole: FC<PropsWithChildren<TypeComponentAuthFileds>> = 

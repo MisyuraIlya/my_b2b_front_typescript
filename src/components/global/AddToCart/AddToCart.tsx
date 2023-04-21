@@ -1,8 +1,8 @@
 import React, { FC, useState} from 'react';
 import AddToCart1 from '../../ui/AddToCart1/AddToCart1';
 import AddToCart2 from '../../ui/AddToCart2/AddToCart2';
-import { useActions } from '../../hooks/useActions';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useActions } from '../../../hooks/useActions';
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { IProduct } from '../../../models/product.interface';
 interface AddToCartProps {
     item: IProduct;

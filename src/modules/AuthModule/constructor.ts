@@ -7,4 +7,7 @@ import InputIcon from '../../components/ui/InputIcon/InputIcon';
 import { API_BACKEND } from '../../utils/constants/API';
 import { onSuccessAlert } from '../../utils/sweetAlert/sweetAlert';
 import { APP_CONFIG } from '../../appconfig';
-export {Input, Button, SubHeading, Heading, Description, InputIcon, API_BACKEND, onSuccessAlert, APP_CONFIG};
+import { useAuth } from '@/hooks/useAuth';
+import {useActions} from '@/hooks/useActions';
+import type { IEmailPassword } from '@/models/user.interface';
+export {Input, Button, SubHeading, Heading, Description, InputIcon, API_BACKEND, onSuccessAlert, APP_CONFIG, useAuth,useActions,IEmailPassword};

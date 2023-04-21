@@ -21,13 +21,13 @@ const LoginForm = () => {
         <div className='LoginForm'>
             <form onSubmit={handleSubmit(handleClick)}>
                 <div className='field'>
-                    <Input hookForm={{...register("userExId")}} type='text' placeholder='username'/>
+                    {/* <Input hookForm={{...register("userExId")}} type='text' placeholder='username'/> */}
                 </div>
                 <div className='field'>
                     <InputIcon hookForm={{...register("phone")}} eye={true} myType='password' placeholder='password' imgLink={'https://lfayou.com/src/img/icons/eye.svg'}/>
                 </div>
                 <div className='button'>
-                    <Button>Validate</Button>
+                    <Button variant='dark'>Validate</Button>
                 </div>
             </form>
         </div>
