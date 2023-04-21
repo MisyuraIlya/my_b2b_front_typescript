@@ -25,7 +25,7 @@
 7. npm install react-redux
 8. npm i redux-persist - for redux working with localstorage and cashe
 8. npm i @tanstack/react-query
-7. npm i react-query
+<!-- 7. npm i react-query --> // updated to tanstack react query
 8. npm install react-hook-form
 <!-- if using rtk query dont install -->
 9. npm i react-query

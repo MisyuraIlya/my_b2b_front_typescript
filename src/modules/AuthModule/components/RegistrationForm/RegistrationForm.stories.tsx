@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { AuthProvider } from '../../context/AuthProvider';
+import { AuthProvider } from '../../provider/AuthProvider';
 import RegistrationForm from './RegistrationForm';
 // import './index.styles.scss';
 

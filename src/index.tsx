@@ -6,14 +6,21 @@ import {BrowserRouter} from 'react-router-dom';
 // local
 import './App.scss';
 import App from './App';
-import { setupStore } from "./store/store";
+import {persistor, store} from '@/store/store';
+// import { setupStore } from "./store/store";
 import {
     QueryClient,
     QueryClientProvider,
-  } from 'react-query'
+  } from '@tanstack/react-query'
+import { PersistGate } from 'redux-persist/integration/react';
 
-const {store} = setupStore();
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false
+    }
+  }
+})
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,9 +29,11 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <React.StrictMode>
       <Provider store={store}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </PersistGate>
       </Provider>
     </React.StrictMode>
   </QueryClientProvider>

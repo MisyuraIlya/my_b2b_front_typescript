@@ -6,7 +6,7 @@ import { Input, Button, InputIcon } from '../../constructor';
 import './RegistrationForm.styles.scss';
 import ValidationForm from '../ValidationForm/ValidationForm';
 import { APP_CONFIG } from '../../constructor';
-import { useAuth } from '../../context/AuthProvider';
+import { useAuth } from '../../provider/AuthProvider';
 
 type Inputs = {
     mail: string,

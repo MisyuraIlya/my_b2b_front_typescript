@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 //locals
 import './LoginForm.styles.scss';
 import { Input, Button, InputIcon } from '../../constructor';
-import { useAuth } from '../../context/AuthProvider';
+import { useAuth } from '../../provider/AuthProvider';
 type Inputs = {
     userExId: string,
     phone: string,

@@ -5,7 +5,7 @@ import ValidationForm from './components/ValidationForm/ValidationForm';
 import LoginForm from './components/LoginForm/LoginForm';
 import { SubHeading } from './constructor';
 import { APP_CONFIG } from './constructor';
-import { AuthProvider } from './context/AuthProvider';
+import { AuthProvider } from './provider/AuthProvider';
 const AuthModule = () => {
 
     const [active, setActive] = useState('Login')

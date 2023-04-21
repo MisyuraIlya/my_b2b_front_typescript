@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 //locals
 import './TwoFactor.styles.scss';
 import { Input, Button, InputIcon } from '../../constructor';
-import { useAuth } from '../../context/AuthProvider';
+import { useAuth } from '../../provider/AuthProvider';
 
 type Inputs = {
     email: string,

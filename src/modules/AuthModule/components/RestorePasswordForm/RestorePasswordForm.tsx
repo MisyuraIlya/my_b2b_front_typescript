@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 //locals
 import './RestorePasswordForm.styles.scss';
 import { Input, Button } from '../../constructor';
-import { useAuth } from '../../context/AuthProvider';
+import { useAuth } from '../../provider/AuthProvider';
 
 type Inputs = {
     password: string,
