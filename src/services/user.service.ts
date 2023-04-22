@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { getContentType } from "@/api/api.heler";
 import { instance } from "@/api/api.interceptor";
-import { IUser } from "@/models/user.interface";
+import { IFullUser, IUser } from "@/models/user.interface";
 const USERS = 'users'
 
 type TypeData = {
@@ -15,7 +15,7 @@ type TypeData = {
 
 export const UserService =  {
     async getProfile(){
-        return instance<IUser[]>({
+        return instance<IFullUser>({
             url: `${USERS}/profile`,
             method: 'GET'
         })

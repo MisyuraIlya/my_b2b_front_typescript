@@ -1,4 +1,6 @@
 import { IAddressUser } from "./addressUser.interface"
+import { IOrder } from "./favorites.interface"
+import { IProduct } from "./product.interface"
 
 export interface IUser {
     id: number
@@ -17,6 +19,11 @@ export interface IUser {
     updatedAt: Date
 }
 
+export interface IFullUser extends IUser {
+    favorites: IProduct[]
+    orders: IOrder[]
+}
+
 export interface IUserState {
     email: string
 }
@@ -33,6 +40,16 @@ export interface IEmailPassword {
     email: string
     password: string
 }
-export interface IAuthResponse extends ITokens {
+
+export interface IData {
+    message: string
+    status: string
+}
+
+export interface AuthRes extends ITokens{
     user: IUser
+}
+export interface IAuthResponse extends IData {
+    // data: []
+    data: AuthRes
 }

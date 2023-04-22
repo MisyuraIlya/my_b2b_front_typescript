@@ -3,13 +3,13 @@ import { FLUSH,PAUSE,PERSIST, persistReducer, persistStore,PURGE, REGISTER, REHY
 import storage from 'redux-persist/lib/storage'
 import { postAPI } from '@/services/PostServiceOld'
 import { productAPI } from "@/services/ProductServiceOld";
-import { cartReducer } from "@/store/cart/cart.slice";
+import { cartSlice } from "./cart/cart.slice";
 import { userSlice } from "./user/user.slice";
 
 const rootReducer = combineReducers({
   // [postAPI.reducerPath]: postAPI.reducer,
   // [productAPI.reducerPath]: productAPI.reducer,
-  cart: cartReducer,
+  cart: cartSlice.reducer,
   user: userSlice.reducer
 })
 

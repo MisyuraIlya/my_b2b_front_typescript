@@ -4,46 +4,45 @@ import AddToCart2 from '../../ui/AddToCart2/AddToCart2';
 import { useActions } from '../../../hooks/useActions';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { IProduct } from '../../../models/product.interface';
+import { useCart } from '@/hooks/useCart';
 interface AddToCartProps {
-    item: IProduct;
+    product: IProduct;
     type: number;
 }
-const AddToCart: FC<AddToCartProps> = ({item,type}) => {
+const AddToCart: FC<AddToCartProps> = ({product,type}) => {
+    const {addItem, increaseQuantity, decreaseQuantity, removeItem, editItem} = useActions()
+    const {items} = useCart()
 
-    const {cart} = useTypedSelector(state => state)
-
-    // const {addItem, removeItem, increaseQuantity, decreaseQuantity, editItem} = useActions()
-
-    // const getCartItem = (productId: number) => {
-    //     const data = cart.items.find((item) => item.product.id === productId)
-    //     return data
-    //   };
+    const getCartItem = (productId: number) => {
+        const data = items.find((item) => item.product.id === productId)
+        return data
+      };
       
-    // const handleAddItem = (product: IProduct) => {
-    //     addItem(product);
-    // };
+    const handleAddItem = (product: IProduct) => {
+        addItem(product);
+    };
 
-    // const handleIncreaseQuantity = (id: number) => {
-    //     increaseQuantity(id);
-    // };
+    const handleIncreaseQuantity = (id: number) => {
+        increaseQuantity(id);
+    };
 
-    // const handleDecreaseQuantity = (id: number) => {
-    //     decreaseQuantity(id);
-    // };
+    const handleDecreaseQuantity = (id: number) => {
+        decreaseQuantity(id);
+    };
 
-    // const handleRemoveItem = (id: number) => {
-    //     removeItem(id);
-    // };
+    const handleRemoveItem = (id: number) => {
+        removeItem(id);
+    };
 
-    // const onEdit = (quantity: number) => {
-    //     editItem({id: item.id, quantity: quantity})
-    // }
+    const onEdit = (quantity: number) => {
+        editItem({id: product.id, quantity: quantity})
+    }
 
     return (
         <>
-            {/* {type == 1 ? 
+            {type == 1 ? 
             <AddToCart1
-            item={item}
+            item={product}
             handleAddItem={handleAddItem}
             handleIncreaseQuantity={handleIncreaseQuantity}
             getCartItem={getCartItem}
@@ -52,13 +51,13 @@ const AddToCart: FC<AddToCartProps> = ({item,type}) => {
             />
             : 
             <AddToCart2
-            item={item}
+            item={product}
             handleAddItem={handleAddItem}
             handleIncreaseQuantity={handleIncreaseQuantity}
             getCartItem={getCartItem}
             handleDecreaseQuantity={handleDecreaseQuantity}
             onEdit={onEdit}
-            />} */}
+            />}
         </>
     );
 };

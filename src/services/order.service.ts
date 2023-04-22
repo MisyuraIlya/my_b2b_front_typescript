@@ -14,4 +14,11 @@ export const UserService =  {
         })
     },
 
+    // async getProfile(){
+    //     return instance<IOrder[]>({
+    //         url: ORDERS,
+    //         method: 'GET'
+    //     })
+    // },
+
 }

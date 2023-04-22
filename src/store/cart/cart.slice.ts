@@ -1,20 +1,15 @@
-import { createSlice, PayloadAction, nanoid, current } from "@reduxjs/toolkit"
-import { IProduct } from "@/models/product.interface"
-import { ICart } from "@/models/cart.interface";
-import cartLocalStorage from "@/services/LocalStorage/CartLocalStorage";
-interface CartState {
-    items: ICart[];
-  }
-
-const initialState: CartState = {
+import { PayloadAction, createSlice, nanoid } from "@reduxjs/toolkit";
+import {IAddToCartPayload, ICartInititalState, IChangeQuantityPayload} from './cart.types'
+import { IProduct } from "@/models/product.interface";
+const initialState: ICartInititalState = {
     items: []
-  };
+}
 
 export const cartSlice = createSlice({
-    name: 'cart',
+    name:'cart',
     initialState,
     reducers: {
-          addItem: (state, action: PayloadAction<IProduct>) => {
+        addItem: (state, action: PayloadAction<IProduct>) => {
             const existingItemIndex = state.items.findIndex(item => item.product.id === action.payload.id);
             if (existingItemIndex >= 0) {
               state.items[existingItemIndex].quantity++;
@@ -68,8 +63,6 @@ export const cartSlice = createSlice({
               }
             }
           }
+
     }
 })
-
-export const cartReducer = cartSlice.reducer
-export const cartActions = cartSlice.actions

@@ -1,7 +1,7 @@
 import { IProduct } from "@models/product.interface"
 
 export interface ICart {
-    id: string | undefined
+    id: string | number
     product: IProduct
     quantity: number
 

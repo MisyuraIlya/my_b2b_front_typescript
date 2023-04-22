@@ -27,9 +27,9 @@ const RouterApp = () => {
             <main>
                 <Routes>
                     <Route>
-                        {/* <Route path="/" element={<HomePage/>} /> */}
+                        <Route path="/" element={<HomePage/>} />
                         <Route path='/auth' element={<AuthPage/>}/>
-                        {/* <Route path='/catalog' element={<CatalogPage/>}/> */}
+                        <Route path='/catalog' element={<CatalogPage/>}/>
                         {/* <Route path='/profile' element={<ProfilePage/>}/> */}
                         {/* <Route path='/documents' element={<DocumentsPage/>}/> */}
                         {/* <Route path='/cart' element={<CartPage/>}/> */}

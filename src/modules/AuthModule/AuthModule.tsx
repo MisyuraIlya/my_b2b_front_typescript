@@ -4,14 +4,16 @@ import RegistrationLayout from './components/RegistrationLayout/AuthLayout';
 import ValidationForm from './components/ValidationForm/ValidationForm';
 import LoginForm from './components/LoginForm/LoginForm';
 import { Button, Heading, IEmailPassword, Input, SubHeading } from './constructor';
-import { APP_CONFIG } from './constructor';
+// import { APP_CONFIG } from './constructor';
 import { AuthProvider } from './provider/AuthProvider';
 import { useAuth,useActions } from './constructor';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { validEmail } from './helpers/valid-email';
+import { useAuthRedirect } from './hooks/useAuthRedirect';
 const AuthModule = () => {
 
     // const [active, setActive] = useState('Login')
+    useAuthRedirect()
     const {isLoading} = useAuth()
     const {login, register} = useActions()
     const [type, setType] = useState<'login' | 'register'>('login')
@@ -29,7 +31,7 @@ const AuthModule = () => {
                 <section className='flex h-screen'>
                     <form onSubmit={handleSubmit(onSubmit)} className='rounded-lg bg-white shadow-sm p-8 m-auto'>
                         <Heading className='capitalize text-center mb-4'>{type}</Heading>
-
+                        {isLoading ? <div>Loading...</div> : null}
                         <Input {...formRegister('email',{
                             required:'Emil is required',
                             pattern: {
@@ -37,7 +39,7 @@ const AuthModule = () => {
                                 message: 'please enter a valid email address'
                             }
                             })}
-                            placeholder='email'
+                            placeholder='מייל'
                             error={errors.email?.message}
                         />
                         <Input {...formRegister('password',{
@@ -48,10 +50,13 @@ const AuthModule = () => {
                             }
                             })}
                             type='password'
-                            placeholder='password'
+                            placeholder='סיסמה'
                             error={errors.password?.message}
                         />
-                        <Button variant='light'>Let go</Button>
+                        <Button className='rounded' variant='dark'>לחץ</Button>
+                        <div>
+                            <Button type='button' variant='light' className='inline-block opacity-20 mt-3 text-sm' onClick={() => setType(type === 'login' ? 'register' : 'login')}>{type === 'login' ? 'register' : 'login'}</Button>
+                        </div>
                     </form>
                 </section>
                     {/* <div className={`userType ${active === 'Login' ? 'active' : ''}`} onClick={() => setActive('Login')}>

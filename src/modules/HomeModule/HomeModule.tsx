@@ -12,15 +12,16 @@ import SliderContainer from './components/SliderContainer/SliderContainer';
 const HomeModule = () => {
     
     return (
-        <HomeProvider>
-            <div className='HomeModule'>
+        <div>
+            hello world
+            {/* <div className='HomeModule'>
                 <Hero/>
-                {/* <HeroSlider/> */}
+                <HeroSlider/>
                 <Container>
                     <SliderContainer/>
                 </Container>
-            </div>
-        </HomeProvider>
+            </div> */}
+        </div>
 
     );
 };

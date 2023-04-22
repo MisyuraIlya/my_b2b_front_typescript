@@ -3,7 +3,7 @@ import React, { createContext, useState, useContext, ReactNode, useEffect } from
 import axios from 'axios';
 import { API_BACKEND } from '../constructor';
 import { onSuccessAlert } from '../constructor';
-import { useQuery,  } from 'react-query';
+import { useQuery  } from '@tanstack/react-query';
 import { ICategory } from '../constructor';
 import { IProduct } from '../constructor';
 import { useDebounce } from 'use-debounce';
@@ -70,7 +70,7 @@ const CatalogProvider: React.FC<CatalogProviderProps> = (props) => {
   const [filteredData, setFilteredData] = useState<IProduct[]>([])
   // Helpers
   const { isLoading: isCategoriesLoading, error: categoriesError, data: categoriesData } = useQuery(
-    'categories',
+  ['categories'],
     () =>
       fetch('https://digitrade.store/my_test/src/index.php', {
         method: 'POST',

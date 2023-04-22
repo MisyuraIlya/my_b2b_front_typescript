@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './ListViewProductList.styles.scss'
 import { useCatalog } from '../../context/CatalogProvider';
 import { TailSpin } from 'react-loader-spinner';
-import {Modal, PopUpCard} from '../../constructor';
+import {AddToCart, Modal, PopUpCard} from '../../constructor';
 import { IProduct, Pagination, defaultProduct } from '../../constructor';
 const ListViewProductList = () => {
 
@@ -101,7 +101,6 @@ const ListViewProductList = () => {
                                     </div> 
                                 )
                             }
-        
                         )}
                     </div>
                 }
