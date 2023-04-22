@@ -21,4 +21,9 @@ import { useTypedSelector } from "./useTypedSelector";
 //     // return { total, tax, totalBeforeTax, totalBeforeDiscount, discount, totalAfterDiscount };
 // };
 
-export const useCart = () => useTypedSelector(state => state.cart)
+export const useCart = () => {
+    const items = useTypedSelector(state => state.cart.items)
+    const total = items.reduce((total, item) => total + (item.product.price.price * item.quantity), 0);
+
+    return {items,total}
+}

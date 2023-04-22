@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { MdShoppingCart, MdPerson, MdShoppingBag, MdOutlineShoppingBag, MdOutlineSettings } from "react-icons/md";
-import { Button } from '../../constructor';
+import { Button, useActions } from '../../constructor';
 import { useNavigate } from 'react-router-dom'; 
 import './Iconsbar.styles.scss';
 const Iconsbar = () => {
     const [isMouseOn, setIsMouseOn] = useState(false);
     const navigate = useNavigate()
+    const {toggleMode} = useActions();
     const handleMouseEnter = () => {
       setIsMouseOn(true);
     };
@@ -66,6 +67,9 @@ const Iconsbar = () => {
             <div className='myPadding pointer' onClick={() => navigate('/catalog')}>
                 <MdShoppingBag/>
             </div>
+            <button onClick={() => toggleMode()}>
+                toggle
+            </button>    
         </div>
     );
 };

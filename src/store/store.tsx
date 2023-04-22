@@ -5,12 +5,13 @@ import { postAPI } from '@/services/PostServiceOld'
 import { productAPI } from "@/services/ProductServiceOld";
 import { cartSlice } from "./cart/cart.slice";
 import { userSlice } from "./user/user.slice";
-
+import { darkModeSlice } from "./darkMode/darkMode.slice";
 const rootReducer = combineReducers({
   // [postAPI.reducerPath]: postAPI.reducer,
   // [productAPI.reducerPath]: productAPI.reducer,
   cart: cartSlice.reducer,
-  user: userSlice.reducer
+  user: userSlice.reducer,
+  darkMode: darkModeSlice.reducer
 })
 
 const persistConfig = {

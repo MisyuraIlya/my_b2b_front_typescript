@@ -7,6 +7,7 @@ import {persistor, store} from '@/store/store';
 import './App.scss';
 import {BrowserRouter} from 'react-router-dom';
 import AuthProvider from './providers/auth-provider/AuthProvider';
+import DarkModeProvider from './providers/darkMode-provider/DarkModeProvider';
 function App () {
 
   const queryClient = new QueryClient({
@@ -23,7 +24,9 @@ function App () {
         <PersistGate loading={null} persistor={persistor}>
           <BrowserRouter>
             <AuthProvider Component={{isOnlyUser:false}}>
-              <RouterApp/>
+              <DarkModeProvider>
+                <RouterApp/>
+              </DarkModeProvider>
             </AuthProvider>
           </BrowserRouter>
         </PersistGate>

@@ -10,5 +10,11 @@ import type { IProduct } from "../CatalogModule/constructor";
 import Modal from '../../components/global/Modal/Modal'
 import PopUpCard from '../../components/global/PopUpCard/PopUpCard'
 import {defaultProduct} from '../../models/product.interface';
+import {useActions} from '../../hooks/useActions'
+import SquareButton from "@/components/ui/SquareButton/SquareButton";
+import { useOutside } from "@/hooks/useOutside";
+import {useCart} from '../../hooks/useCart';
+import { useProfile } from "@/hooks/useProfile";
+import { useDarkMode } from "@/hooks/useDarkMode";
 // imported global css with styles
-export {Container, Button, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory, Z_INDEX, AddToCart, IProduct, Modal, PopUpCard, defaultProduct}
+export {Container, Button, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory, Z_INDEX, AddToCart, IProduct, Modal, PopUpCard, defaultProduct,useActions, SquareButton, useOutside, useCart, useDarkMode}
