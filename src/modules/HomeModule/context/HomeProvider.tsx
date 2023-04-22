@@ -1,7 +1,7 @@
 // Global
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 import axios from 'axios';
-import { useQuery,  } from 'react-query';
+import { useQuery,  } from '@tanstack/react-query';
 import { ICategory, IProduct } from '../constructor';
 import { API_BACKEND } from '../constructor';
 interface HomeContextType {
@@ -64,7 +64,7 @@ const HomeProvider: React.FC<HomeProviderProps> = (props) => {
   };
 
   const { isLoading: isCategoriesLoading, error: categoriesError, data: categoriesData } = useQuery(
-    'categories',
+    ['categories'],
     () =>
       fetch('https://digitrade.store/my_test/src/index.php', {
         method: 'POST',

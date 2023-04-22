@@ -1,7 +1,7 @@
 // Global
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import axios from 'axios';
-import { useQuery,  } from 'react-query';
+import { useQuery,  } from '@tanstack/react-query';
 import { IProduct } from '../constructor';
 import { useDebounce } from 'use-debounce';
 
@@ -39,7 +39,7 @@ const CartProvider: React.FC<CartProviderProps> = (props) => {
 
   // Helpers
   const { isLoading: DeliveryLoading, error: DeliveryError, data: DeliveryData } = useQuery(
-    'cart',
+    ['cart'],
     () =>
       fetch('https://digitrade.store/my_test/src/index.php', {
         method: 'POST',

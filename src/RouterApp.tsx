@@ -16,7 +16,7 @@ const RouterApp = () => {
     return (
         <div>
             {/* <Header/> */}
-            {/* <HeaderModule/> */}
+            <HeaderModule/>
             {/* <AuthPage/> */}
             {/* <Link to="/" data-testid="home-link">Home</Link>
             <Link to="/auth" data-testid="cart-link">auth</Link>
@@ -30,13 +30,12 @@ const RouterApp = () => {
                         <Route path="/" element={<HomePage/>} />
                         <Route path='/auth' element={<AuthPage/>}/>
                         <Route path='/catalog' element={<CatalogPage/>}/>
-                        {/* <Route path='/profile' element={<ProfilePage/>}/> */}
-                        {/* <Route path='/documents' element={<DocumentsPage/>}/> */}
-                        {/* <Route path='/cart' element={<CartPage/>}/> */}
-                        {/* <Route path='/catalog' element={<CatalogPage/>}/> */}
+                        <Route path='/profile' element={<ProfilePage/>}/>
+                        <Route path='/documents' element={<DocumentsPage/>}/>
+                        <Route path='/cart' element={<CartPage/>}/>
                         {/* <Route path='/login' element={<LoginPage/>}/> */}
-                        {/* <Route path='/registration' element={<RegistrationPage/>}/> */}
-                        {/* <Route path='/*' element={<ErrorPage/>}/> */}
+                        <Route path='/registration' element={<RegistrationPage/>}/>
+                        <Route path='/*' element={<ErrorPage/>}/>
 
                     </Route>
                 </Routes>
