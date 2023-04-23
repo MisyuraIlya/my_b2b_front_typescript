@@ -20,7 +20,7 @@ const HeaderModule = () => {
     const {darkMode} = useDarkMode()
     console.log('darkMode',darkMode)
     return (
-        <header className='bg-bg-color dark:bg-secondary  transition-colors duration-500 w-full py-6 px-6 grid grid-cols-3'
+        <header className='bg-bg-color dark:bg-secondary  bgAnimation  w-full py-6 px-6 grid grid-cols-3'
             // style={{
             //     gridTemplateColumns: '1fr 3fr 1.2fr'
             // }}
@@ -29,7 +29,7 @@ const HeaderModule = () => {
             {/* <Search/> */}
 
             <Link to="/">
-                <img src="https://amit-pastry-b2b.com/src/img/logo.png" alt="logo" style={{width:'50px'}}/>
+                {/* <img src="https://amit-pastry-b2b.com/src/img/logo.png" alt="logo" style={{width:'50px'}}/> */}
             </Link>
             <HeaderSearch/>
             <div className='flex items-center justify-center gap-10'>

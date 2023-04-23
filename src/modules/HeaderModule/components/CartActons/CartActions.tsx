@@ -16,7 +16,7 @@ const CartActions: FC<{item: ICart}> = ({item}) => {
                 >
                     <FiMinus fontSize={13}/>
                 </button>
-                <input disabled readOnly value={quantity} className='w-10 bg-black text-center'/>
+                <input disabled readOnly value={quantity} className='w-10 bg:bg-primary dark:bg-black text-center rounded'/>
 
                 <button
                     onClick={() => increaseQuantity(item.product.id)}

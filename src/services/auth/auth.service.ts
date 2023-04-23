@@ -18,6 +18,7 @@ export const AuthService =  {
             method:'POST',
             data : valAjax
         })
+        console.log('response',response)
         if (response.data.data) saveToStorage(response.data)
 
         return response.data

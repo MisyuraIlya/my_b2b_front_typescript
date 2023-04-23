@@ -1,8 +1,11 @@
 import { instance } from "@/api/api.interceptor";
 import {PRODUCTS, TypeProductData, TypeProductDataFilters} from './product.types'
 import { IProduct } from "@/models/product.interface";
+import { IProductResponse, IProductSearchResponse } from "@/models/product.interface";
+const API = 'https://digitrade.store/my_test/src/index.php';
+const Controller = 'ProductsController'
 
-export const UserService =  {
+export const ProductService =  {
     async getProfile(queryData = {} as TypeProductDataFilters){
         return instance<IProduct[]>({
             url:PRODUCTS,
@@ -12,9 +15,19 @@ export const UserService =  {
     },
     
     async getSimilar(productId: string | number){
-        return instance<IProduct[]>({
-            url:`${PRODUCTS}/similar/${productId}`,
-            method: 'GET'        })
+        const response = await instance<IProductSearchResponse>({
+            url:`${API}`,
+            method: 'POST',
+            data: {
+                classPoint: Controller,
+                funcName: 'FetchProductsByFilter',
+                val: {
+                    filterValue: productId
+                }
+            }
+        })
+
+        return response.data.data
     },
 
     async getBySlug(slug: string){

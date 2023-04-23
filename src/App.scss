@@ -75,10 +75,27 @@ $c3: #fff;
 
 .open-menu {
 	opacity: 1;
+	display: block;
 	transform: scale(1);
 }
 
 .close-menu {
+	display: none;
 	opacity: 0;
 	transform: scale(0.8);
+}
+
+.bgAnimation {
+	@apply transition-colors duration-500
+}
+
+.myBg {
+	@apply transition-colors duration-500 dark:bg-secondary bg-white
+}
+.bgHover {
+	@apply hover:bg-primary/5 hover:dark:bg-white/5
+}
+
+.myText {
+	@apply text-secondary dark:text-white
 }

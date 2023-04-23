@@ -1,6 +1,6 @@
 import { ICategory } from "./category.interface";
 import { IPriceListBase } from "./priceListBase.interface";
-
+import { IServerResponse } from "./serverResponse.interface";
 export interface IProduct {
     id: number;
     category: ICategory
@@ -68,3 +68,15 @@ export const defaultProduct: IProduct = {
       timezone_type: 0
     }
   };
+
+export interface IProductResponse extends IServerResponse {
+  data: IProduct[] | []
+}
+
+interface ISearchType {
+  product: IProduct[]
+  total: number
+}
+export interface IProductSearchResponse extends IServerResponse {
+  data: ISearchType
+}

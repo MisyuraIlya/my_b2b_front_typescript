@@ -4,14 +4,14 @@ import { ICart } from '@/models/cart.interface';
 const CartItem: FC<{item: ICart}> = ({item}) => {
     return (
         <>
-            {/* <div className={styles.item}>
-                <img src={item.image} />
+            <div className='flex py-2'>
+                    <img src={item.product.image}  className='w-6/12 px-4'/>
                 <div>
-                    <div className={styles.name}>{item.product.name}</div>
-                    <div className={styles.price}>{convertPrice(item.product.price)}</div>
+                    <div>{item.product.name}</div>
+                    <div>{item.product.price.price}</div>
                     <CartActions item={item}/>
                 </div>    
-            </div> */}
+            </div>
         </>
 
     );
