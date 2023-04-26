@@ -2,51 +2,57 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { getContentType } from "@/api/api.heler";
 import { instance } from "@/api/api.interceptor";
-import { ICategory } from "@/models/category.interface";
-const CATEGORIES = 'categories'
-
+import { ICategoryResponse } from "@/models/category.interface";
+const CATEGORIES = 'CategoriesController'
+const API = 'https://digitrade.store/my_test/src/index.php'
 export const CategoryService =  {
     async getAll(){
-        return instance<ICategory[]>({
-            url: CATEGORIES,
-            method: 'GET'
+        const response = await instance<ICategoryResponse>({
+            url:`${API}`,
+            method: 'POST',
+            data: {
+                classPoint: CATEGORIES,
+                funcName: 'FetchAllCategories',
+            }
         })
+
+        return response.data.data
     },
     
-    async getById(id: string | number){
-        return instance<ICategory>({
-            url: `${CATEGORIES}/${id}`,
-            method: 'GET'
-        })
-    },
+    // async getById(id: string | number){
+    //     return instance<ICategory>({
+    //         url: `${CATEGORIES}/${id}`,
+    //         method: 'GET'
+    //     })
+    // },
 
-    async getBySlug(slug: string | number){
-        return instance<ICategory>({
-            url: `${CATEGORIES}/by-slug/${slug}`,
-            method: 'GET'
-        })
-    },
+    // async getBySlug(slug: string | number){
+    //     return instance<ICategory>({
+    //         url: `${CATEGORIES}/by-slug/${slug}`,
+    //         method: 'GET'
+    //     })
+    // },
 
-    async create(){
-        return instance<ICategory>({
-            url: CATEGORIES,
-            method: 'POST'
-        })
-    },
+    // async create(){
+    //     return instance<ICategory>({
+    //         url: CATEGORIES,
+    //         method: 'POST'
+    //     })
+    // },
 
-    async update(id: string | number, name: string){
-        return instance<ICategory>({
-            url: `${CATEGORIES}/${id}`,
-            method: 'PUT', 
-            data: {name}
-        })
-    },
+    // async update(id: string | number, name: string){
+    //     return instance<ICategory>({
+    //         url: `${CATEGORIES}/${id}`,
+    //         method: 'PUT', 
+    //         data: {name}
+    //     })
+    // },
 
-    async delete(id: string | number){
-        return instance<ICategory>({
-            url: `${CATEGORIES}/${id}`,
-            method: 'DELETE'
-        })
-    }
+    // async delete(id: string | number){
+    //     return instance<ICategory>({
+    //         url: `${CATEGORIES}/${id}`,
+    //         method: 'DELETE'
+    //     })
+    // }
 
 }

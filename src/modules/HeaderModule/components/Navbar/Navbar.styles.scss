@@ -2,7 +2,8 @@
     position: relative;
     width: 100%;
     direction: rtl;
-    background-color: white;
+    // background-color: white;
+    @apply bg-secondary;
     .list{
         width: 100%;
         overflow: auto;
@@ -21,8 +22,9 @@
     }
 
     .modal{
+        display: flex;
         position: absolute;
-        top: 80%;
+        top: 100%;
         background: #fff;
         right: 0;
         left: 0;

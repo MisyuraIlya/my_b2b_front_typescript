@@ -16,21 +16,13 @@ const HomeModule = () => {
 
     return (
         <div>
-            <h4 className='dark:text-gray-100 dark:bg-slate-900 duration-100'>hello world</h4>
-            {/* <div className='HomeModule'>
+            {/* <div className='HomeModule'> */}
                 <Hero/>
-                <HeroSlider/>
+                {/* <HeroSlider/> */}
                 <Container>
                     <SliderContainer/>
                 </Container>
-            </div> */}
-                <div className="h-screen bg-white dark:bg-black">
-                    <p className="text-lg dark:text-white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed risus
-                        vel ex lobortis lacinia. Phasellus sodales tellus quis sapien ultrices
-                        vestibulum.
-                    </p>
-                </div>
+            {/* </div> */}
                 {/* <button onClick={() => toggleMode()}>toggle</button> */}
         </div>
 

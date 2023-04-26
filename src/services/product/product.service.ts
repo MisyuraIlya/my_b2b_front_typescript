@@ -6,12 +6,24 @@ const API = 'https://digitrade.store/my_test/src/index.php';
 const Controller = 'ProductsController'
 
 export const ProductService =  {
-    async getProfile(queryData = {} as TypeProductDataFilters){
-        return instance<IProduct[]>({
-            url:PRODUCTS,
-            method: 'GET',
-            params: queryData
+    async getAll(){
+        const response = await instance<IProductSearchResponse>({
+            url:`${API}`,
+            method: 'POST',
+            data: {
+                classPoint: Controller,
+                funcName: 'FetchProductsByFilter',
+                val: {
+                    lvl1: "1",
+                    lvl2: "2",
+                    lvl3:null,
+                    pageSize: "1",
+                    page: "2"
+                }
+            }
         })
+
+        return response.data.data.product
     },
     
     async getSimilar(productId: string | number){

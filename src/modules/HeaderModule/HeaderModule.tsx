@@ -14,13 +14,15 @@ import HeaderCart from './components/HeaderCart/HeaderCart';
 import HeaderProfile from './components/HeaderProfile/HeaderProfile';
 import {CiDark,CiSun} from 'react-icons/ci'
 import HeaderSearch from './components/HeaderSearch/HeaderSearch';
+
 const HeaderModule = () => {
     const navigate = useNavigate()
     const {toggleMode} = useActions()
     const {darkMode} = useDarkMode()
-    console.log('darkMode',darkMode)
     return (
+        <div className='fixed z-50 w-full'>
         <header className='bg-bg-color dark:bg-secondary  bgAnimation  w-full py-6 px-6 grid grid-cols-3'
+            
             // style={{
             //     gridTemplateColumns: '1fr 3fr 1.2fr'
             // }}
@@ -44,7 +46,6 @@ const HeaderModule = () => {
                 }
                 
             </div>
-            
         {/* <HeaderProvider>
             <div className='HeaderModule'>
                 <Container>
@@ -66,6 +67,10 @@ const HeaderModule = () => {
         </HeaderProvider> */}
 
         </header>
+        <Navbar/>
+
+        </div>
+
 
     );
 };

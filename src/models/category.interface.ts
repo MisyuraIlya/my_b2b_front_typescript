@@ -1,3 +1,5 @@
+import { IData } from "./user.interface"
+
 export interface ICategory {
     id: number
     name: string
@@ -13,4 +15,8 @@ interface IDate {
     date: string
     timezone: string,
     timezone_type: number
+}
+
+export interface ICategoryResponse extends IData {
+    data: ICategory[]
 }

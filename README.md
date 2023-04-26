@@ -195,3 +195,23 @@ set in package.json jest configuration
       }
     ]
   },
+
+
+
+  /deleted from package.json
+  ,
+  "eslintConfig": {
+    "extends": [
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },

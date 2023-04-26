@@ -45,16 +45,19 @@ const HeaderCart = () => {
                     <div>סה״כ:</div>
                     <span className='font-bold text-lg'>{total} ₪</span>
                 </div>
-                <div className='text-center'>
-                    <Button variant='light' className='btn-link mt-5 mb-2 rounded-lg'>
-                        מעבר לסיכום
-                    </Button>
+                <div className='flex text-center'>
+                    <div className='py-2 px-2'>
+                        <Button variant='light' className='btn-link mt-5 mb-2 rounded-lg'>
+                            לסיכום
+                        </Button>
+                    </div> 
+                    <div className='py-2 px-2'>
+                        <Button variant='light' className='btn-link mt-5 mb-2 rounded-lg bg-secondary dark: bg-white '>
+                            לתשלום
+                        </Button>
+                    </div>    
                 </div>    
-                <div className='text-center'>
-                    <Button variant='light' className='btn-link mt-5 mb-2 rounded-lg'>
-                        מעבר לתשלום
-                    </Button>
-                </div>  
+  
             </div>    
         </div>
     );

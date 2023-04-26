@@ -18,5 +18,6 @@ import { useProfile } from "@/hooks/useProfile";
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { ProductService } from "@/services/product/product.service";
 import { useAuth } from "../AuthModule/constructor";
+import { CategoryService } from "@/services/category.service";
 // imported global css with styles
-export {Container, Button, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory, Z_INDEX, AddToCart, IProduct, Modal, PopUpCard, defaultProduct,useActions, SquareButton, useOutside, useCart, useDarkMode, ProductService,useAuth}
+export {Container, Button, API_BACKEND, onSuccessAlert, APP_CONFIG, ICategory, Z_INDEX, AddToCart, IProduct, Modal, PopUpCard, defaultProduct,useActions, SquareButton, useOutside, useCart, useDarkMode, ProductService,useAuth,CategoryService}

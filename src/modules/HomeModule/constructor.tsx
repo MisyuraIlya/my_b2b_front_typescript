@@ -7,4 +7,6 @@ import { Modal } from '../CatalogModule/constructor';
 import {PopUpCard} from '../CatalogModule/constructor';
 import { defaultProduct } from '../../models/product.interface';
 import {AddToCart} from '../CatalogModule/constructor';
-export {Container, Button2, IProduct, ICategory, API_BACKEND, PopUpCard, Modal, defaultProduct,AddToCart }
+import { ProductService } from '../HeaderModule/constructor';
+import { CategoryService } from '../HeaderModule/constructor';
+export {Container, Button2, IProduct, ICategory, API_BACKEND, PopUpCard, Modal, defaultProduct,AddToCart, ProductService, CategoryService }
